@@ -1,0 +1,15 @@
+{
+  "name": "Gacha",
+  "packageManager": "yarn@3.5.1",
+  "private": true,
+  "scripts": {
+    "brand:dev": "yarn workspace @brand/web run dev"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}
