@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "brand:dev": "yarn workspace @brand/web run dev",
+    "server:dev": "yarn workspace @brand/server run start",
     "g:typecheck": "yarn workspaces foreach -pv run typecheck"
   },
   "workspaces": [
