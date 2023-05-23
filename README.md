@@ -17,3 +17,13 @@ This project uses computer algorithms to turn randomly generated digital art int
 [ ] DB 구성 </br>
 
 # test기능
+
+
+# Setting
+
+yarn set version berry
+- yarn berry 버젼으로 변경시켜준다.
+yarn brand:dev
+- 웹 프론트 서버 실행
+yarn server:dev
+- 웹 서버 실행

@@ -28,7 +28,7 @@ export default function Home() {
       </div>
 
       <Button>from @brand/ui</Button>
-      
+
       <div className={styles.grid}>
         <a
           href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
