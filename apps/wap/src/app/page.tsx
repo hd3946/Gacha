@@ -1,5 +1,5 @@
-import { sayHello } from '@brand/lib'
-import { Button } from '@brand/ui'
+import { sayHello } from '../lib'
+import { Button } from '../ui'
 import Image from 'next/image'
 import styles from './page.module.css'
 

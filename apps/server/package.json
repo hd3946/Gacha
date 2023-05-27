@@ -1,5 +1,5 @@
 {
-  "name": "@brand/server",
+  "name": "@apps/server",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -21,7 +21,6 @@
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@brand/lib": "workspace:^",
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
