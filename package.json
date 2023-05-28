@@ -3,7 +3,7 @@
   "packageManager": "yarn@3.5.1",
   "private": true,
   "scripts": {
-    "wap:dev": "yarn workspace @apps/web run dev",
+    "web:dev": "yarn workspace @apps/web run dev",
     "server:dev": "yarn workspace @apps/server run start",
     "g:typecheck": "yarn workspaces foreach -pv run typecheck"
   },
