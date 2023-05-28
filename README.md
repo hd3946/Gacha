@@ -22,8 +22,8 @@ This project uses computer algorithms to turn randomly generated digital art int
 
 yarn set version berry
 
-- yarn berry 버젼으로 변경시켜준다.
+- yarn berry 버젼으로 변경시켜준다. </br>
   yarn wap:dev
-- 웹 프론트 서버 실행
+- 웹 프론트 서버 실행 </br>
   yarn server:dev
 - 웹 서버 실행
