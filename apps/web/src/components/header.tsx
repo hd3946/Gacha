@@ -34,7 +34,6 @@ export default function Header() {
               </a>
             </div>
           </div>
-
           <nav className="hidden md:flex md:grow">
             <ul className="flex grow justify-end flex-wrap items-center">
               <li>
