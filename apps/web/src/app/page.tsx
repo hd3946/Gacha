@@ -1,5 +1,4 @@
-import HeaderTest from './components/HeaderTest'
-import styles from './page.module.css'
+import HeaderTest from './components/HeaderTest' 
 
 export default function Home() {
   return (
