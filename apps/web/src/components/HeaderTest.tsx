@@ -2,57 +2,135 @@
 import ImageLogo from 'next/image'
 import Link from 'next/link'
 import styles from './HeaderTest.module.css'
-import { useEffect, useState } from 'react'
 import useColorMode from '@/hooks/useColorMode'
+import { IonIcon } from '@ionic/react'
+import { settingsOutline, constructOutline, sparklesOutline, moonOutline } from 'ionicons/icons'
 
 export default function HeaderTest() {
   const [colorMode, setColorMode] = useColorMode()
 
   return (
-    <div className={styles.container}>
-      <div className="w-1/5 shrink-0">
-        <a href="/" target="" rel="noopener noreferrer">
-          <ImageLogo src="/assets/logo.png" alt="Gacha Logo" width={220} height={32} priority />
-        </a>
-      </div>
+    <div className="bg-gray-800 mx-auto px-2 sm:px-6 lg:px-8 h-full relative flex items-center justify-between max-w-[3000px] overflow-auto hiddenScrollbar">
+      <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start gap-10">
+        <div className="flex flex-shrink-0 items-center">
+          <a href="/" target="" rel="noopener noreferrer">
+            <ImageLogo src="/assets/logo.png" alt="Gacha Logo" width={220} height={40} priority />
+          </a>
+        </div>
 
-      <nav className="w-3/5 flex-none">
-        <ul className="flex grow flex-wrap items-center">
-          <li>
-            <Link href="/" className={styles.link}>
-              Settings
-            </Link>
-          </li>
-          <li>
-            <Link href="/" className={styles.link}>
-              Organize
-            </Link>
-          </li>
-          <li>
-            <Link href="/" className={styles.link}>
-              Preview
-            </Link>
-          </li>
-          <li>
-            <Link href="/" className={styles.link}>
-              Export
-            </Link>
-          </li>
-        </ul>
-      </nav>
+        <div className="relative z-0 flex flex-1 items-center justify-center">
+          <div className="flex space-x-4 my-2 mx-auto">
+            <button className="group bg-white hover:bg-gray-200 border-2 border-transparent dark:hover:bg-slate-700 flex items-center justify-center px-3 py-2 rounded-md text-sm font-medium bg-gray-200 dark:bg-slate-700 border-2 border-orange-400">
+              <span className="flex gap-3 items-center justify-center group-hover:text-orange-400 dark:text-orange-300 group-hover:text-orange-300 text-orange-400 dark:text-orange-300 group-hover:text-orange-300">
+                <span className="group-hover:text-orange-400 dark:text-orange-300 group-hover:text-orange-300 text-orange-400 dark:text-orange-300 group-hover:text-orange-300 inline-flex items-center">
+                  <IonIcon icon={settingsOutline} />
+                </span>
+                <span className="hidden lg:inline dark:group-hover:text-cyan-400 dark:text-cyan-400 group-hover:text-cyan-400 text-gray-600 dark:text-gray-400">
+                  Settings
+                </span>
+              </span>
+            </button>
+            <span className="text-slate-400 mt-4">
+              <svg width="3" height="6" aria-hidden="true">
+                <path
+                  d="M0 0L3 3L0 6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            <button
+              className="group bg-white hover:bg-gray-200 border-2 border-transparent dark:hover:bg-slate-700 flex items-center justify-center px-3 py-2 rounded-md text-sm font-medium dark:bg-slate-800"
+              aria-current="page">
+              <span className="flex gap-3 items-center justify-center group-hover:text-cyan-400 dark:text-cyan-400 group-hover:text-cyan-400 text-cyan-400 dark:text-cyan-400 group-hover:text-cyan-400">
+                <span className="group-hover:text-cyan-400 dark:text-cyan-400 group-hover:text-cyan-400 text-cyan-400 dark:text-cyan-400 group-hover:text-cyan-400 inline-flex items-center">
+                  <IonIcon icon={constructOutline} />
+                </span>
+                <span className="hidden lg:inline dark:group-hover:text-cyan-400 dark:text-cyan-400 group-hover:text-cyan-400 text-gray-600 dark:text-gray-400">
+                  Organize
+                </span>
+              </span>
+            </button>
+            <span className="text-slate-400 mt-4">
+              <svg width="3" height="6" aria-hidden="true">
+                <path
+                  d="M0 0L3 3L0 6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            <button
+              className="group bg-white hover:bg-gray-200 border-2 border-transparent dark:hover:bg-slate-700 flex items-center justify-center px-3 py-2 rounded-md text-sm font-medium dark:bg-slate-800"
+              aria-current="page">
+              <span className="flex gap-3 items-center justify-center group-hover:text-violet-400 dark:text-violet-300 group-hover:text-violet-300 text-violet-400 dark:text-violet-300 group-hover:text-violet-300">
+                <span className="group-hover:text-violet-400 dark:text-violet-300 group-hover:text-violet-300 text-violet-400 dark:text-violet-300 group-hover:text-violet-300 inline-flex items-center">
+                  <IonIcon icon={constructOutline} />
+                </span>
+                <span className="hidden lg:inline dark:group-hover:text-violet-400 dark:text-violet-300 group-hover:text-violet-300 text-gray-600 dark:text-gray-400">
+                  Preview
+                </span>
+              </span>
+            </button>
+            <span className="text-slate-400 mt-4">
+              <svg width="3" height="6" aria-hidden="true">
+                <path
+                  d="M0 0L3 3L0 6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            <button
+              className="group bg-white hover:bg-gray-200 border-2 border-transparent dark:hover:bg-slate-700 flex items-center justify-center px-3 py-2 rounded-md text-sm font-medium dark:bg-slate-800"
+              aria-current="page">
+              <span className="flex gap-3 items-center justify-center group-hover:text-teal-400 dark:text-teal-400 group-hover:text-teal-400 text-teal-400 dark:text-teal-400 group-hover:text-teal-400">
+                <span className="group-hover:text-teal-400 dark:text-teal-400 group-hover:text-teal-400 text-teal-400 dark:text-teal-400 group-hover:text-teal-400 inline-flex items-center">
+                  <IonIcon icon={sparklesOutline} />
+                </span>
+                <span className="hidden lg:inline dark:group-hover:text-teal-400 dark:text-teal-400 group-hover:text-teal-400 text-gray-600 dark:text-gray-400">
+                  Export
+                </span>
+              </span>
+            </button>
+          </div>
 
-      <div className="w-1/5 flex justify-end">
-        <button
-          type="button"
-          className="block text-gray-100 hover:text-gray-400 focus:text-gray-400 focus:outline-none"
-          aria-label="Open sidebar"
-          onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}>
-          <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current">
-            <path fillRule="evenodd" d="M4 6h16M4 12h8m-8 6h16" />
-          </svg>
-          다크모드
-        </button>
-        <button className={styles.btn}>Connect</button>
+          <div className="mx-auto">
+            <button className="ml-4 text-xs leading-5 font-medium ring-1 ring-sky-600 dark:ring-0 text-sky-600 dark:text-sky-400 bg-sky-400/10 rounded-full py-1 px-3 hidden lg:flex gap-2 items-center justify-between hover:bg-sky-400/20 cursor-pointer">
+              <span className="font-bold underline whitespace-nowrap">Mint a Team Pass</span>
+              <span className="inline-flex items-center"></span>
+              <span className="hidden xl:inline-block">Unlock Pro features!</span>
+            </button>
+          </div>
+        </div>
+        <div className="ml-auto flex items-center justify-end gap-2">
+          <button
+            className="relative inline-flex items-center justify-center flex-shrink-0 cursor-pointer rounded-md transition-colors duration-200 ease-in-out focus:outline-none text-white h-[36px] w-[36px] bg-white hover:bg-gray-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-gray-600 dark:text-gray-400"
+            id="headlessui-switch-1"
+            role="switch"
+            type="button"
+            aria-checked="true"
+            data-headlessui-state="checked">
+            <IonIcon icon={moonOutline} />
+          </button>
+          <button
+            type="button"
+            className="bg-white hover:bg-gray-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-gray-600 dark:text-gray-400 py-2 px-3 text-sm rounded-md">
+            Connect
+          </button>
+        </div>
+        
+        {/* <button
+        type="button"
+        className="block text-gray-100 hover:text-gray-400 focus:text-gray-400 focus:outline-none"
+        aria-label="Open sidebar"
+        onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}></button> */}
       </div>
     </div>
   )
