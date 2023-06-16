@@ -1,14 +1,21 @@
 {
-  "arrowParens": "avoid",
-  "bracketSameLine": false,
+  "trailingComma": "none",
+  "bracketSameLine": true,
   "bracketSpacing": true,
   "endOfLine": "lf",
   "jsxSingleQuote": false,
   "printWidth": 120,
-  "proseWrap": "preserve",
-  "quoteProps": "as-needed",
   "semi": false,
   "singleQuote": true,
   "tabWidth": 2,
-  "trailingComma": "es5"
+  "overrides": [
+    {
+      "files": "*.sol",
+      "options": {
+        "tabWidth": 4,
+        "singleQuote": false,
+        "bracketSpacing": true
+      }
+    }
+  ]
 }
