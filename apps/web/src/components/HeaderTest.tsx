@@ -1,21 +1,17 @@
 'use client'
-import ImageLogo from 'next/image'
-import Link from 'next/link'
-import styles from './HeaderTest.module.css'
 import useColorMode from '@/hooks/useColorMode'
 import { IonIcon } from '@ionic/react'
-import { settingsOutline, constructOutline, sparklesOutline, moonOutline } from 'ionicons/icons'
+import { constructOutline, moonOutline, settingsOutline, sparklesOutline, sunnyOutline } from 'ionicons/icons'
+import ImageLogo from 'next/image'
 
 export default function HeaderTest() {
   const [colorMode, setColorMode] = useColorMode()
 
   return (
-    <div className="bg-gray-800 mx-auto px-2 sm:px-6 lg:px-8 h-full relative flex items-center justify-between max-w-[3000px] overflow-auto hiddenScrollbar">
+    <div className="dark:bg-gray-800 bg-red-200 mx-auto px-2 sm:px-6 lg:px-8 h-full relative flex items-center justify-between max-w-[3000px] overflow-auto hiddenScrollbar">
       <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start gap-10">
         <div className="flex flex-shrink-0 items-center">
-          <a href="/" target="" rel="noopener noreferrer">
-            <ImageLogo src="/assets/logo.png" alt="Gacha Logo" width={220} height={40} priority />
-          </a>
+          <ImageLogo src="/assets/logo.png" alt="Gacha Logo" width={220} height={40} priority />
         </div>
 
         <div className="relative z-0 flex flex-1 items-center justify-center">
@@ -23,30 +19,20 @@ export default function HeaderTest() {
             <button className="group bg-white hover:bg-gray-200 border-2 border-transparent dark:hover:bg-slate-700 flex items-center justify-center px-3 py-2 rounded-md text-sm font-medium bg-gray-200 dark:bg-slate-700 border-2 border-orange-400">
               <span className="flex gap-3 items-center justify-center group-hover:text-orange-400 dark:text-orange-300 group-hover:text-orange-300 text-orange-400 dark:text-orange-300 group-hover:text-orange-300">
                 <span className="group-hover:text-orange-400 dark:text-orange-300 group-hover:text-orange-300 text-orange-400 dark:text-orange-300 group-hover:text-orange-300 inline-flex items-center">
-                  <IonIcon icon={settingsOutline} />
+                  <IonIcon icon={settingsOutline} role="img" className="hi" />
                 </span>
                 <span className="hidden lg:inline dark:group-hover:text-cyan-400 dark:text-cyan-400 group-hover:text-cyan-400 text-gray-600 dark:text-gray-400">
                   Settings
                 </span>
               </span>
             </button>
-            <span className="text-slate-400 mt-4">
-              <svg width="3" height="6" aria-hidden="true">
-                <path
-                  d="M0 0L3 3L0 6"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"></path>
-              </svg>
-            </span>
+            <span className="text-slate-400 mt-4"></span>
             <button
               className="group bg-white hover:bg-gray-200 border-2 border-transparent dark:hover:bg-slate-700 flex items-center justify-center px-3 py-2 rounded-md text-sm font-medium dark:bg-slate-800"
               aria-current="page">
               <span className="flex gap-3 items-center justify-center group-hover:text-cyan-400 dark:text-cyan-400 group-hover:text-cyan-400 text-cyan-400 dark:text-cyan-400 group-hover:text-cyan-400">
                 <span className="group-hover:text-cyan-400 dark:text-cyan-400 group-hover:text-cyan-400 text-cyan-400 dark:text-cyan-400 group-hover:text-cyan-400 inline-flex items-center">
-                  <IonIcon icon={constructOutline} />
+                  <IonIcon icon={constructOutline} role="img" className="hi" />
                 </span>
                 <span className="hidden lg:inline dark:group-hover:text-cyan-400 dark:text-cyan-400 group-hover:text-cyan-400 text-gray-600 dark:text-gray-400">
                   Organize
@@ -54,22 +40,14 @@ export default function HeaderTest() {
               </span>
             </button>
             <span className="text-slate-400 mt-4">
-              <svg width="3" height="6" aria-hidden="true">
-                <path
-                  d="M0 0L3 3L0 6"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"></path>
-              </svg>
+              <svg width="3" height="6" aria-hidden="true" />
             </span>
             <button
               className="group bg-white hover:bg-gray-200 border-2 border-transparent dark:hover:bg-slate-700 flex items-center justify-center px-3 py-2 rounded-md text-sm font-medium dark:bg-slate-800"
               aria-current="page">
               <span className="flex gap-3 items-center justify-center group-hover:text-violet-400 dark:text-violet-300 group-hover:text-violet-300 text-violet-400 dark:text-violet-300 group-hover:text-violet-300">
                 <span className="group-hover:text-violet-400 dark:text-violet-300 group-hover:text-violet-300 text-violet-400 dark:text-violet-300 group-hover:text-violet-300 inline-flex items-center">
-                  <IonIcon icon={constructOutline} />
+                  <IonIcon icon={constructOutline} role="img" className="hi" />
                 </span>
                 <span className="hidden lg:inline dark:group-hover:text-violet-400 dark:text-violet-300 group-hover:text-violet-300 text-gray-600 dark:text-gray-400">
                   Preview
@@ -77,22 +55,14 @@ export default function HeaderTest() {
               </span>
             </button>
             <span className="text-slate-400 mt-4">
-              <svg width="3" height="6" aria-hidden="true">
-                <path
-                  d="M0 0L3 3L0 6"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"></path>
-              </svg>
+              <svg width="3" height="6" aria-hidden="true"></svg>
             </span>
             <button
               className="group bg-white hover:bg-gray-200 border-2 border-transparent dark:hover:bg-slate-700 flex items-center justify-center px-3 py-2 rounded-md text-sm font-medium dark:bg-slate-800"
               aria-current="page">
               <span className="flex gap-3 items-center justify-center group-hover:text-teal-400 dark:text-teal-400 group-hover:text-teal-400 text-teal-400 dark:text-teal-400 group-hover:text-teal-400">
                 <span className="group-hover:text-teal-400 dark:text-teal-400 group-hover:text-teal-400 text-teal-400 dark:text-teal-400 group-hover:text-teal-400 inline-flex items-center">
-                  <IonIcon icon={sparklesOutline} />
+                  <IonIcon icon={sparklesOutline} role="img" className="hi" />
                 </span>
                 <span className="hidden lg:inline dark:group-hover:text-teal-400 dark:text-teal-400 group-hover:text-teal-400 text-gray-600 dark:text-gray-400">
                   Export
@@ -116,8 +86,8 @@ export default function HeaderTest() {
             role="switch"
             type="button"
             aria-checked="true"
-            data-headlessui-state="checked">
-            <IonIcon icon={moonOutline} />
+            onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}>
+            {colorMode === 'light' ? <IonIcon icon={sunnyOutline} /> : <IonIcon icon={moonOutline} />}
           </button>
           <button
             type="button"
@@ -125,12 +95,6 @@ export default function HeaderTest() {
             Connect
           </button>
         </div>
-        
-        {/* <button
-        type="button"
-        className="block text-gray-100 hover:text-gray-400 focus:text-gray-400 focus:outline-none"
-        aria-label="Open sidebar"
-        onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}></button> */}
       </div>
     </div>
   )

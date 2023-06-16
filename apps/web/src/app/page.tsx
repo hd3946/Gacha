@@ -1,4 +1,6 @@
+import Organize from '@/components/Organize'
 import HeaderTest from '../components/HeaderTest'
+import MainV2 from '@/components/MainV2'
 
 export default function Home() {
   return (
@@ -8,7 +10,7 @@ export default function Home() {
       </header>
 
       <main>
-        <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">{/* Your content */}</div>
+        <MainV2 />
       </main>
     </>
   )
