@@ -6,6 +6,19 @@
     "web:dev": "yarn workspace @apps/web run dev",
     "server:dev": "yarn workspace @apps/server run start"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,mjs,ts,tsx}": [
+      "prettier --write"
+    ],
+    "*.{sol}": [
+      "prettier --write '**/*.sol'"
+    ]
+  },
   "workspaces": [
     "apps/**"
   ],
@@ -20,6 +33,8 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "latest",
+    "husky": "4",
+    "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
     "prettier-plugin-organize-imports": "^3.2.2",
     "prettier-plugin-solidity": "^1.1.3",

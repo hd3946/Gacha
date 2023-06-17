@@ -1,4 +1,4 @@
-import Organize from "./Organize"
+import Organize from './Organize'
 
 const MainV2 = () => {
   return (
