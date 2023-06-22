@@ -4,20 +4,28 @@ import { addOutline } from 'ionicons/icons'
 
 const Organize = () => {
   return (
-    <div className="mx-auto max-w-[3000px] min-h-screen w-full mt-5 px-6">
+    <div className="dark:bg-gray-800 mx-auto max-w-[3000px] min-h-screen w-full px-6">
       <div className="flex flex-col md:flex-row pt-3 px-4 pl-0 md:gap-10">
         <aside className="w-full md:w-[16rem] pb-10 overflow-y-auto px-[1px] pt-[1px] shrink md:shrink-0 h-fit md:h-full relative">
           <div className="relative w-full ring-1 ring-slate-200 hover:ring-slate-300 dark:ring-white/5 dark:ring-inset bg-white dark:bg-slate-700/40 dark:ring-slate-500 rounded-lg h-10 flex items-center">
+            <input
+              min="3"
+              required
+              type="text"
+              id="layer name"
+              className="outline-none group flex items-center h-auto flex-none py-3 pl-4 pr-3.5 text-sm dark:focus:text-white focus:placeholder:text-white/75 bg-transparent w-full"
+              placeholder="New layer name"></input>
             <button className="absolute right-[5px] top-[5px] bottom-[5px] text-cyan-400 dark:hover:text-violet-200 text-sm border rounded-lg px-2 py-1 border-1 border-slate-200/10 hover:bg-slate-700/10">
               <div className="relative gap-0.5 flex items-center">
                 <span className="inline-flex items-center">
-                  <IonIcon icon={addOutline} role="img" className="hi"></IonIcon>
+                  <IonIcon icon={addOutline} role="img" className="hi" />
                 </span>
                 <span>Add</span>
               </div>
             </button>
           </div>
         </aside>
+
         <main className="grow overflow-hidden">
           <div className="pb-4 transition-all duration-200 ease-in-out space-y-2" style={{ position: 'relative' }}>
             <div className="flex h-10 items-center gap-4 overflow-auto hiddenScrollbar max-w-full whitespace-nowrap px-2">
