@@ -84,7 +84,7 @@ export default function HeaderTest() {
         </div>
         <div className="ml-auto flex items-center justify-end gap-2">
           <button
-            className="relative inline-flex items-center justify-center flex-shrink-0 cursor-pointer rounded-md transition-colors duration-200 ease-in-out focus:outline-none text-white h-[36px] w-[36px] bg-white hover:bg-gray-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-gray-900 dark:text-gray-400"
+            className="text-gray-600 relative inline-flex items-center justify-center flex-shrink-0 cursor-pointer rounded-md transition-colors duration-200 ease-in-out focus:outline-none h-[36px] w-[36px] bg-white hover:bg-gray-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-gray-900 dark:text-gray-400"
             id="headlessui-switch-1"
             role="switch"
             type="button"
