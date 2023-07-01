@@ -12,3 +12,13 @@
   @apply bg-white hover:bg-gray-200;
   @apply dark:text-gray-400 dark:bg-slate-800 dark:hover:bg-slate-700 text-gray-600;
 }
+.header_btn {
+  @apply bg-white border-2 border-transparent;
+  @apply flex items-center justify-center px-3 py-2 rounded-md text-sm font-medium;
+  @apply hover:bg-gray-200;
+  @apply dark:hover:bg-slate-700 dark:bg-slate-700;
+
+  .settings {
+    @apply focus:border-orange-400;
+  }
+}
