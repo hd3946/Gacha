@@ -1,20 +1,17 @@
 'use client'
 import useColorMode from '@/hooks/useColorMode'
-import useStore from '@/store'
 import { IonIcon } from '@ionic/react'
 import { constructOutline, moonOutline, settingsOutline, sparklesOutline, sunnyOutline } from 'ionicons/icons'
 import ImageLogo from 'next/image'
 
 export default function HeaderTest() {
   const [colorMode, setColorMode] = useColorMode()
-  const { count, inc } = useStore()
 
   return (
     <div className="dark:bg-gray-800 bg-red-200 mx-auto px-2 sm:px-6 lg:px-8 h-full relative flex items-center justify-between max-w-[3000px] overflow-auto hiddenScrollbar">
       <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start gap-10">
         <div className="flex flex-shrink-0 items-center">
-          <ImageLogo onClick={inc} src="/assets/logo.png" alt="Gacha Logo" width={220} height={40} priority />
-          <h1 className="bg-red-800">{count}</h1>
+          <ImageLogo src="/images/logo.png" alt="Gacha Logo" width={220} height={40} priority />
         </div>
 
         <div className="relative z-0 flex flex-1 items-center justify-center">
