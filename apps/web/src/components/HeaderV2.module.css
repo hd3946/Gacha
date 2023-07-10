@@ -7,14 +7,31 @@
   @apply font-medium text-gray-100 hover:text-gray-400 px-5 py-3 flex items-center;
   @apply transition duration-150 ease-in-out;
 }
-.btn {
-  @apply py-2 px-3 text-sm rounded-md;
-  @apply bg-white hover:bg-gray-200;
-  @apply dark:text-gray-400 dark:bg-slate-800 dark:hover:bg-slate-700 text-gray-600;
-}
-.header_btn {
+.organize_btn {
   @apply bg-white border-2 border-transparent;
-  @apply flex items-center justify-center px-3 py-2 rounded-md text-sm font-medium;
+  @apply focus:border-cyan-400 focus:bg-gray-200;
   @apply hover:bg-gray-200;
+  @apply flex items-center justify-center px-3 py-2 rounded-md text-sm font-medium;
+  @apply dark:hover:bg-slate-700 dark:bg-slate-800;
+}
+.settings_btn {
+  @apply bg-white border-2 border-transparent;
+  @apply focus:border-orange-400 focus:bg-gray-200;
+  @apply hover:bg-gray-200;
+  @apply flex items-center justify-center px-3 py-2 rounded-md text-sm font-medium;
   @apply dark:hover:bg-slate-700 dark:bg-slate-700;
+}
+.preview_btn {
+  @apply bg-white border-2 border-transparent;
+  @apply focus:border-violet-400 focus:bg-gray-200;
+  @apply hover:bg-gray-200;
+  @apply flex items-center justify-center px-3 py-2 rounded-md text-sm font-medium;
+  @apply dark:hover:bg-slate-700 dark:bg-slate-800;
+}
+.export_btn {
+  @apply bg-white border-2 border-transparent;
+  @apply focus:border-teal-400 focus:bg-gray-200;
+  @apply hover:bg-gray-200;
+  @apply flex items-center justify-center px-3 py-2 rounded-md text-sm font-medium;
+  @apply dark:bg-slate-800 dark:hover:bg-slate-700;
 }
