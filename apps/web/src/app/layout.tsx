@@ -8,12 +8,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const pathname = usePathname()
 
   const isExceptHeader = () => {
-    const exceptHeader = ['/make', '/login', '/signup']
+    const exceptHeader = ['/generate', '/login', '/signup']
     return !exceptHeader.includes(pathname)
   }
 
   const isExceptFooter = () => {
-    const exceptFooter = ['/make', '/login', '/signup']
+    const exceptFooter = ['/generate', '/login', '/signup']
     return !exceptFooter.includes(pathname)
   }
 
