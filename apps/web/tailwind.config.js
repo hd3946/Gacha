@@ -2,6 +2,11 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   darkMode: ['class', "[class~='dark']"],
+  variants: {
+    extend: {
+      divideColor: ['group-hover']
+    }
+  },
   theme: {
     extend: {
       colors: {
@@ -126,4 +131,3 @@ module.exports = {
   },
   plugins: [require('@tailwindcss/forms')]
 }
-  
