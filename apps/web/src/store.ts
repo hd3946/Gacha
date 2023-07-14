@@ -5,9 +5,12 @@ type store = {
   inc: () => void
 }
 
-const useStore = create<store>()((set) => ({
+export const useStore = create<store>()((set) => ({
   count: 0,
   inc: () => set((state) => ({ count: state.count + 1 }))
 }))
 
-export default useStore
+export const useDownStore = create<store>()((set) => ({
+  count: 0,
+  inc: () => set((state) => ({ count: state.count - 1 }))
+}))

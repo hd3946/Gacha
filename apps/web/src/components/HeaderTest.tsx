@@ -1,6 +1,6 @@
 'use client'
 import useColorMode from '@/hooks/useColorMode'
-import useStore from '@/store'
+import { useStore } from '@/store'
 import { IonIcon } from '@ionic/react'
 import { constructOutline, moonOutline, settingsOutline, sparklesOutline, sunnyOutline } from 'ionicons/icons'
 import ImageLogo from 'next/image'
