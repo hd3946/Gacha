@@ -5,7 +5,7 @@ import { TabV2 } from '@/type'
 import { IonIcon } from '@ionic/react'
 import { constructOutline, moonOutline, settingsOutline, sparklesOutline, sunnyOutline } from 'ionicons/icons'
 import ImageLogo from 'next/image'
-import style from './HeaderV2.module.css'
+// import style from './HeaderV2.module.css'
 
 export default function HeaderTest() {
   const [colorMode, setColorMode] = useColorMode()
@@ -22,41 +22,27 @@ export default function HeaderTest() {
 
         <div className="relative z-0 flex flex-1 items-center justify-center">
           <div className="mx-auto my-2 flex space-x-4">
-            <button className={style.settings} onClick={() => store.setValue(TabV2.Settings)}>
-              <span
-                className="flex items-center justify-center gap-3 text-orange-400 group-hover:text-orange-300 group-hover:text-orange-300 
-              group-hover:text-orange-400 dark:text-orange-300 dark:text-orange-300">
-                <span
-                  className="inline-flex items-center text-orange-400 group-hover:text-orange-300 group-hover:text-orange-300 group-hover:text-orange-400 
-                dark:text-orange-300 dark:text-orange-300">
+            <button className="settings_btn group" onClick={() => store.setValue(TabV2.Settings)}>
+              <span className="flex items-center justify-center gap-3 text-orange-400 group-hover:text-orange-300 group-hover:text-orange-300 group-hover:text-orange-400 dark:text-orange-300 dark:text-orange-300">
+                <span className="inline-flex items-center text-orange-400 group-hover:text-orange-300 group-hover:text-orange-300 group-hover:text-orange-400 dark:text-orange-300 dark:text-orange-300">
                   <IonIcon icon={settingsOutline} role="img" className="hi" />
                 </span>
-                <span className="hidden text-gray-600 group-hover:text-cyan-400 dark:text-cyan-400 dark:text-gray-400 dark:group-hover:text-cyan-400 lg:inline">
-                  Settings
-                </span>
+                <span className="settings_span">Settings</span>
               </span>
             </button>
             <span className="mt-4 text-slate-400"></span>
-            <button
-              className="group flex items-center justify-center rounded-md border-2 border-transparent bg-white px-3 py-2 text-sm font-medium hover:bg-gray-200 dark:bg-slate-800 dark:hover:bg-slate-700"
-              aria-current="page"
-              onClick={() => store.setValue(TabV2.Organize)}>
+            <button className="organize_btn group" onClick={() => store.setValue(TabV2.Organize)}>
               <span className="flex items-center justify-center gap-3 text-cyan-400 group-hover:text-cyan-400 group-hover:text-cyan-400 group-hover:text-cyan-400 dark:text-cyan-400 dark:text-cyan-400">
                 <span className="inline-flex items-center text-cyan-400 group-hover:text-cyan-400 group-hover:text-cyan-400 group-hover:text-cyan-400 dark:text-cyan-400 dark:text-cyan-400">
                   <IonIcon icon={constructOutline} role="img" />
                 </span>
-                <span className="hidden text-gray-600 group-hover:text-cyan-400 dark:text-cyan-400 dark:text-gray-400 dark:group-hover:text-cyan-400 lg:inline">
-                  Organize
-                </span>
+                <span className="organize_span">Organize</span>
               </span>
             </button>
             <span className="mt-4 text-slate-400">
               <svg width="3" height="6" aria-hidden="true" />
             </span>
-            <button
-              className="group flex items-center justify-center rounded-md border-2 border-transparent bg-white px-3 py-2 text-sm font-medium hover:bg-gray-200 dark:bg-slate-800 dark:hover:bg-slate-700"
-              aria-current="page"
-              onClick={() => store.setValue(TabV2.Preview)}>
+            <button className="preview_btn" onClick={() => store.setValue(TabV2.Preview)}>
               <span className="flex items-center justify-center gap-3 text-violet-400 group-hover:text-violet-300 group-hover:text-violet-300 group-hover:text-violet-400 dark:text-violet-300 dark:text-violet-300">
                 <span className="inline-flex items-center text-violet-400 group-hover:text-violet-300 group-hover:text-violet-300 group-hover:text-violet-400 dark:text-violet-300 dark:text-violet-300">
                   <IonIcon icon={constructOutline} role="img" />
@@ -69,10 +55,7 @@ export default function HeaderTest() {
             <span className="mt-4 text-slate-400">
               <svg width="3" height="6" aria-hidden="true"></svg>
             </span>
-            <button
-              className="group flex items-center justify-center rounded-md border-2 border-transparent bg-white px-3 py-2 text-sm font-medium hover:bg-gray-200 dark:bg-slate-800 dark:hover:bg-slate-700"
-              aria-current="page"
-              onClick={() => store.setValue(TabV2.Export)}>
+            <button className="export_btn" onClick={() => store.setValue(TabV2.Export)}>
               <span className="flex items-center justify-center gap-3 text-teal-400 group-hover:text-teal-400 group-hover:text-teal-400 group-hover:text-teal-400 dark:text-teal-400 dark:text-teal-400">
                 <span className="inline-flex items-center text-teal-400 group-hover:text-teal-400 group-hover:text-teal-400 group-hover:text-teal-400 dark:text-teal-400 dark:text-teal-400">
                   <IonIcon icon={sparklesOutline} role="img" />
