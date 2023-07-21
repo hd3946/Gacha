@@ -14,53 +14,53 @@ export default function HeaderTest() {
   const LogoImage = colorMode === 'light' ? '/images/NFTArtGeneratorbyonemintblue.webp' : '/images/logo.png'
 
   return (
-    <div className="dark:bg-gray-800 bg-red-200 mx-auto px-2 sm:px-6 lg:px-8 h-full relative flex items-center justify-between max-w-[3000px] overflow-auto hiddenScrollbar">
-      <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start gap-10">
+    <div className="hiddenScrollbar relative mx-auto flex h-full max-w-[3000px] items-center justify-between overflow-auto bg-red-200 px-2 dark:bg-gray-800 sm:px-6 lg:px-8">
+      <div className="flex flex-1 items-center justify-center gap-10 sm:items-stretch sm:justify-start">
         <div className="flex flex-shrink-0 items-center">
           <ImageLogo src={LogoImage} alt="Gacha_Logo" width={220} height={40} priority />
         </div>
 
         <div className="relative z-0 flex flex-1 items-center justify-center">
-          <div className="flex space-x-4 my-2 mx-auto">
-            <button className="group settings_btn" onClick={() => store.setValue(TabV2.Settings)}>
-              <span className="flex gap-3 items-center justify-center group-hover:text-orange-400 dark:text-orange-300 group-hover:text-orange-300 text-orange-400 dark:text-orange-300 group-hover:text-orange-300">
-                <span className="group-hover:text-orange-400 dark:text-orange-300 group-hover:text-orange-300 text-orange-400 dark:text-orange-300 group-hover:text-orange-300 inline-flex items-center">
+          <div className="mx-auto my-2 flex space-x-4">
+            <button className="settings_btn group" onClick={() => store.setValue(TabV2.Settings)}>
+              <span className="flex items-center justify-center gap-3 text-orange-400 group-hover:text-orange-300 group-hover:text-orange-300 group-hover:text-orange-400 dark:text-orange-300 dark:text-orange-300">
+                <span className="inline-flex items-center text-orange-400 group-hover:text-orange-300 group-hover:text-orange-300 group-hover:text-orange-400 dark:text-orange-300 dark:text-orange-300">
                   <IonIcon icon={settingsOutline} role="img" className="hi" />
                 </span>
                 <span className="settings_span">Settings</span>
               </span>
             </button>
-            <span className="text-slate-400 mt-4"></span>
-            <button className="group organize_btn" onClick={() => store.setValue(TabV2.Organize)}>
-              <span className="flex gap-3 items-center justify-center group-hover:text-cyan-400 dark:text-cyan-400 group-hover:text-cyan-400 text-cyan-400 dark:text-cyan-400 group-hover:text-cyan-400">
-                <span className="group-hover:text-cyan-400 dark:text-cyan-400 group-hover:text-cyan-400 text-cyan-400 dark:text-cyan-400 group-hover:text-cyan-400 inline-flex items-center">
+            <span className="mt-4 text-slate-400"></span>
+            <button className="organize_btn group" onClick={() => store.setValue(TabV2.Organize)}>
+              <span className="flex items-center justify-center gap-3 text-cyan-400 group-hover:text-cyan-400 group-hover:text-cyan-400 group-hover:text-cyan-400 dark:text-cyan-400 dark:text-cyan-400">
+                <span className="inline-flex items-center text-cyan-400 group-hover:text-cyan-400 group-hover:text-cyan-400 group-hover:text-cyan-400 dark:text-cyan-400 dark:text-cyan-400">
                   <IonIcon icon={constructOutline} role="img" />
                 </span>
                 <span className="organize_span">Organize</span>
               </span>
             </button>
-            <span className="text-slate-400 mt-4">
+            <span className="mt-4 text-slate-400">
               <svg width="3" height="6" aria-hidden="true" />
             </span>
             <button className="preview_btn" onClick={() => store.setValue(TabV2.Preview)}>
-              <span className="flex gap-3 items-center justify-center group-hover:text-violet-400 dark:text-violet-300 group-hover:text-violet-300 text-violet-400 dark:text-violet-300 group-hover:text-violet-300">
-                <span className="group-hover:text-violet-400 dark:text-violet-300 group-hover:text-violet-300 text-violet-400 dark:text-violet-300 group-hover:text-violet-300 inline-flex items-center">
+              <span className="flex items-center justify-center gap-3 text-violet-400 group-hover:text-violet-300 group-hover:text-violet-300 group-hover:text-violet-400 dark:text-violet-300 dark:text-violet-300">
+                <span className="inline-flex items-center text-violet-400 group-hover:text-violet-300 group-hover:text-violet-300 group-hover:text-violet-400 dark:text-violet-300 dark:text-violet-300">
                   <IonIcon icon={constructOutline} role="img" />
                 </span>
-                <span className="hidden lg:inline dark:group-hover:text-violet-400 dark:text-violet-300 group-hover:text-violet-300 text-gray-600 dark:text-gray-400">
+                <span className="hidden text-gray-600 group-hover:text-violet-300 dark:text-gray-400 dark:text-violet-300 dark:group-hover:text-violet-400 lg:inline">
                   Preview
                 </span>
               </span>
             </button>
-            <span className="text-slate-400 mt-4">
+            <span className="mt-4 text-slate-400">
               <svg width="3" height="6" aria-hidden="true"></svg>
             </span>
             <button className="export_btn" onClick={() => store.setValue(TabV2.Export)}>
-              <span className="flex gap-3 items-center justify-center group-hover:text-teal-400 dark:text-teal-400 group-hover:text-teal-400 text-teal-400 dark:text-teal-400 group-hover:text-teal-400">
-                <span className="group-hover:text-teal-400 dark:text-teal-400 group-hover:text-teal-400 text-teal-400 dark:text-teal-400 group-hover:text-teal-400 inline-flex items-center">
+              <span className="flex items-center justify-center gap-3 text-teal-400 group-hover:text-teal-400 group-hover:text-teal-400 group-hover:text-teal-400 dark:text-teal-400 dark:text-teal-400">
+                <span className="inline-flex items-center text-teal-400 group-hover:text-teal-400 group-hover:text-teal-400 group-hover:text-teal-400 dark:text-teal-400 dark:text-teal-400">
                   <IonIcon icon={sparklesOutline} role="img" />
                 </span>
-                <span className="hidden lg:inline dark:group-hover:text-teal-400 dark:text-teal-400 group-hover:text-teal-400 text-gray-600 dark:text-gray-400">
+                <span className="hidden text-gray-600 group-hover:text-teal-400 dark:text-gray-400 dark:text-teal-400 dark:group-hover:text-teal-400 lg:inline">
                   Export
                 </span>
               </span>
@@ -68,8 +68,8 @@ export default function HeaderTest() {
           </div>
 
           <div className="mx-auto">
-            <button className="ml-4 text-xs leading-5 font-medium ring-1 ring-sky-600 dark:ring-0 text-sky-600 dark:text-sky-400 bg-sky-400/10 rounded-full py-1 px-3 hidden lg:flex gap-2 items-center justify-between hover:bg-sky-400/20 cursor-pointer">
-              <span className="font-bold underline whitespace-nowrap">Mint a Team Pass</span>
+            <button className="ml-4 hidden cursor-pointer items-center justify-between gap-2 rounded-full bg-sky-400/10 px-3 py-1 text-xs font-medium leading-5 text-sky-600 ring-1 ring-sky-600 hover:bg-sky-400/20 dark:text-sky-400 dark:ring-0 lg:flex">
+              <span className="whitespace-nowrap font-bold underline">Mint a Team Pass</span>
               <span className="inline-flex items-center"></span>
               <span className="hidden xl:inline-block">Unlock Pro features!</span>
             </button>
@@ -77,7 +77,7 @@ export default function HeaderTest() {
         </div>
         <div className="ml-auto flex items-center justify-end gap-2">
           <button
-            className="text-gray-600 relative inline-flex items-center justify-center flex-shrink-0 cursor-pointer rounded-md transition-colors duration-200 ease-in-out focus:outline-none h-[36px] w-[36px] bg-white hover:bg-gray-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-gray-900 dark:text-gray-400"
+            className="relative inline-flex h-[36px] w-[36px] flex-shrink-0 cursor-pointer items-center justify-center rounded-md bg-white text-gray-600 text-gray-900 transition-colors duration-200 ease-in-out hover:bg-gray-200 focus:outline-none dark:bg-slate-800 dark:text-gray-400 dark:hover:bg-slate-700"
             id="headlessui-switch-1"
             role="switch"
             type="button"
@@ -87,7 +87,7 @@ export default function HeaderTest() {
           </button>
           <button
             type="button"
-            className="bg-white hover:bg-gray-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-gray-600 dark:text-gray-400 py-2 px-3 text-sm rounded-md">
+            className="rounded-md bg-white px-3 py-2 text-sm text-gray-600 hover:bg-gray-200 dark:bg-slate-800 dark:text-gray-400 dark:hover:bg-slate-700">
             Connect
           </button>
         </div>

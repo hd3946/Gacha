@@ -17,5 +17,11 @@
         "bracketSpacing": true
       }
     }
-  ]
+  ],
+  "plugins": [
+    "prettier-plugin-solidity",
+    "prettier-plugin-organize-imports",
+    "prettier-plugin-tailwindcss" 
+  ],
+  "pluginSearchDirs": false
 }
