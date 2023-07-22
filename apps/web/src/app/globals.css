@@ -1,0 +1,9 @@
+@import './generate/HeaderV2.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply dark:bg-gray-800;
+}

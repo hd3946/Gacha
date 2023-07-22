@@ -1,0 +1,19 @@
+'use client'
+import { useEffect } from 'react'
+import useLocalStorage from './useLocalStorage'
+
+function useColorMode() {
+  const [colorMode, setColorMode] = useLocalStorage('color-mode', 'light')
+
+  useEffect(() => {
+    const className = 'dark'
+    if (typeof window !== 'undefined') {
+      const bodyClasses = window.document.body.classList
+      colorMode === 'dark' ? bodyClasses.add(className) : bodyClasses.remove(className)
+    }
+  }, [colorMode])
+
+  return [colorMode, setColorMode]
+}
+
+export default useColorMode
