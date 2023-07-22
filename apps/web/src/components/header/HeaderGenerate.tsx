@@ -92,11 +92,6 @@ export default function HeaderTest() {
             onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}>
             {colorMode === 'light' ? <IonIcon icon={sunnyOutline} /> : <IonIcon icon={moonOutline} />}
           </button>
-          <button
-            type="button"
-            className="rounded-md bg-white px-3 py-2 text-sm text-gray-600 hover:bg-gray-200 dark:bg-slate-800 dark:text-gray-400 dark:hover:bg-slate-700">
-            Connect
-          </button>
           <WalletButton />
         </div>
       </div>
