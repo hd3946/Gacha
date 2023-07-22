@@ -1,4 +1,4 @@
-@import './generate/HeaderV2.css';
+@import './generate/header_generate.css';
 
 @tailwind base;
 @tailwind components;
