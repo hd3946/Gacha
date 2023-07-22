@@ -1,11 +1,8 @@
 import { Suspense } from 'react'
-import Hello from '../modal/HelloModal'
 
 const Preview = () => {
   return (
     <div>
-      <Hello />
-      {/* <WalletButton /> */}
       <Suspense fallback={<p>Loading feed...</p>}>
         <div
           className="dark:bg-brand-900 border-t border-gray-300 bg-gray-100 text-gray-700 transition-colors duration-200 ease-in-out 

@@ -1,6 +1,8 @@
-const Wallet = () => {
+import { MouseEvent } from 'react'
+
+const Wallet = ({ onClose }: { onClose: (event: MouseEvent<HTMLDivElement>) => void }) => {
   return (
-    <div>
+    <div onClick={onClose}>
       {/* Main modal */}
       <div
         id="crypto-modal"

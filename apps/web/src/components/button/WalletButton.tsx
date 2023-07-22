@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { Modal } from '../modal/Index'
+import WalletModal from '../modal/WalletModal'
 
 const WalletButton = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -18,7 +20,10 @@ const WalletButton = () => {
         onClick={openModal}
         data-modal-target="crypto-modal"
         data-modal-toggle="crypto-modal"
-        className="inline-flex items-center rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+        className="inline-flex items-center rounded-lg border border-gray-200 bg-white 
+        px-5 py-2.5 text-center text-sm font-medium text-gray-900 hover:bg-gray-200 
+        focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:bg-slate-800
+        dark:text-gray-400 dark:hover:bg-slate-700 dark:focus:ring-gray-600">
         <svg
           aria-hidden="true"
           className="mr-2 h-4 w-4"
@@ -34,6 +39,9 @@ const WalletButton = () => {
         </svg>
         Connect wallet
       </button>
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <WalletModal onClose={closeModal} />
+      </Modal>
     </div>
   )
 }
