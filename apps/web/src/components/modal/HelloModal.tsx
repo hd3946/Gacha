@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Modal } from './IndexModal'
+import { Modal } from './Index'
 
 const Hello = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)

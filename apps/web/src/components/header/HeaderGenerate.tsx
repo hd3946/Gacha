@@ -1,11 +1,17 @@
 'use client'
 import useColorMode from '@/hooks/useColorMode'
-import { useTabValueStore } from '@/store'
-import { TabV2 } from '@/type'
+import { useTabValueStore } from '@/store/store'
+import { TabV2 } from '@/utils/type'
 import { IonIcon } from '@ionic/react'
-import { constructOutline, moonOutline, settingsOutline, sparklesOutline, sunnyOutline } from 'ionicons/icons'
+import {
+  constructOutline,
+  flaskOutline,
+  moonOutline,
+  settingsOutline,
+  sparklesOutline,
+  sunnyOutline
+} from 'ionicons/icons'
 import ImageLogo from 'next/image'
-// import style from './HeaderV2.module.css'
 
 export default function HeaderTest() {
   const [colorMode, setColorMode] = useColorMode()
@@ -45,7 +51,7 @@ export default function HeaderTest() {
             <button className="preview_btn" onClick={() => store.setValue(TabV2.Preview)}>
               <span className="flex items-center justify-center gap-3 text-violet-400 group-hover:text-violet-300 group-hover:text-violet-300 group-hover:text-violet-400 dark:text-violet-300 dark:text-violet-300">
                 <span className="inline-flex items-center text-violet-400 group-hover:text-violet-300 group-hover:text-violet-300 group-hover:text-violet-400 dark:text-violet-300 dark:text-violet-300">
-                  <IonIcon icon={constructOutline} role="img" />
+                  <IonIcon icon={flaskOutline} role="img" />
                 </span>
                 <span className="hidden text-gray-600 group-hover:text-violet-300 dark:text-gray-400 dark:text-violet-300 dark:group-hover:text-violet-400 lg:inline">
                   Preview

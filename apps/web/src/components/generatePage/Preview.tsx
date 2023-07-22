@@ -1,5 +1,5 @@
 import { Suspense } from 'react'
-import Hello from './Modal/HelloModal'
+import Hello from '../modal/HelloModal'
 
 const Preview = () => {
   return (
