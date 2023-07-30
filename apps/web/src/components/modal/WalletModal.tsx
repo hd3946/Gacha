@@ -23,9 +23,9 @@ const Wallet = ({ onClose }: { onClose: (event: MouseEvent<HTMLDivElement>) => v
                 viewBox="0 0 14 14">
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
                 />
               </svg>
@@ -224,7 +224,7 @@ const Wallet = ({ onClose }: { onClose: (event: MouseEvent<HTMLDivElement>) => v
                           <stop stop-color="#006FFF" offset="100%"></stop>
                         </radialGradient>
                       </defs>
-                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fill-rule="evenodd">
                         <g id="logo">
                           <rect
                             id="base"
@@ -280,9 +280,9 @@ const Wallet = ({ onClose }: { onClose: (event: MouseEvent<HTMLDivElement>) => v
                     viewBox="0 0 20 20">
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M7.529 7.988a2.502 2.502 0 0 1 5 .191A2.441 2.441 0 0 1 10 10.582V12m-.01 3.008H10M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                     />
                   </svg>
