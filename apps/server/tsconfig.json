@@ -1,4 +1,4 @@
-{ 
+{
   "compilerOptions": {
     "baseUrl": "./src",
     "module": "commonjs",
@@ -7,7 +7,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es2017",
+    "target": "ES2021",
     "sourceMap": true,
     "outDir": "./dist",
     "incremental": true,
@@ -16,6 +16,7 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
-  },
+    "noFallthroughCasesInSwitch": false,
+    "resolveJsonModule": true
+  }
 }
