@@ -1,7 +1,7 @@
 'use client'
+import Footer from 'components/footer/Footer'
+import Header from 'components/header/Header'
 import { usePathname } from 'next/navigation'
-import Footer from '../components/footer'
-import Header from '../components/header'
 import './globals.css'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
