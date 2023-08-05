@@ -1,33 +1,33 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
-import { HydratedDocument } from 'mongoose'
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { HydratedDocument } from 'mongoose';
 
-export type CountryDocument = HydratedDocument<Country>
+export type CountryDocument = HydratedDocument<Country>;
 
 @Schema()
 export class Country {
   @Prop()
-  simpleName: string
+  simpleName: string;
 
   @Prop()
-  englishName: string
+  englishName: string;
 
   @Prop()
-  originName: string
+  originName: string;
 
   @Prop()
-  wikiLink: string
+  wikiLink: string;
 
   @Prop()
-  koreanName: string
+  koreanName: string;
 
   @Prop()
-  numberCode: number
+  numberCode: number;
 
   @Prop()
-  threeLetterCode: string
+  threeLetterCode: string;
 
   @Prop()
-  twoLetterCode: string
+  twoLetterCode: string;
 }
 
-export const CountrySchema = SchemaFactory.createForClass(Country)
+export const CountrySchema = SchemaFactory.createForClass(Country);
