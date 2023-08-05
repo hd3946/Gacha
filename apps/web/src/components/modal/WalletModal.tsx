@@ -1,6 +1,27 @@
+import useMounted from '@/hooks/useMouted'
 import { MouseEvent } from 'react'
+import { useAccount, useConnect, useNetwork, useSwitchNetwork } from 'wagmi'
 
 const Wallet = ({ onClose }: { onClose: (event: MouseEvent<HTMLDivElement>) => void }) => {
+  const { connect, connectors, error, isLoading: isConnecting } = useConnect()
+  const { address, isConnected } = useAccount()
+  const { chain } = useNetwork()
+  const { switchNetworkAsync, isLoading: isSwitching } = useSwitchNetwork()
+
+  const handleConnect = async () => {
+    const d = connectors[0]
+    await connect(d)
+  }
+
+  // const handleSwitch = async () => {
+  //   await switchNetworkAsync?.(activeChainId.ethereum)
+  // }
+
+  // If the component has not mounted yet, return null
+  if (!useMounted) {
+    return null
+  }
+
   return (
     <div onClick={onClose}>
       {/* Main modal */}
@@ -40,11 +61,20 @@ const Wallet = ({ onClose }: { onClose: (event: MouseEvent<HTMLDivElement>) => v
               <p className="text-sm font-normal text-gray-500 dark:text-gray-400">
                 Connect with one of our available wallet providers or create a new one.
               </p>
+              <div>
+                {connectors.map((connector) => (
+                  <button disabled={!connector.ready} key={connector.id} onClick={() => connect({ connector })}>
+                    {connector.name}
+                    {!connector.ready && ' (unsupported)'}
+                  </button>
+                ))}
+              </div>
               <ul className="my-4 space-y-3">
                 <li>
                   <a
                     href="#"
-                    className="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500">
+                    className="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 
+                    hover:bg-gray-100 hover:shadow dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500">
                     <svg
                       aria-hidden="true"
                       className="h-4"
