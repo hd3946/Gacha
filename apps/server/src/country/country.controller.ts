@@ -16,8 +16,8 @@ export class CountryController {
   constructor(private readonly countryService: CountryService) {}
 
   @Post()
-  create(@Body() createCountryDto: CreateCountryDto) {
-    return this.countryService.create(createCountryDto);
+  async create(@Body() createCountryDto: CreateCountryDto) {
+    await this.countryService.create(createCountryDto);
   }
 
   @Get()
