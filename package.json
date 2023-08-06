@@ -3,6 +3,8 @@
   "packageManager": "yarn@3.6.0",
   "private": true,
   "scripts": {
+    "build": "yarn workspace @apps/web run build && yarn workspace @apps/server run build",
+    "dev": "yarn workspace @apps/web run dev && yarn workspace @apps/server run start",
     "web:dev": "yarn workspace @apps/web run dev",
     "server:dev": "yarn workspace @apps/server run start"
   },
