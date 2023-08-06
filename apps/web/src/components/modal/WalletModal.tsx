@@ -1,6 +1,27 @@
+import useMounted from '@/hooks/useMouted'
 import { MouseEvent } from 'react'
+import { useAccount, useConnect, useNetwork, useSwitchNetwork } from 'wagmi'
 
 const Wallet = ({ onClose }: { onClose: (event: MouseEvent<HTMLDivElement>) => void }) => {
+  const { connect, connectors, error, isLoading: isConnecting } = useConnect()
+  const { address, isConnected } = useAccount()
+  const { chain } = useNetwork()
+  const { switchNetworkAsync, isLoading: isSwitching } = useSwitchNetwork()
+
+  const handleConnect = async () => {
+    const d = connectors[0]
+    await connect(d)
+  }
+
+  // const handleSwitch = async () => {
+  //   await switchNetworkAsync?.(activeChainId.ethereum)
+  // }
+
+  // If the component has not mounted yet, return null
+  if (!useMounted) {
+    return null
+  }
+
   return (
     <div onClick={onClose}>
       {/* Main modal */}
@@ -23,9 +44,9 @@ const Wallet = ({ onClose }: { onClose: (event: MouseEvent<HTMLDivElement>) => v
                 viewBox="0 0 14 14">
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
                 />
               </svg>
@@ -40,11 +61,20 @@ const Wallet = ({ onClose }: { onClose: (event: MouseEvent<HTMLDivElement>) => v
               <p className="text-sm font-normal text-gray-500 dark:text-gray-400">
                 Connect with one of our available wallet providers or create a new one.
               </p>
+              <div>
+                {connectors.map((connector) => (
+                  <button disabled={!connector.ready} key={connector.id} onClick={() => connect({ connector })}>
+                    {connector.name}
+                    {!connector.ready && ' (unsupported)'}
+                  </button>
+                ))}
+              </div>
               <ul className="my-4 space-y-3">
                 <li>
                   <a
                     href="#"
-                    className="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500">
+                    className="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 
+                    hover:bg-gray-100 hover:shadow dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500">
                     <svg
                       aria-hidden="true"
                       className="h-4"
@@ -224,7 +254,7 @@ const Wallet = ({ onClose }: { onClose: (event: MouseEvent<HTMLDivElement>) => v
                           <stop stop-color="#006FFF" offset="100%"></stop>
                         </radialGradient>
                       </defs>
-                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fill-rule="evenodd">
                         <g id="logo">
                           <rect
                             id="base"
@@ -280,9 +310,9 @@ const Wallet = ({ onClose }: { onClose: (event: MouseEvent<HTMLDivElement>) => v
                     viewBox="0 0 20 20">
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M7.529 7.988a2.502 2.502 0 0 1 5 .191A2.441 2.441 0 0 1 10 10.582V12m-.01 3.008H10M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                     />
                   </svg>
