@@ -1,4 +1,5 @@
 'use client'
+import useColorMode from '@/hooks/useColorMode'
 import ImageLogo from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -16,18 +17,20 @@ export default function Header() {
     return () => window.removeEventListener('scroll', scrollHandler)
   }, [top])
 
+  const [colorMode] = useColorMode()
+  const LogoImage = colorMode === 'light' ? '/images/NFTArtGeneratorbyonemintblue.webp' : '/images/logo.png'
   return (
     <header
       className={`fixed z-30 w-full bg-slate-900 transition duration-300 ease-in-out md:bg-opacity-90 ${
         !top ? 'bg-slate-900 shadow-lg backdrop-blur-sm' : ''
       }`}>
-      <div className="mx-auto max-w-6xl px-5 sm:px-6">
+      <div className="mx-auto px-5 sm:px-6">
         <div className="flex h-16 items-center justify-between md:h-20">
           <div className="mr-4 shrink-0">
             <div className="mb-2">
-              <a href="" target="" rel="noopener noreferrer">
-                By <ImageLogo src="/vercel.svg" alt="Vercel Logo" width={100} height={24} priority />
-              </a>
+              <div className="flex flex-shrink-0 items-center">
+                <ImageLogo src={LogoImage} alt="Gacha_Logo" width={330} height={60} priority />
+              </div>
             </div>
           </div>
           <nav className="hidden md:flex md:grow">
@@ -48,7 +51,7 @@ export default function Header() {
               </li>
               <li>
                 <Link
-                  href="/signin"
+                  href="/pricing"
                   className="flex items-center px-5 py-3 font-medium text-gray-100 transition duration-150 ease-in-out hover:text-gray-400">
                   Pricing
                 </Link>
