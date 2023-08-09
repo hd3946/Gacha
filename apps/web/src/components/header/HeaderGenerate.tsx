@@ -1,7 +1,7 @@
 'use client'
 import useColorMode from '@/hooks/useColorMode'
 import { useTabValueStore } from '@/store/store'
-import { GenerateTab } from '@/utils/type'
+import { GenerateTab } from '@/types/taps'
 import { IonIcon } from '@ionic/react'
 import {
   constructOutline,

@@ -2,11 +2,11 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "baseUrl": "./src", 
+    "baseUrl": "./src",
     "target": "ES6",
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
-    "jsx": "preserve", 
+    "jsx": "preserve",
     "incremental": true,
     "paths": {
       "@/*": ["./*"]
@@ -16,7 +16,7 @@
         "name": "next"
       }
     ]
-  }, 
+  },
   "include": [
     "next-env.d.ts",
     "**/*.ts",

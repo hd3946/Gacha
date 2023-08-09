@@ -5,7 +5,7 @@ import Preview from '@/components/generatePage/Preview'
 import Settings from '@/components/generatePage/Settings'
 import Header from '@/components/header/HeaderGenerate'
 import { useTabValueStore } from '@/store/store'
-import { GenerateTab } from '@/utils/type'
+import { GenerateTab } from '@/types/taps'
 
 export default function Home() {
   const store = useTabValueStore()

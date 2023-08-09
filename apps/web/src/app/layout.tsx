@@ -1,4 +1,5 @@
 'use client'
+import AppProvider from '@/components/AppProvider'
 import Footer from 'components/footer/Footer'
 import Header from 'components/header/Header'
 import { usePathname } from 'next/navigation'
@@ -20,9 +21,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html>
       <body>
-        {isExceptHeader() && <Header />}
-        {children}
-        {isExceptFooter() && <Footer />}
+        <AppProvider>
+          {isExceptHeader() && <Header />}
+          {children}
+          {isExceptFooter() && <Footer />}
+        </AppProvider>
       </body>
     </html>
   )
