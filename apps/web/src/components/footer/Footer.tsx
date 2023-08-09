@@ -1,15 +1,18 @@
-import { default as ImageLogo, default as ImagePower } from 'next/image'
+import { default as ImageLogo } from 'next/image'
 
 export default function Footer() {
+  const LogoImage2 = '/images/logo2.png'
+  const LogoImage3 = '/images/logo3.png'
+
   return (
     <footer className="bg-slate-900">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="grid grid-cols-10 gap-8 border-t border-gray-200 py-8 md:py-12">
+        <div className="py-18 grid grid-cols-10 gap-8 border-t border-gray-200 md:py-20">
           <div className="sm:col-span-2 md:col-span-2 lg:col-span-2">
             <div className="mb-2">
-              <a href="" target="" rel="noopener noreferrer">
-                By <ImageLogo src="/vercel.svg" alt="Vercel Logo" width={100} height={24} priority />
-              </a>
+              <div className="flex flex-shrink-0 items-center">
+                <ImageLogo src={LogoImage2} alt="Gacha_Logo" width={220} height={40} priority />
+              </div>
             </div>
             <p className="mb-4 text-sm text-gray-300">
               Join our mailing list to stay tuned with the latest news, articles, and resources in the blockchain space.
@@ -47,9 +50,9 @@ export default function Footer() {
               </div>
             </form>
             <div className="mb-2">
-              <a href="" target="" rel="noopener noreferrer">
-                By <ImagePower src="/vercel.svg" alt="Vercel Logo" width={100} height={24} priority />
-              </a>
+              <div className="flex flex-shrink-0 items-center">
+                <ImageLogo src={LogoImage3} alt="Gacha_Logo" width={220} height={40} priority />
+              </div>
             </div>
           </div>
 
