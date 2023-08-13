@@ -2,9 +2,7 @@ import { goerli, klaytn, polygon, polygonMumbai } from '@wagmi/core/chains'
 import { publicProvider } from '@wagmi/core/providers/public'
 import { Chain, WagmiConfig, configureChains, createConfig, mainnet } from 'wagmi'
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
-import { InjectedConnector } from 'wagmi/connectors/injected'
 import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
-import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
 
 const klaytnBaobab = {
   id: 1001,
@@ -37,19 +35,6 @@ const config = createConfig({
       chains,
       options: {
         appName: 'wagmi'
-      }
-    }),
-    new WalletConnectConnector({
-      chains,
-      options: {
-        projectId: '...'
-      }
-    }),
-    new InjectedConnector({
-      chains,
-      options: {
-        name: 'Injected',
-        shimDisconnect: true
       }
     })
   ],
