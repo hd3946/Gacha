@@ -515,7 +515,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.17.2, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.22.6":
+"@babel/runtime@npm:^7.17.2, @babel/runtime@npm:^7.22.6":
+  version: 7.22.10
+  resolution: "@babel/runtime@npm:7.22.10"
+  dependencies:
+    regenerator-runtime: ^0.14.0
+  checksum: 524d41517e68953dbc73a4f3616b8475e5813f64e28ba89ff5fca2c044d535c2ea1a3f310df1e5bb06162e1f0b401b5c4af73fe6e2519ca2450d9d8c44cf268d
+  languageName: node
+  linkType: hard
+
+"@babel/runtime@npm:^7.20.7":
   version: 7.22.6
   resolution: "@babel/runtime@npm:7.22.6"
   dependencies:
@@ -3629,13 +3638,11 @@ __metadata:
   linkType: hard
 
 "agentkeepalive@npm:^4.3.0":
-  version: 4.4.0
-  resolution: "agentkeepalive@npm:4.4.0"
+  version: 4.5.0
+  resolution: "agentkeepalive@npm:4.5.0"
   dependencies:
-    debug: ^4.1.0
-    depd: ^2.0.0
     humanize-ms: ^1.2.1
-  checksum: 36e0919a7503dacc863dc216ea6ca176c454724a63fd3d7b215089a1a2c89ee97db377b3af2454f79e5a8e7bb87e5975317734e9b0f9d5898c2269e3d8be05c7
+  checksum: 13278cd5b125e51eddd5079f04d6fe0914ac1b8b91c1f3db2c1822f99ac1a7457869068997784342fe455d59daaff22e14fb7b8c3da4e741896e7e31faf92481
   languageName: node
   linkType: hard
 
@@ -11115,6 +11122,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"regenerator-runtime@npm:^0.14.0":
+  version: 0.14.0
+  resolution: "regenerator-runtime@npm:0.14.0"
+  checksum: 1c977ad82a82a4412e4f639d65d22be376d3ebdd30da2c003eeafdaaacd03fc00c2320f18120007ee700900979284fc78a9f00da7fb593f6e6eeebc673fba9a3
+  languageName: node
+  linkType: hard
+
 "regexp.prototype.flags@npm:^1.4.3, regexp.prototype.flags@npm:^1.5.0":
   version: 1.5.0
   resolution: "regexp.prototype.flags@npm:1.5.0"
@@ -13086,8 +13100,8 @@ __metadata:
   linkType: hard
 
 "viem@npm:^1.0.0, viem@npm:^1.4.2":
-  version: 1.5.3
-  resolution: "viem@npm:1.5.3"
+  version: 1.5.4
+  resolution: "viem@npm:1.5.4"
   dependencies:
     "@adraffy/ens-normalize": 1.9.0
     "@noble/curves": 1.0.0
@@ -13104,7 +13118,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: da1e732e1f874251bb9f042dc164f4e53262b3db70c7bba8155c54de7c8a38258bd6e9c2eee8d26896301b27e3e1f14ad05869e20adff95c292a6f3c71625e98
+  checksum: c49517b74cbea11e951bebfe1143b4d526c3567491062a5153d9bc8ca131557a129807fa02c077ed8b5dc974e31d51143f35937877322dbc17d58f7b4e567e91
   languageName: node
   linkType: hard
 
@@ -13558,7 +13572,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zustand@npm:^4.3.1, zustand@npm:^4.3.8":
+"zustand@npm:^4.3.1":
+  version: 4.4.1
+  resolution: "zustand@npm:4.4.1"
+  dependencies:
+    use-sync-external-store: 1.2.0
+  peerDependencies:
+    "@types/react": ">=16.8"
+    immer: ">=9.0"
+    react: ">=16.8"
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    immer:
+      optional: true
+    react:
+      optional: true
+  checksum: 80acd0fbf633782996642802c8692bbb80ae5c80a8dff4c501b88250acd5ccd468fbc6398bdce198475a25e3839c91385b81da921274f33ffb5c2d08c3eab400
+  languageName: node
+  linkType: hard
+
+"zustand@npm:^4.3.8":
   version: 4.4.0
   resolution: "zustand@npm:4.4.0"
   dependencies:
