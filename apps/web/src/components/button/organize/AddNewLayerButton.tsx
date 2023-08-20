@@ -1,8 +1,8 @@
+import AddNewLayerModal from '@/components/modal/AddNewLayerModal'
+import { Modal } from '@/components/modal/Index'
 import { IonIcon } from '@ionic/react'
 import { addCircleOutline } from 'ionicons/icons'
 import { useState } from 'react'
-import AddNewLayerModal from '../modal/AddNewLayerModal'
-import { Modal } from '../modal/Index'
 
 const AddNewLayerButton = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
