@@ -1,5 +1,3 @@
-import { GetServerSideProps } from 'next'
-
 const Settings = () => {
   return (
     <section className="bg-gradient-to-b from-gray-100 to-white">
@@ -195,12 +193,6 @@ const Settings = () => {
       </div>
     </section>
   )
-}
-
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  return {
-    props: {}
-  }
 }
 
 export default Settings
