@@ -1,6 +1,7 @@
 'use client'
 import { IonIcon } from '@ionic/react'
-import { addCircleOutline, addOutline, colorPaletteOutline, settingsOutline } from 'ionicons/icons'
+import { addOutline, colorPaletteOutline, settingsOutline } from 'ionicons/icons'
+import AddNewLayerButton from '../button/AddNewLayerButton'
 
 const Organize = () => {
   return (
@@ -27,56 +28,29 @@ const Organize = () => {
           </div>
           {/* 아래 */}
           <div className="hiddenScrollbar h-fit overflow-y-auto px-0.5 md:h-[calc(100vh-175px)]">
-            <div data-rbd-droppable-id="droppable" data-rbd-droppable-context-id="0">
-              <div>
-                <div
-                  id="Background|z5fIU"
-                  data-rbd-draggable-context-id="0"
-                  data-rbd-draggable-id="Background|z5fIU"
-                  role="button"
-                  aria-describedby="rbd-hidden-text-0-hidden-text-0"
-                  data-rbd-drag-handle-draggable-id="Background|z5fIU"
-                  data-rbd-drag-handle-context-id="0"
-                  draggable="false">
-                  <div className="transition-bg group mt-3 grid w-full cursor-pointer grid-cols-12 items-center rounded-md bg-slate-700/30 px-3 py-1 text-sm outline-none transition duration-100 hover:bg-slate-700/20 dark:bg-slate-700/50 dark:hover:bg-slate-700/50">
-                    <div className="col-span-11 flex items-center">
-                      <div className="flex w-full flex-col">
-                        <p className="truncate whitespace-nowrap text-sm font-medium text-black dark:text-cyan-400 ">
-                          Background
-                        </p>
-                        <div className="flex dark:text-gray-200  dark:group-hover:text-gray-200">
-                          <span className="inline-flex rounded-md text-[10px] ">0 Files</span>
-                          <span className="mx-2 mt-2 h-1 w-1 rounded-full bg-gray-500  dark:bg-gray-200"></span>
-                          <span className="inline-flex rounded-md text-[10px] ">100% Rarity</span>
-                        </div>
-                      </div>
+            <div id="Background" role="button" draggable="true">
+              <div className="transition-bg group mt-3 grid w-full cursor-pointer grid-cols-12 items-center rounded-md bg-slate-700/30 px-3 py-1 text-sm outline-none transition duration-100 hover:bg-slate-700/20 dark:bg-slate-700/50 dark:hover:bg-slate-700/50">
+                <div className="col-span-11 flex items-center">
+                  <div className="flex w-full flex-col">
+                    <p className="truncate whitespace-nowrap text-sm font-medium text-black dark:text-cyan-400 ">
+                      Background
+                    </p>
+                    <div className="flex dark:text-gray-200 dark:group-hover:text-gray-200">
+                      <span className="inline-flex rounded-md text-[10px] ">0 Files</span>
+                      <span className="mx-2 mt-2 h-1 w-1 rounded-full bg-gray-500  dark:bg-gray-200"></span>
+                      <span className="inline-flex rounded-md text-[10px] ">100% Rarity</span>
                     </div>
-                    <div className="col-span-1 ml-auto text-gray-900 transition-all hover:text-white dark:text-white/50 dark:hover:text-white">
-                      <button type="button" className="flex items-center">
-                        <IonIcon
-                          icon={settingsOutline}
-                          name=""
-                          role="img"
-                          className="md hydrated"
-                          aria-label="settings outline"
-                        />
-                      </button>
-                    </div>
-                  </div>
-                  <div className="relative -mb-2 mt-1 flex w-full flex-col items-center justify-center">
-                    <div className="h-[5px] w-[1px] bg-gray-300 dark:bg-gray-500"></div>
-                    <button
-                      type="button"
-                      className="flex items-center p-0.5 text-gray-500 hover:!text-cyan-400 dark:text-white">
-                      <IonIcon
-                        icon={addCircleOutline}
-                        role="img"
-                        className="md hydrated"
-                        aria-label="add circle outline"
-                      />
-                    </button>
                   </div>
                 </div>
+                <div className="col-span-1 ml-auto text-gray-900 transition-all hover:text-white dark:text-white/50 dark:hover:text-white">
+                  <button type="button" className="flex items-center">
+                    <IonIcon icon={settingsOutline} role="img" className="md hydrated" aria-label="settings outline" />
+                  </button>
+                </div>
+              </div>
+              <div className="relative -mb-2 mt-1 flex w-full flex-col items-center justify-center">
+                <div className="h-[5px] w-[1px] bg-gray-300 dark:bg-gray-500"></div>
+                <AddNewLayerButton />
               </div>
             </div>
           </div>
