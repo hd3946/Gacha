@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { MouseEvent } from 'react'
 import { useConnect } from 'wagmi'
 
-const Wallet = ({ onClose }: { onClose: (event: MouseEvent<HTMLDivElement>) => void }) => {
+const WalletModal = ({ onClose }: { onClose: (event: MouseEvent<HTMLDivElement>) => void }) => {
   const { connect, connectors } = useConnect()
 
   if (!useMounted) {
@@ -93,4 +93,4 @@ const Wallet = ({ onClose }: { onClose: (event: MouseEvent<HTMLDivElement>) => v
   )
 }
 
-export default Wallet
+export default WalletModal
