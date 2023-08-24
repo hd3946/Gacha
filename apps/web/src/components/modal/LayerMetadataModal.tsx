@@ -32,7 +32,7 @@ const LayerMetadataModal = ({ onClose }: { onClose: any }) => {
             <div className="mb-1">
               <div>
                 <div>
-                  <h3 className=" text-lg font-bold leading-6 text-gray-100">Layer Metadata</h3>
+                  <h3 className="text-lg font-bold leading-6 text-gray-100">Layer Metadata</h3>
                   <p className=" mb-2 mt-0 text-xs text-gray-400">Layer details appearing in the token metadata.</p>
                   <div className="flex items-center justify-between">
                     <label className="block text-sm font-medium text-gray-200">Name</label>

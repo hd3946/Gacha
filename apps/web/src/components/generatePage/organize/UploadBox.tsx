@@ -20,7 +20,8 @@ const ImageUploadBox = () => {
               <div className="ml-auto text-sm text-gray-600">
                 <label
                   htmlFor="file-upload"
-                  className="relative cursor-pointer rounded-md font-medium text-cyan-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-cyan-400 focus-within:ring-offset-2 hover:text-cyan-400">
+                  className="relative cursor-pointer rounded-md font-medium text-cyan-500 focus-within:outline-none focus-within:ring-2
+                   focus-within:ring-cyan-400 focus-within:ring-offset-2 hover:text-cyan-400">
                   <span>Upload files</span>
                   <input accept="image/png, image/gif, video/mp4, video/webm" type="file" className="hidden" />
                 </label>

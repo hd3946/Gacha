@@ -1,29 +1,53 @@
 'use client'
+import { useLayerStore } from '@/store/layerStore'
 import { useUploadBoxOpen } from '@/store/store'
 import { IonIcon } from '@ionic/react'
-import { addOutline, settingsOutline } from 'ionicons/icons'
+import { addOutline } from 'ionicons/icons'
 import AddFileButton from '../button/organize/AddFilesButton'
-import AddNewLayerButton from '../button/organize/AddNewLayerButton'
+
+import { useState } from 'react'
 import LayerMetadataButton from '../button/organize/LayerMetadataButton'
+import LayerButton from './organize/LayerButton'
 import ImageUploadBox from './organize/UploadBox'
 
 const Organize = () => {
-  const store = useUploadBoxOpen()
-  const Open = store.open
+  const [inputText, setInputText] = useState('')
+  const { addLayer } = useLayerStore()
+
+  const { layers } = useLayerStore()
+  const { open: Open } = useUploadBoxOpen()
+
+  const handleSubmit = (event: { preventDefault: () => void }) => {
+    event.preventDefault()
+    const newLayer = {
+      layerName: inputText,
+      layerImageList: [],
+      layerRarity: 100
+    }
+    addLayer(newLayer)
+  }
+
   return (
     <div className="mx-auto min-h-screen w-full max-w-[3000px] px-6 dark:bg-gray-800">
       <div className="flex flex-col px-4 pl-0 pt-3 md:flex-row md:gap-10">
         <aside className="relative h-fit w-full shrink overflow-y-auto px-[1px] pb-10 pt-[1px] md:h-full md:w-[16rem] md:shrink-0">
-          <div className="relative flex h-10 w-full items-center rounded-lg bg-white ring-1 ring-slate-200 hover:ring-slate-300 dark:bg-slate-700/40 dark:ring-inset dark:ring-slate-500 dark:ring-white/5">
+          <div
+            className="relative flex h-10 w-full items-center rounded-lg bg-white ring-1 ring-slate-200 hover:ring-slate-300
+           dark:bg-slate-700/40 dark:ring-inset dark:ring-slate-500 dark:ring-white/5">
             <input
               min="3"
               required
               type="text"
               id="layer name"
-              className="group flex h-auto w-full flex-none items-center bg-transparent py-3 pl-4 pr-3.5 text-sm outline-none focus:placeholder:text-white/75 dark:focus:text-white"
+              className="group flex h-auto w-full flex-none items-center bg-transparent py-3 pl-4 pr-3.5 text-sm
+               outline-none focus:placeholder:text-white/75 dark:focus:text-white"
               placeholder="New layer name"
+              onChange={(e) => setInputText(e.target.value)}
             />
-            <button className="border-1 absolute bottom-[5px] right-[5px] top-[5px] rounded-lg border border-slate-200/10 px-2 py-1 text-sm text-cyan-400 hover:bg-slate-700/10 dark:hover:text-violet-200">
+            <button
+              className="border-1 absolute bottom-[5px] right-[5px] top-[5px] rounded-lg border border-slate-200/10
+             px-2 py-1 text-sm text-cyan-400 hover:bg-slate-700/10 dark:hover:text-violet-200"
+              onClick={handleSubmit}>
               <div className="relative flex items-center gap-0.5">
                 <span className="inline-flex items-center">
                   <IonIcon icon={addOutline} role="img" className="hi" />
@@ -34,31 +58,9 @@ const Organize = () => {
           </div>
           {/* 아래 */}
           <div className="hiddenScrollbar h-fit overflow-y-auto px-0.5 md:h-[calc(100vh-175px)]">
-            <div id="Background" role="button" draggable="true">
-              <div className="transition-bg group mt-3 grid w-full cursor-pointer grid-cols-12 items-center rounded-md bg-slate-700/30 px-3 py-1 text-sm outline-none transition duration-100 hover:bg-slate-700/20 dark:bg-slate-700/50 dark:hover:bg-slate-700/50">
-                <div className="col-span-11 flex items-center">
-                  <div className="flex w-full flex-col">
-                    <p className="truncate whitespace-nowrap text-sm font-medium text-black dark:text-cyan-400 ">
-                      Background
-                    </p>
-                    <div className="flex dark:text-gray-200 dark:group-hover:text-gray-200">
-                      <span className="inline-flex rounded-md text-[10px] ">0 Files</span>
-                      <span className="mx-2 mt-2 h-1 w-1 rounded-full bg-gray-500  dark:bg-gray-200"></span>
-                      <span className="inline-flex rounded-md text-[10px] ">100% Rarity</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-span-1 ml-auto text-gray-900 transition-all hover:text-white dark:text-white/50 dark:hover:text-white">
-                  <button type="button" className="flex items-center">
-                    <IonIcon icon={settingsOutline} role="img" className="md hydrated" aria-label="settings outline" />
-                  </button>
-                </div>
-              </div>
-              <div className="relative -mb-2 mt-1 flex w-full flex-col items-center justify-center">
-                <div className="h-[5px] w-[1px] bg-gray-300 dark:bg-gray-500"></div>
-                <AddNewLayerButton />
-              </div>
-            </div>
+            {layers.map((layer) => (
+              <LayerButton layer={layer} />
+            ))}
           </div>
         </aside>
 
