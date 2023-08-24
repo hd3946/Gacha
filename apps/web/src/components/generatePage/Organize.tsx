@@ -73,7 +73,8 @@ const Organize = () => {
                   <span className="invisible h-full p-0.5 text-2xl font-semibold">Background</span>
                   <input
                     type="text"
-                    className="absolute inset-0 h-full w-full rounded-sm border-none bg-transparent p-0.5 text-2xl font-semibold text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/30"
+                    className="absolute inset-0 h-full w-full rounded-sm border-none bg-transparent p-0.5 text-2xl 
+                    font-semibold text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/30"
                   />
                 </div>
                 <LayerMetadataButton />

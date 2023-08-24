@@ -1,6 +1,5 @@
 import AddNewLayerButton from '@/components/button/organize/AddNewLayerButton'
-import { IonIcon } from '@ionic/react'
-import { settingsOutline } from 'ionicons/icons'
+import LayerMetadataIconButton from '@/components/button/organize/LayerMetadataIconButton'
 
 const LayerButton = ({ layer }: { layer: any }) => {
   return (
@@ -21,9 +20,7 @@ const LayerButton = ({ layer }: { layer: any }) => {
           </div>
         </div>
         <div className="col-span-1 ml-auto text-gray-900 transition-all hover:text-white dark:text-white/50 dark:hover:text-white">
-          <button type="button" className="flex items-center">
-            <IonIcon icon={settingsOutline} role="img" className="md hydrated" aria-label="settings outline" />
-          </button>
+          <LayerMetadataIconButton />
         </div>
       </div>
       <div className="relative -mb-2 mt-1 flex w-full flex-col items-center justify-center">
