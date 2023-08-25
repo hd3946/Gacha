@@ -43,10 +43,10 @@ export default function Header() {
   const LogoImage = colorMode === 'light' ? '/images/NFTArtGeneratorbyonemintblue.webp' : '/images/logo.png'
   return (
     <header
-      className={`fixed z-30 w-full bg-slate-900 transition duration-300 ease-in-out md:bg-opacity-90 ${
+      className={`z-30 w-full bg-slate-900 transition duration-300 ease-in-out ${
         !top ? 'bg-slate-900 shadow-lg backdrop-blur-sm' : ''
       }`}>
-      <div className="mx-auto px-5 sm:px-6">
+      <div className="mx-auto px-5 py-5 sm:px-6">
         <div className="flex h-16 items-center justify-between md:h-20">
           <div className="mr-4 shrink-0">
             <div className="mb-2">

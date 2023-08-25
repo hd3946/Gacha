@@ -1,194 +1,346 @@
+import SettingValuesStore from '@/store/settingValuesStore'
+import { IonIcon } from '@ionic/react'
+import { addOutline, folderOpenOutline, helpCircleOutline, trashOutline } from 'ionicons/icons'
 import { GetServerSideProps } from 'next'
 
 const Settings = () => {
+  const {
+    collectionName,
+    collectionDescription,
+    collectionSize,
+    nameOfEachNFT,
+    exportFormat,
+    blockchain,
+    artwork,
+    setCollectionName,
+    setCollectionDescription,
+    setCollectionSize,
+    setNameOfEachNFT,
+    setExportFormat,
+    setBlockchain,
+    setArtwork
+  } = SettingValuesStore()
+
+  const onChangeCollectionName = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCollectionName(event.target.value)
+  }
+  const onChangeCollectionDescription = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCollectionDescription(event.target.value)
+  }
+  const onChangeCollectionSize = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCollectionSize(parseFloat(event.target.value))
+  }
+  const onChangeNameOfEachNFT = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setNameOfEachNFT(event.target.value)
+  }
+  const onChangeExportFormat = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setExportFormat(event.target.value)
+  }
+  const onChangeBlockchain = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setBlockchain(event.target.value)
+  }
   return (
     <section className="bg-gradient-to-b from-gray-100 to-white">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="flex pb-12 pt-32 md:pb-20 md:pt-40">
-          <div className="mx-auto max-w-sm">
-            <form>
-              <div className="-mx-3 mb-4 flex flex-wrap">
-                <div className="w-full px-3">
-                  <label className="mb-1 block text-sm font-medium text-gray-800" htmlFor="name">
-                    Collection Name <span className="text-red-600">*</span>
-                  </label>
-                  <input
-                    id="name"
-                    type="text"
-                    className="border-1 mb-1 w-full rounded-md border-gray-300 px-3 py-2 transition-colors focus:border-indigo-500 focus:outline-none"
-                    placeholder=""
-                    required
-                  />
-                </div>
-              </div>
-              <div className="-mx-3 mb-4 flex flex-wrap">
-                <div className="w-full px-3">
-                  <label className="mb-1 block text-sm font-medium text-gray-800" htmlFor="email">
-                    Collection Description <span className="text-red-600">*</span>
-                  </label>
-                  <div className="text-sm text-gray-500">The description will appear in the NFT metadata</div>
-                  <input
-                    id="email"
-                    type="text"
-                    className="border-1 mb-1 w-full rounded-md border-gray-300 px-3 py-2 transition-colors focus:border-indigo-500 focus:outline-none"
-                    placeholder=""
-                    required
-                  />
-                </div>
-              </div>
-              <div className="-mx-3 mb-4 flex flex-wrap">
-                <div className="w-full px-3">
-                  <label className="mb-1 block text-sm font-medium text-gray-800" htmlFor="email">
-                    Collection Size <span className="text-red-600">*</span>
-                  </label>
-                  <div className="text-sm text-gray-500">The description will appear in the NFT metadata</div>
-                  <input
-                    id="email"
-                    type="number"
-                    className="border-1 mb-1 w-full rounded-md border-gray-300 px-3 py-2 transition-colors focus:border-indigo-500 focus:outline-none"
-                    placeholder=""
-                    required
-                  />
-                </div>
-              </div>
-              <div className="-mx-3 mb-4 flex flex-wrap">
-                <div className="w-full px-3">
-                  <label className="mb-1 block text-sm font-medium text-gray-800" htmlFor="email">
-                    Name of each NFT <span className="text-red-600">*</span>
-                  </label>
-                  <div className="text-sm text-gray-500">The description will appear in the NFT metadata</div>
-                  <input
-                    id="email"
-                    type="text"
-                    className="border-1 mb-1 w-full rounded-md border-gray-300 px-3 py-2 transition-colors focus:border-indigo-500 focus:outline-none"
-                    placeholder=""
-                    required
-                  />
-                </div>
-              </div>
-              <div className="-mx-3 mb-4 flex flex-wrap">
-                <div className="w-full px-3">
-                  <label className="mb-1 block text-sm font-medium text-gray-800" htmlFor="email">
-                    Export Format <span className="text-red-600">*</span>
-                  </label>
-                  <div className="text-sm text-gray-500">The description will appear in the NFT metadata</div>
-                  <input
-                    id="email"
-                    type="email"
-                    className="border-1 mb-1 w-full rounded-md border-gray-300 px-3 py-2 transition-colors focus:border-indigo-500 focus:outline-none"
-                    placeholder=""
-                    required
-                  />
-                </div>
-              </div>
-              <div className="-mx-3 mb-4 flex flex-wrap">
-                <div className="w-full px-3">
-                  <label className="mb-1 block text-sm font-medium text-gray-800" htmlFor="email">
-                    Blockchain <span className="text-red-600">*</span>
-                  </label>
-                  <div className="text-sm text-gray-500">The description will appear in the NFT metadata</div>
-                  <input
-                    id="email"
-                    type="email"
-                    className="border-1 mb-1 w-full rounded-md border-gray-300 px-3 py-2 transition-colors focus:border-indigo-500 focus:outline-none"
-                    placeholder=""
-                    required
-                  />
-                </div>
-              </div>
-              <div className="-mx-3 mb-4 flex flex-wrap">
-                <div className="w-full px-3">
-                  <label className="mb-1 block text-sm font-medium text-gray-800" htmlFor="email">
-                    Dimensions <span className="text-red-600">*</span>
-                  </label>
-                  <div className="text-sm text-gray-500">The description will appear in the NFT metadata</div>
-                  <div className="flex">
+      <div className="mx-auto grid min-h-screen max-w-7xl grid-cols-4 gap-2 overflow-hidden px-3 py-12 sm:px-6 md:grid-cols-8 xl:gap-20">
+        <div className="col-span-4">
+          <div className="group">
+            <div className="">
+              <form className="space-y-6" action="#" method="POST">
+                <div className="">
+                  <div className="">
+                    <label
+                      htmlFor="Collection Name"
+                      className="block text-base font-medium dark:font-normal dark:text-white">
+                      Collection Name
+                    </label>
+                  </div>
+                  <div className="mt-1">
                     <input
-                      id="email"
-                      type="number"
-                      className="border-1 mb-1 w-full rounded-md border-gray-300 px-3 py-2 transition-colors focus:border-indigo-500 focus:outline-none"
-                      placeholder=""
-                      required
-                    />
-                    <input
-                      id="email"
-                      type="number"
-                      className="border-1 mb-1 w-full rounded-md border-gray-300 px-3 py-2 transition-colors focus:border-indigo-500 focus:outline-none"
-                      placeholder=""
-                      required
+                      id="Collection Name"
+                      name="Collection Name"
+                      type="text"
+                      className="group flex h-auto w-full flex-none items-center justify-start rounded-lg border-none px-3 py-2.5 text-sm outline-none ring-1 ring-slate-200 hover:ring-slate-300 disabled:cursor-not-allowed disabled:opacity-70 hover:disabled:ring-slate-200 dark:bg-slate-700/40 dark:ring-inset dark:ring-slate-500 dark:ring-white/5 dark:disabled:bg-slate-500/50 dark:hover:disabled:ring-slate-500"
+                      value={collectionName}
+                      onChange={onChangeCollectionName}
                     />
                   </div>
                 </div>
-              </div>
-              <div className="-mx-3 mt-6 flex flex-wrap">
-                <div className="w-full px-3">
-                  <button className="btn h-8 w-full bg-blue-600 text-white hover:bg-blue-700">Continue</button>
+                <div className="">
+                  <div className="">
+                    <label
+                      htmlFor="Collection Description"
+                      className="block text-base font-medium dark:font-normal dark:text-white">
+                      Collection Description
+                    </label>
+                    <p className="text-sm text-slate-700 dark:text-slate-400">
+                      The description will appear in the NFT metadata
+                    </p>
+                  </div>
+                  <div className="mt-1">
+                    <input
+                      id="Collection Description"
+                      name="Collection Description"
+                      type="text"
+                      className="group flex h-auto w-full flex-none items-center justify-start rounded-lg border-none px-3 py-2.5 text-sm outline-none ring-1 ring-slate-200 hover:ring-slate-300 disabled:cursor-not-allowed disabled:opacity-70 hover:disabled:ring-slate-200 dark:bg-slate-700/40 dark:ring-inset dark:ring-slate-500 dark:ring-white/5 dark:disabled:bg-slate-500/50 dark:hover:disabled:ring-slate-500"
+                      value={collectionDescription}
+                      onChange={onChangeCollectionDescription}
+                    />
+                  </div>
+                </div>
+                <div className="">
+                  <div className="">
+                    <label
+                      htmlFor="Collection Size"
+                      className="block text-base font-medium dark:font-normal dark:text-white">
+                      Collection Size
+                    </label>
+                    <p className="text-sm text-slate-700 dark:text-slate-400">Number of NFTs to generate</p>
+                  </div>
+                  <div className="mt-1">
+                    <input
+                      id="Collection Size"
+                      name="Collection Size"
+                      type="number"
+                      className="group flex h-auto w-full flex-none items-center justify-start rounded-lg border-none px-3 py-2.5 text-sm outline-none ring-1 ring-slate-200 hover:ring-slate-300 disabled:cursor-not-allowed disabled:opacity-70 hover:disabled:ring-slate-200 dark:bg-slate-700/40 dark:ring-inset dark:ring-slate-500 dark:ring-white/5 dark:disabled:bg-slate-500/50 dark:hover:disabled:ring-slate-500"
+                      value={collectionSize}
+                      onChange={onChangeCollectionSize}
+                    />
+                  </div>
+                </div>
+                <div className="">
+                  <div className="">
+                    <label
+                      htmlFor="Name of each NFT"
+                      className="block text-base font-medium dark:font-normal dark:text-white">
+                      Name of each NFT
+                    </label>
+                    <p className="text-sm text-slate-700 dark:text-slate-400">Preview: "#1"</p>
+                  </div>
+                  <div className="mt-1">
+                    <input
+                      id="Name of each NFT"
+                      name="Name of each NFT"
+                      type="text"
+                      className="group flex h-auto w-full flex-none items-center justify-start rounded-lg border-none px-3 py-2.5 text-sm outline-none ring-1 ring-slate-200 hover:ring-slate-300 disabled:cursor-not-allowed disabled:opacity-70 hover:disabled:ring-slate-200 dark:bg-slate-700/40 dark:ring-inset dark:ring-slate-500 dark:ring-white/5 dark:disabled:bg-slate-500/50 dark:hover:disabled:ring-slate-500"
+                      value={nameOfEachNFT}
+                      onChange={onChangeNameOfEachNFT}
+                    />
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <label htmlFor="format" className="block text-base font-medium dark:font-normal dark:text-white">
+                      Export Format
+                    </label>
+                    <p className="mt-1 text-sm text-slate-700 dark:text-slate-400">
+                      Recommended format: webp (best quality &amp; size)
+                    </p>
+                  </div>
+                  <div className="mt-1">
+                    <select
+                      value={exportFormat}
+                      onChange={onChangeExportFormat}
+                      id="format"
+                      name="format"
+                      className="group flex h-auto w-full flex-none items-center justify-start rounded-lg border-none px-3 py-2.5 text-sm outline-none ring-1 ring-slate-200 hover:ring-slate-300 disabled:cursor-not-allowed disabled:opacity-70 hover:disabled:ring-slate-200 dark:bg-slate-700/40 dark:ring-inset dark:ring-slate-500 dark:ring-white/5 dark:disabled:bg-slate-500/50 dark:hover:disabled:ring-slate-500">
+                      <option value="webp">webp</option>
+                      <option value="png">png</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="space-y-1">
+                  <div>
+                    <label htmlFor="format" className="block text-base font-medium dark:font-normal dark:text-white">
+                      Blockchain
+                    </label>
+                    <p className="mt-1 text-sm text-slate-700 dark:text-slate-400">
+                      Choose the blockchain you will be using to generate the corresponding compatible metadata
+                    </p>
+                  </div>
+                  <div className="space-y-6">
+                    <select
+                      id="format"
+                      name="format"
+                      value={blockchain}
+                      onChange={onChangeBlockchain}
+                      className="group flex h-auto w-full flex-none items-center justify-start rounded-lg border-none px-3 py-2.5 text-sm outline-none ring-1 ring-slate-200 hover:ring-slate-300 disabled:cursor-not-allowed disabled:opacity-70 hover:disabled:ring-slate-200 dark:bg-slate-700/40 dark:ring-inset dark:ring-slate-500 dark:ring-white/5 dark:disabled:bg-slate-500/50 dark:hover:disabled:ring-slate-500">
+                      <option value="1">Ethereum, Polygon &amp; other EVM chains</option>
+                      <option value="77771">Solana</option>
+                      <option value="77773">MultiversX</option>
+                      <option value="77777">Cardano</option>
+                      <option value="77779">XRP</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-base font-medium dark:font-normal dark:text-white">
+                    Artwork (Optional)
+                  </label>
+                  <p className="mb-2 mt-1 text-sm text-slate-700 dark:text-slate-400">
+                    Drag and Drop your assets folder into the box below. We will automatically generate your layers
+                    htmlFor you to setup on the next step.
+                  </p>
+                  <div id="directory-drop" role="presentation">
+                    <div className="jsx-af28e199db5dfdf2 cursor-pointer rounded border border-dashed border-slate-500 p-3 text-center hover:border-solid">
+                      <input
+                        accept="image/*,.png,.webp,.gif,video/*,.mp4,.webm"
+                        type="file"
+                        className="jsx-af28e199db5dfdf2 hidden"
+                        id="artwork-input"
+                      />
+                      <label htmlFor="artwork-input">
+                        <div className="jsx-af28e199db5dfdf2 ">
+                          <div className="jsx-af28e199db5dfdf2 flex flex-col items-center justify-center rounded-md">
+                            <IonIcon
+                              size="large"
+                              icon={folderOpenOutline}
+                              role="img"
+                              className="md icon-large hydrated"
+                              aria-label="folder open outline"></IonIcon>
+                          </div>
+                          <div className="jsx-af28e199db5dfdf2 flex items-start justify-center gap-1 text-sm">
+                            <span className="jsx-af28e199db5dfdf2">Drop your assets </span>
+                            <div className="jsx-cb040b4b4d36d2c9">
+                              <span
+                                data-tooltip="Drop your folder containing all the layers and images."
+                                className="jsx-cb040b4b4d36d2c9 has-tooltip-arrow has-tooltip-undefined has-tooltip-undefined has-tooltip-multiline">
+                                <IonIcon
+                                  icon={helpCircleOutline}
+                                  role="img"
+                                  className="md hydrated"
+                                  aria-label="help circle outline"></IonIcon>
+                              </span>
+                            </div>
+                          </div>
+                          <i className="jsx-af28e199db5dfdf2 mt-0 text-sm">We'll import everything htmlFor you</i>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <button
+                    type="button"
+                    className="hover:bg-brand-500 focus:ring-brand-500 flex w-full justify-center rounded-md border border-transparent bg-[#1c5fe5] px-4 py-2 text-sm font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2">
+                    Continue
+                  </button>
+                </div>
+              </form>
+              <div className="mt-6">
+                <div className="relative">
+                  <div className="absolute inset-0 flex items-center">
+                    <div className="w-full border-t border-gray-300"></div>
+                  </div>
+                  <div className="relative flex justify-center text-sm">
+                    <span className="dark:bg-brand-900 bg-gray-100 px-2 text-gray-500 transition-colors duration-200 ease-in-out dark:text-white">
+                      Or
+                    </span>
+                  </div>
+                </div>
+                <div className="mt-6 grid grid-cols-2 gap-3">
+                  <div>
+                    <button className="flex w-full items-center justify-center gap-2 rounded-md bg-slate-700 bg-opacity-10 px-4 py-2 text-center text-sm font-medium text-gray-600 shadow-sm hover:bg-opacity-20 hover:text-red-400 focus:outline-none dark:bg-opacity-20 dark:text-white dark:hover:bg-opacity-30 dark:hover:text-red-400">
+                      <span className="inline-flex items-center">
+                        <IonIcon
+                          icon={trashOutline}
+                          role="img"
+                          className="md hydrated"
+                          aria-label="trash outline"></IonIcon>
+                      </span>
+                      <span>Reset collection</span>
+                    </button>
+                  </div>
+                  <div>
+                    <a
+                      className="flex w-full items-center justify-center gap-2 rounded-md bg-slate-700 bg-opacity-10 px-4 py-2 text-center text-sm font-medium text-gray-600 shadow-sm hover:bg-opacity-20 focus:outline-none dark:bg-opacity-20 dark:text-white dark:hover:bg-opacity-30"
+                      href="/account">
+                      <span className="inline-flex items-center">
+                        <IonIcon
+                          icon={addOutline}
+                          role="img"
+                          className="md hydrated"
+                          aria-label="add outline"></IonIcon>
+                      </span>
+                      <span>Start a new collection</span>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </form>
-            <div className="my-6 flex items-center">
-              <div className="mr-3 grow border-t border-gray-300" aria-hidden="true"></div>
-              <div className="italic text-gray-600">Or</div>
-              <div className="ml-3 grow border-t border-gray-300" aria-hidden="true"></div>
             </div>
-            <form>
-              <div className="-mx-3 mb-3 flex flex-wrap">
-                <div className="max-w-[50%] px-3">
-                  <button className="btn relative flex h-10 w-full items-center bg-gray-900 px-0 text-white hover:bg-gray-800">
-                    <svg
-                      className="mx-4 h-4 w-4 shrink-0 fill-current text-white opacity-75"
-                      viewBox="0 0 16 16"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="M17.114,3.923h-4.589V2.427c0-0.252-0.207-0.459-0.46-0.459H7.935c-0.252,0-0.459,0.207-0.459,0.459v1.496h-4.59c-0.252,0-0.459,0.205-0.459,0.459c0,0.252,0.207,0.459,0.459,0.459h1.51v12.732c0,0.252,0.207,0.459,0.459,0.459h10.29c0.254,0,0.459-0.207,0.459-0.459V4.841h1.511c0.252,0,0.459-0.207,0.459-0.459C17.573,4.127,17.366,3.923,17.114,3.923M8.394,2.886h3.214v0.918H8.394V2.886z M14.686,17.114H5.314V4.841h9.372V17.114z M12.525,7.306v7.344c0,0.252-0.207,0.459-0.46,0.459s-0.458-0.207-0.458-0.459V7.306c0-0.254,0.205-0.459,0.458-0.459S12.525,7.051,12.525,7.306M8.394,7.306v7.344c0,0.252-0.207,0.459-0.459,0.459s-0.459-0.207-0.459-0.459V7.306c0-0.254,0.207-0.459,0.459-0.459S8.394,7.051,8.394,7.306"></path>
-                    </svg>
-                    <span className="-ml-16 flex-auto pl-16 pr-8 text-xs">Reset collection</span>
-                  </button>
-                </div>
-                <div className="max-w-[50%] px-3">
-                  <button className="btn relative flex h-10 w-full items-center bg-red-600 px-0 text-white hover:bg-red-700">
-                    <svg
-                      className="mx-4 h-4 w-4 shrink-0 fill-current text-white opacity-75"
-                      viewBox="0 0 16 16"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="M14.613,10c0,0.23-0.188,0.419-0.419,0.419H10.42v3.774c0,0.23-0.189,0.42-0.42,0.42s-0.419-0.189-0.419-0.42v-3.774H5.806c-0.23,0-0.419-0.189-0.419-0.419s0.189-0.419,0.419-0.419h3.775V5.806c0-0.23,0.189-0.419,0.419-0.419s0.42,0.189,0.42,0.419v3.775h3.774C14.425,9.581,14.613,9.77,14.613,10 M17.969,10c0,4.401-3.567,7.969-7.969,7.969c-4.402,0-7.969-3.567-7.969-7.969c0-4.402,3.567-7.969,7.969-7.969C14.401,2.031,17.969,5.598,17.969,10 M17.13,10c0-3.932-3.198-7.13-7.13-7.13S2.87,6.068,2.87,10c0,3.933,3.198,7.13,7.13,7.13S17.13,13.933,17.13,10"></path>{' '}
-                    </svg>
-                    <span className="-ml-16 flex-auto pl-16 pr-8 text-xs">Start a new collection</span>
-                  </button>
-                </div>
-              </div>
-            </form>
           </div>
-          <div className="max-w-600px mx-auto max-w-[50%] rounded-lg bg-gray-200 p-5 px-5 pb-10 pt-16 text-gray-700 shadow-lg">
-            <div className="mx-auto max-w-3xl pb-6 md:pb-8">
-              <h1 className="h2">Collection Settings</h1>
-              <h1 className="h5">
-                Welcome to the NFT Art Generator. The most powerful no-code NFT tool trusted by the world’s largest NFT
-                creators.
-              </h1>
+        </div>
+        <div className="col-span-4 mb-10 hidden md:block xl:mb-0">
+          <div className="h-auto rounded-2xl bg-slate-700 bg-opacity-[15%] px-10 py-8 text-left text-gray-600 shadow-lg dark:bg-[#191a26] dark:bg-opacity-100 dark:text-white">
+            <h2 className="font-display mt-2 text-xl font-bold tracking-tight">Collection Settings</h2>
+            <div className="my-2 text-gray-600 dark:text-slate-200">
+              Welcome to the NFT Art Generator. The most powerful no-code NFT tool trusted by the world’s largest NFT
+              creators.
             </div>
-            <div className="mx-auto max-w-3xl pb-6 md:pb-8">
-              <img src="https://nft-generator.art/images/test.png" className=""></img>
-            </div>
-            <div className="mx-auto max-w-3xl pb-6 md:pb-8">
-              <h1 className="h2">Setup your NFT Collection</h1>
-              <h1 className="h5">
+            <img src="/images/test.png" className="my-6 rounded-lg" />
+            <div className="mt-8 text-gray-600 dark:text-slate-200">
+              <strong className="mt-2 text-xl font-extrabold tracking-tight text-gray-600 dark:text-slate-50 ">
+                Setup your NFT Collection
+              </strong>
+              <p className="mt-2 max-w-3xl space-y-6 ">
                 Select the desired Blockchain, give your collection a name, a description, and set up the size of the
-                final art pieces. Once you are ready, click the "Save & Continue" button to proceed to the next step.
-              </h1>
+                final art pieces. Once you are ready, click the "Save &amp; Continue" button to proceed to the next
+                step.
+              </p>
             </div>
-            <div className="mx-auto max-w-3xl pb-6 md:pb-8">
-              <h1 className="h2">Import your art into the tool.</h1>
-              <h1 className="h5">
+            <div className="mt-8 text-gray-600 dark:text-slate-200">
+              <strong className="mt-2 text-xl font-extrabold tracking-tight text-gray-600 dark:text-slate-50 ">
+                Import your art into the tool.
+              </strong>
+              <p className="mt-2 max-w-3xl space-y-6 ">
                 You can import a single image or a folder of images. The tool will automatically generate the
-                corresponding metadata for each image.
-              </h1>
+                corresponding metadata htmlFor each image.
+              </p>
             </div>
-            <div className="mx-auto max-w-3xl pb-6 md:pb-8">
-              <h1 className="h2">Preview and Generate your collection.</h1>
-              <h1 className="h5">
+            <div className="mt-8 text-gray-600 dark:text-slate-200">
+              <strong className="mt-2 text-xl font-extrabold tracking-tight text-gray-600 dark:text-slate-50 ">
+                Preview and Generate your collection.
+              </strong>
+              <p className="mt-2 max-w-3xl space-y-6 ">
                 Once the metadata is generated the NFTs and download the metadata file. You can also upload the metadata
                 file to IPFS to generate the NFTs.
-              </h1>
+              </p>
+            </div>
+          </div>
+          <div className="relative">
+            <div className="absolute transform sm:top-6 sm:translate-x-0">
+              <div className="ml-24 flex min-w-max space-x-6 sm:ml-3 lg:space-x-8">
+                <div className="flex space-x-6 sm:flex-col sm:space-x-0 sm:space-y-6 lg:space-y-8">
+                  <div className="flex-shrink-0">
+                    <img
+                      className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
+                      src="https://ik.imagekit.io/llh50zxqb/images/projects/Scremlins.png?tr=w-288,h-288,c-maintain_ratio,f-auto"
+                      alt=""
+                    />
+                  </div>
+                  <div className="mt-6 flex-shrink-0 sm:mt-0">
+                    <img
+                      className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
+                      src="https://ik.imagekit.io/llh50zxqb/images/projects/ElephrensNFT.jpeg?tr=w-288,h-288,c-maintain_ratio,f-auto"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div className="mt-20 flex space-x-6 sm:flex-col sm:space-x-0 sm:space-y-6 lg:space-y-8">
+                  <div className="flex-shrink-0" />
+                  <img
+                    loading="lazy"
+                    className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
+                    src="https://ik.imagekit.io/llh50zxqb/images/projects/thepopulars.jpeg?tr=w-288,h-288,c-maintain_ratio,f-auto"
+                    alt=""
+                  />
+                </div>
+                <div className="mt-6 flex-shrink-0 sm:mt-0" />
+                <img
+                  className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
+                  src="https://ik.imagekit.io/llh50zxqb/images/projects/elftown.jpeg?tr=w-288,h-288,c-maintain_ratio,f-auto"
+                  alt=""
+                />
+              </div>
             </div>
           </div>
         </div>
