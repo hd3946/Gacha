@@ -14,7 +14,7 @@ import {
 import ImageLogo from 'next/image'
 import { WalletButton } from '../button'
 
-export default function HeaderTest() {
+export default function Header() {
   const [colorMode, setColorMode] = useColorMode()
   const store = useTabValueStore()
 
@@ -85,7 +85,6 @@ export default function HeaderTest() {
         <div className="ml-auto flex items-center justify-end gap-2">
           <button
             className="relative inline-flex h-[36px] w-[36px] flex-shrink-0 cursor-pointer items-center justify-center rounded-md bg-white text-gray-600 text-gray-900 transition-colors duration-200 ease-in-out hover:bg-gray-200 focus:outline-none dark:bg-slate-800 dark:text-gray-400 dark:hover:bg-slate-700"
-            id="headlessui-switch-1"
             role="switch"
             type="button"
             aria-checked="true"

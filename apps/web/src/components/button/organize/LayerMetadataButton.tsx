@@ -1,4 +1,4 @@
-import Arrow from '@/components/Images/Arrow'
+import Arrow from '@/components/images/Arrow'
 import { Modal } from '@/components/modal/Index'
 import LayerMetadataModal from '@/components/modal/LayerMetadataModal'
 import { useState } from 'react'

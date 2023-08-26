@@ -1,4 +1,4 @@
-import Arrow from '@/components/Images/Arrow'
+import Arrow from '@/components/images/Arrow'
 import { useUploadBoxOpen } from '@/store/store'
 import Button from './IndexCaptionButton'
 
