@@ -20,7 +20,7 @@ const LayerMetadataModal = ({ onClose }: { onClose: any }) => {
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
           </button>
           <div className="col-span-6 flex h-fit w-full flex-col p-8 !pb-4">
