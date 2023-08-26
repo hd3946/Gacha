@@ -3,8 +3,10 @@ export default function Home() {
   return (
     <>
       <header></header>
-      <Main />
-      <main></main>
+
+      <main>
+        <Main />
+      </main>
     </>
   )
 }
