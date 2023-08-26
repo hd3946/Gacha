@@ -1,5 +1,12 @@
 import { create } from 'zustand'
 
+export type layerImage = {
+  name: string
+  url: string
+  rarity: number // 1% ~ 100%
+  isShow: boolean
+}
+
 export type layer = {
   name: string
   imageList: string[]
