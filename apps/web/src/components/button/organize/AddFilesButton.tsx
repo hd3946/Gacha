@@ -1,5 +1,5 @@
+import Arrow from '@/components/Images/Arrow'
 import { useUploadBoxOpen } from '@/store/store'
-import Arrow from '../../Images/Arrow'
 import Button from './IndexCaptionButton'
 
 const AddFileButton = () => {

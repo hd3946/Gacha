@@ -1,7 +1,27 @@
+import { useLayerStore } from '@/store/layerStore'
 import { IonIcon } from '@ionic/react'
 import { closeOutline } from 'ionicons/icons'
+import { SetStateAction, useState } from 'react'
 
 const AddNewLayerModal = ({ onClose }: { onClose: any }) => {
+  const [inputText, setInputText] = useState('')
+  const { addLayer } = useLayerStore()
+
+  const handleInputChange = (event: { target: { value: SetStateAction<string> } }) => {
+    setInputText(event.target.value)
+  }
+
+  const handleSubmit = (event: { preventDefault: () => void }) => {
+    event.preventDefault()
+    const newLayer = {
+      layerName: inputText,
+      layerImageList: [],
+      layerRarity: 100
+    }
+    addLayer(newLayer)
+    onClose()
+  }
+
   return (
     <form
       className="relative w-[32rem] translate-y-0 transform space-y-3 overflow-hidden rounded-lg bg-gray-800 px-6 pb-4 pt-5 
@@ -28,14 +48,16 @@ const AddNewLayerModal = ({ onClose }: { onClose: any }) => {
           className="focus:border-brand-500 focus:ring-brand-500 block w-full rounded-md 
           border-gray-300 text-black shadow-sm placeholder:text-gray-400 sm:text-sm"
           placeholder="Background"
-          value=""
+          onChange={handleInputChange}
+          value={inputText}
         />
       </div>
       <div className="flex justify-end">
         <button
           type="submit"
-          className="bg-brand-500 hover:bg-brand-700 focus:ring-brand-500 disabled:hover:bg-brand-500 inline-flex w-full justify-center 
-          rounded-md border border-transparent px-4 py-2 text-sm font-medium text-white shadow-sm 
+          onClick={handleSubmit}
+          className="hover:bg-brand-700 focus:ring-brand-500 disabled:hover:bg-brand-500 inline-flex w-full justify-center rounded-md 
+          border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white shadow-sm 
           focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto">
           Continue
         </button>
