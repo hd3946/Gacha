@@ -1,5 +1,4 @@
-import { IonIcon } from '@ionic/react'
-import { checkmarkCircleOutline } from 'ionicons/icons'
+import { IoCheckmarkCircleOutline, IoRemoveCircleOutline } from 'react-icons/io5'
 
 const Seventh = () => {
   return (
@@ -91,8 +90,7 @@ const Seventh = () => {
                 </th>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={checkmarkCircleOutline}
+                    <IoCheckmarkCircleOutline
                       style={{ color: 'blue', margin: '0 auto', fontSize: '22px' }}
                       role="img"
                       aria-label="checkmark circle outline"
@@ -102,8 +100,7 @@ const Seventh = () => {
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={checkmarkCircleOutline}
+                    <IoCheckmarkCircleOutline
                       style={{ color: 'blue', margin: '0 auto', fontSize: '22px' }}
                       role="img"
                       aria-label="checkmark circle outline"
@@ -113,45 +110,41 @@ const Seventh = () => {
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={checkmarkCircleOutline}
+                    <IoCheckmarkCircleOutline
                       style={{ color: 'blue', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="checkmark circle outline"></IonIcon>
+                      aria-label="checkmark circle outline"
+                    />
                   </div>
                   <span className="sr-only">NFTInator</span>
                 </td>
               </tr>
-              {/* <tr>
+              <tr>
                 <th scope="row" className="-gray-900 py-4 text-sm font-normal leading-6">
                   Smart Contract Deployment<div className="absolute inset-x-8 mt-4 h-px bg-gray-900/5"></div>
                 </th>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={checkmarkCircleOutline}
-                      style={{ color: 'blue', margin: '0 auto', fontSize: '22px' }}
-                    />
+                    <IoCheckmarkCircleOutline style={{ color: 'blue', margin: '0 auto', fontSize: '22px' }} />
                   </div>
                   <span className="sr-only">OneMint</span>
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={checkmarkCircleOutline}
+                    <IoCheckmarkCircleOutline
                       style={{ color: 'blue', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="checkmark circle outline"></IonIcon>
+                      aria-label="checkmark circle outline"
+                    />
                   </div>
                   <span className="sr-only">BuenoArt</span>
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={checkmarkCircleOutline}
+                    <IoCheckmarkCircleOutline
                       style={{ color: 'blue', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="checkmark circle outline"></IonIcon>
+                      aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                   </div>
                   <span className="sr-only">NFTInator</span>
                 </td>
@@ -162,31 +155,29 @@ const Seventh = () => {
                 </th>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={checkmarkCircleOutline}
+                    <IoCheckmarkCircleOutline
                       style={{ color: 'blue', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="checkmark circle outline"></IonIcon>
+                      aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                   </div>
                   <span className="sr-only">OneMint</span>
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={checkmarkCircleOutline}
+                    <IoCheckmarkCircleOutline
                       style={{ color: 'blue', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="checkmark circle outline"></IonIcon>
+                      aria-label="checkmark circle outline"
+                    />
                   </div>
                   <span className="sr-only">BuenoArt</span>
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={removeCircleOutline}
+                    <IoCheckmarkCircleOutline
                       style={{ color: 'gray', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="remove circle outline"></IonIcon>
+                      aria-label="remove circle outline"></IoCheckmarkCircleOutline>
                   </div>
                   <span className="sr-only">NFTInator</span>
                 </td>
@@ -197,31 +188,28 @@ const Seventh = () => {
                 </th>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={checkmarkCircleOutline}
+                    <IoCheckmarkCircleOutline
                       style={{ color: 'blue', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="checkmark circle outline"></IonIcon>
+                      aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                   </div>
                   <span className="sr-only">OneMint</span>
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={removeCircleOutline}
+                    <IoRemoveCircleOutline
                       style={{ color: 'gray', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="remove circle outline"></IonIcon>
+                      aria-label="remove circle outline"></IoRemoveCircleOutline>
                   </div>
                   <span className="sr-only">BuenoArt</span>
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={removeCircleOutline}
+                    <IoRemoveCircleOutline
                       style={{ color: 'gray', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="remove circle outline"></IonIcon>
+                      aria-label="remove circle outline"></IoRemoveCircleOutline>
                   </div>
                   <span className="sr-only">NFTInator</span>
                 </td>
@@ -232,31 +220,28 @@ const Seventh = () => {
                 </th>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={checkmarkCircleOutline}
+                    <IoCheckmarkCircleOutline
                       style={{ color: 'blue', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="checkmark circle outline"></IonIcon>
+                      aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                   </div>
                   <span className="sr-only">OneMint</span>
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={removeCircleOutline}
+                    <IoRemoveCircleOutline
                       style={{ color: 'gray', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="remove circle outline"></IonIcon>
+                      aria-label="remove circle outline"></IoRemoveCircleOutline>
                   </div>
                   <span className="sr-only">BuenoArt</span>
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={removeCircleOutline}
+                    <IoRemoveCircleOutline
                       style={{ color: 'gray', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="remove circle outline"></IonIcon>
+                      aria-label="remove circle outline"></IoRemoveCircleOutline>
                   </div>
                   <span className="sr-only">NFTInator</span>
                 </td>
@@ -267,31 +252,28 @@ const Seventh = () => {
                 </th>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={checkmarkCircleOutline}
+                    <IoCheckmarkCircleOutline
                       style={{ color: 'blue', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="checkmark circle outline"></IonIcon>
+                      aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                   </div>
                   <span className="sr-only">OneMint</span>
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={checkmarkCircleOutline}
+                    <IoCheckmarkCircleOutline
                       style={{ color: 'blue', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="checkmark circle outline"></IonIcon>
+                      aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                   </div>
                   <span className="sr-only">BuenoArt</span>
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={removeCircleOutline}
+                    <IoRemoveCircleOutline
                       style={{ color: 'gray', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="remove circle outline"></IonIcon>
+                      aria-label="remove circle outline"></IoRemoveCircleOutline>
                   </div>
                   <span className="sr-only">NFTInator</span>
                 </td>
@@ -302,31 +284,28 @@ const Seventh = () => {
                 </th>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={checkmarkCircleOutline}
+                    <IoCheckmarkCircleOutline
                       style={{ color: 'blue', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="checkmark circle outline"></IonIcon>
+                      aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                   </div>
                   <span className="sr-only">OneMint</span>
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={checkmarkCircleOutline}
+                    <IoCheckmarkCircleOutline
                       style={{ color: 'blue', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="checkmark circle outline"></IonIcon>
+                      aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                   </div>
                   <span className="sr-only">BuenoArt</span>
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={removeCircleOutline}
+                    <IoRemoveCircleOutline
                       style={{ color: 'gray', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="remove circle outline"></IonIcon>
+                      aria-label="remove circle outline"></IoRemoveCircleOutline>
                   </div>
                   <span className="sr-only">NFTInator</span>
                 </td>
@@ -337,31 +316,28 @@ const Seventh = () => {
                 </th>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={checkmarkCircleOutline}
+                    <IoCheckmarkCircleOutline
                       style={{ color: 'blue', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="checkmark circle outline"></IonIcon>
+                      aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                   </div>
                   <span className="sr-only">OneMint</span>
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={checkmarkCircleOutline}
+                    <IoCheckmarkCircleOutline
                       style={{ color: 'blue', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="checkmark circle outline"></IonIcon>
+                      aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                   </div>
                   <span className="sr-only">BuenoArt</span>
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={removeCircleOutline}
+                    <IoRemoveCircleOutline
                       style={{ color: 'gray', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="remove circle outline"></IonIcon>
+                      aria-label="remove circle outline"></IoRemoveCircleOutline>
                   </div>
                   <span className="sr-only">NFTInator</span>
                 </td>
@@ -372,31 +348,28 @@ const Seventh = () => {
                 </th>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={checkmarkCircleOutline}
+                    <IoCheckmarkCircleOutline
                       style={{ color: 'blue', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="checkmark circle outline"></IonIcon>
+                      aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                   </div>
                   <span className="sr-only">OneMint</span>
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={checkmarkCircleOutline}
+                    <IoCheckmarkCircleOutline
                       style={{ color: 'blue', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="checkmark circle outline"></IonIcon>
+                      aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                   </div>
                   <span className="sr-only">BuenoArt</span>
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={checkmarkCircleOutline}
+                    <IoCheckmarkCircleOutline
                       style={{ color: 'blue', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="checkmark circle outline"></IonIcon>
+                      aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                   </div>
                   <span className="sr-only">NFTInator</span>
                 </td>
@@ -407,31 +380,28 @@ const Seventh = () => {
                 </th>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={checkmarkCircleOutline}
+                    <IoCheckmarkCircleOutline
                       style={{ color: 'blue', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="checkmark circle outline"></IonIcon>
+                      aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                   </div>
                   <span className="sr-only">OneMint</span>
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={removeCircleOutline}
+                    <IoRemoveCircleOutline
                       style={{ color: 'gray', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="remove circle outline"></IonIcon>
+                      aria-label="remove circle outline"></IoRemoveCircleOutline>
                   </div>
                   <span className="sr-only">BuenoArt</span>
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={removeCircleOutline}
+                    <IoRemoveCircleOutline
                       style={{ color: 'gray', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="remove circle outline"></IonIcon>
+                      aria-label="remove circle outline"></IoRemoveCircleOutline>
                   </div>
                   <span className="sr-only">NFTInator</span>
                 </td>
@@ -442,31 +412,28 @@ const Seventh = () => {
                 </th>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={checkmarkCircleOutline}
+                    <IoCheckmarkCircleOutline
                       style={{ color: 'blue', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="checkmark circle outline"></IonIcon>
+                      aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                   </div>
                   <span className="sr-only">OneMint</span>
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={removeCircleOutline}
+                    <IoRemoveCircleOutline
                       style={{ color: 'gray', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="remove circle outline"></IonIcon>
+                      aria-label="remove circle outline"></IoRemoveCircleOutline>
                   </div>
                   <span className="sr-only">BuenoArt</span>
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={checkmarkCircleOutline}
+                    <IoRemoveCircleOutline
                       style={{ color: 'gray', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="checkmark circle outline"></IonIcon>
+                      aria-label="checkmark circle outline"></IoRemoveCircleOutline>
                   </div>
                   <span className="sr-only">NFTInator</span>
                 </td>
@@ -477,31 +444,28 @@ const Seventh = () => {
                 </th>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={checkmarkCircleOutline}
+                    <IoCheckmarkCircleOutline
                       style={{ color: 'blue', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="checkmark circle outline"></IonIcon>
+                      aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                   </div>
                   <span className="sr-only">OneMint</span>
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={removeCircleOutline}
+                    <IoRemoveCircleOutline
                       style={{ color: 'gray', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="remove circle outline"></IonIcon>
+                      aria-label="remove circle outline"></IoRemoveCircleOutline>
                   </div>
                   <span className="sr-only">BuenoArt</span>
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={removeCircleOutline}
+                    <IoRemoveCircleOutline
                       style={{ color: 'gray', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="remove circle outline"></IonIcon>
+                      aria-label="remove circle outline"></IoRemoveCircleOutline>
                   </div>
                   <span className="sr-only">NFTInator</span>
                 </td>
@@ -512,35 +476,32 @@ const Seventh = () => {
                 </th>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={checkmarkCircleOutline}
+                    <IoCheckmarkCircleOutline
                       style={{ color: 'blue', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="checkmark circle outline"></IonIcon>
+                      aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                   </div>
                   <span className="sr-only">OneMint</span>
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={removeCircleOutline}
+                    <IoRemoveCircleOutline
                       style={{ color: 'gray', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="remove circle outline"></IonIcon>
+                      aria-label="remove circle outline"></IoRemoveCircleOutline>
                   </div>
                   <span className="sr-only">BuenoArt</span>
                 </td>
                 <td className="px-6 py-4 xl:px-8">
                   <div className="mx-auto flex w-full items-center">
-                    <IonIcon
-                      icon={removeCircleOutline}
+                    <IoRemoveCircleOutline
                       style={{ color: 'gray', margin: '0 auto', fontSize: '22px' }}
                       role="img"
-                      aria-label="remove circle outline"></IonIcon>
+                      aria-label="remove circle outline"></IoRemoveCircleOutline>
                   </div>
                   <span className="sr-only">NFTInator</span>
                 </td>
-              </tr> */}
+              </tr>
             </tbody>
           </table>
         </div>

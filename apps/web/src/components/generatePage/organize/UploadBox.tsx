@@ -1,5 +1,4 @@
-import { IonIcon } from '@ionic/react'
-import { colorPaletteOutline } from 'ionicons/icons'
+import { IoColorPaletteOutline } from 'react-icons/io5'
 
 const ImageUploadBox = () => {
   return (
@@ -38,7 +37,7 @@ const ImageUploadBox = () => {
         className="flex h-[140px] w-fit max-w-[200px] cursor-pointer flex-col items-center justify-center rounded-md border border-slate-500 p-4 transition hover:border-slate-300"
         title="These assets will not have an image/video attached to them, meaning they will only be used for the metadata.">
         <span className="inline-flex items-center text-gray-400">
-          <IonIcon icon={colorPaletteOutline} />
+          <IoColorPaletteOutline />
         </span>
         <p className="relative cursor-pointer rounded-md text-sm font-medium text-cyan-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-cyan-400 focus-within:ring-offset-2 hover:text-cyan-400">
           Add Custom Asset

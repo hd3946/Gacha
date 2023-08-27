@@ -1,8 +1,7 @@
 'use client'
 import { useLayerStore } from '@/store/layerStore'
 import { useUploadBoxOpen } from '@/store/store'
-import { IonIcon } from '@ionic/react'
-import { addOutline } from 'ionicons/icons'
+import { IoAddOutline } from 'react-icons/io5'
 import AddFileButton from '../button/organize/AddFilesButton'
 
 import { useState } from 'react'
@@ -50,7 +49,7 @@ const Organize = () => {
               onClick={handleSubmit}>
               <div className="relative flex items-center gap-0.5">
                 <span className="inline-flex items-center">
-                  <IonIcon icon={addOutline} role="img" className="hi" />
+                  <IoAddOutline role="img" className="hi" />
                 </span>
                 <span>Add</span>
               </div>

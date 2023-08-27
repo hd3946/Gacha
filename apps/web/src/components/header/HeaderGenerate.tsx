@@ -2,16 +2,15 @@
 import useColorMode from '@/hooks/useColorMode'
 import { useTabValueStore } from '@/store/store'
 import { GenerateTab } from '@/types/taps'
-import { IonIcon } from '@ionic/react'
-import {
-  constructOutline,
-  flaskOutline,
-  moonOutline,
-  settingsOutline,
-  sparklesOutline,
-  sunnyOutline
-} from 'ionicons/icons'
 import ImageLogo from 'next/image'
+import {
+  IoConstructOutline,
+  IoFlaskOutline,
+  IoMoonOutline,
+  IoSettingsOutline,
+  IoSparklesOutline,
+  IoSunnyOutline
+} from 'react-icons/io5'
 import { WalletButton } from '../button'
 
 export default function Header() {
@@ -32,7 +31,7 @@ export default function Header() {
             <button className="settings_btn group" onClick={() => store.setValue(GenerateTab.Settings)}>
               <span className="flex items-center justify-center gap-3 text-orange-400 group-hover:text-orange-300 group-hover:text-orange-300 group-hover:text-orange-400 dark:text-orange-300 dark:text-orange-300">
                 <span className="inline-flex items-center text-orange-400 group-hover:text-orange-300 group-hover:text-orange-300 group-hover:text-orange-400 dark:text-orange-300 dark:text-orange-300">
-                  <IonIcon icon={settingsOutline} role="img" className="hi" />
+                  <IoSettingsOutline role="img" className="hi" />
                 </span>
                 <span className="settings_span">Settings</span>
               </span>
@@ -41,7 +40,7 @@ export default function Header() {
             <button className="organize_btn group" onClick={() => store.setValue(GenerateTab.Organize)}>
               <span className="flex items-center justify-center gap-3 text-cyan-400 group-hover:text-cyan-400 group-hover:text-cyan-400 group-hover:text-cyan-400 dark:text-cyan-400 dark:text-cyan-400">
                 <span className="inline-flex items-center text-cyan-400 group-hover:text-cyan-400 group-hover:text-cyan-400 group-hover:text-cyan-400 dark:text-cyan-400 dark:text-cyan-400">
-                  <IonIcon icon={constructOutline} role="img" />
+                  <IoConstructOutline role="img" />
                 </span>
                 <span className="organize_span">Organize</span>
               </span>
@@ -52,7 +51,7 @@ export default function Header() {
             <button className="preview_btn" onClick={() => store.setValue(GenerateTab.Preview)}>
               <span className="flex items-center justify-center gap-3 text-violet-400 group-hover:text-violet-300 group-hover:text-violet-300 group-hover:text-violet-400 dark:text-violet-300 dark:text-violet-300">
                 <span className="inline-flex items-center text-violet-400 group-hover:text-violet-300 group-hover:text-violet-300 group-hover:text-violet-400 dark:text-violet-300 dark:text-violet-300">
-                  <IonIcon icon={flaskOutline} role="img" />
+                  <IoFlaskOutline role="img" />
                 </span>
                 <span className="hidden text-gray-600 group-hover:text-violet-300 dark:text-gray-400 dark:text-violet-300 dark:group-hover:text-violet-400 lg:inline">
                   Preview
@@ -65,7 +64,7 @@ export default function Header() {
             <button className="export_btn" onClick={() => store.setValue(GenerateTab.Export)}>
               <span className="flex items-center justify-center gap-3 text-teal-400 group-hover:text-teal-400 group-hover:text-teal-400 group-hover:text-teal-400 dark:text-teal-400 dark:text-teal-400">
                 <span className="inline-flex items-center text-teal-400 group-hover:text-teal-400 group-hover:text-teal-400 group-hover:text-teal-400 dark:text-teal-400 dark:text-teal-400">
-                  <IonIcon icon={sparklesOutline} role="img" />
+                  <IoSparklesOutline role="img" />
                 </span>
                 <span className="hidden text-gray-600 group-hover:text-teal-400 dark:text-gray-400 dark:text-teal-400 dark:group-hover:text-teal-400 lg:inline">
                   Export
@@ -89,7 +88,7 @@ export default function Header() {
             type="button"
             aria-checked="true"
             onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}>
-            {colorMode === 'light' ? <IonIcon icon={sunnyOutline} /> : <IonIcon icon={moonOutline} />}
+            {colorMode === 'light' ? <IoSunnyOutline /> : <IoMoonOutline />}
           </button>
           <WalletButton />
         </div>

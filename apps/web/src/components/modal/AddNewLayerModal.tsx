@@ -1,7 +1,6 @@
 import { useLayerStore } from '@/store/layerStore'
-import { IonIcon } from '@ionic/react'
-import { closeOutline } from 'ionicons/icons'
 import { SetStateAction, useState } from 'react'
+import { IoCloseOutline } from 'react-icons/io5'
 
 const AddNewLayerModal = ({ onClose }: { onClose: any }) => {
   const [inputText, setInputText] = useState('')
@@ -33,7 +32,7 @@ const AddNewLayerModal = ({ onClose }: { onClose: any }) => {
         hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2">
         <span className="sr-only">Close</span>
         <span className="inline-flex items-center" aria-hidden="true">
-          <IonIcon icon={closeOutline} role="img" />
+          <IoCloseOutline role="img" />
         </span>
       </button>
       <div className="!mt-0 text-left">

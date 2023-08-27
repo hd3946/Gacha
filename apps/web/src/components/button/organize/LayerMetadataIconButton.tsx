@@ -1,8 +1,7 @@
 import { Modal } from '@/components/modal/Index'
 import LayerMetadataModal from '@/components/modal/LayerMetadataModal'
-import { IonIcon } from '@ionic/react'
-import { settingsOutline } from 'ionicons/icons'
 import { useState } from 'react'
+import { IoSettingsOutline } from 'react-icons/io5'
 import Button from './IndexCaptionButton'
 
 const LayerMetadataIconButton = () => {
@@ -18,7 +17,7 @@ const LayerMetadataIconButton = () => {
   return (
     <div>
       <Button onClick={openModal} className="flex items-center">
-        <IonIcon icon={settingsOutline} role="img" className="md hydrated" aria-label="settings outline" />
+        <IoSettingsOutline role="img" className="md hydrated" aria-label="settings outline" />
       </Button>
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <LayerMetadataModal onClose={closeModal} />

@@ -1,5 +1,4 @@
-import { IonIcon } from '@ionic/react'
-import { colorPaletteOutline, duplicateOutline, eyeOutline, trashOutline } from 'ionicons/icons'
+import { IoColorPaletteOutline, IoDuplicateOutline, IoEyeOutline, IoTrashOutline } from 'react-icons/io5'
 
 const LayerMetadataModal = ({ onClose }: { onClose: any }) => {
   return (
@@ -141,8 +140,7 @@ const LayerMetadataModal = ({ onClose }: { onClose: any }) => {
                               }}
                             />
                           </div>
-                          <IonIcon
-                            icon={eyeOutline}
+                          <IoEyeOutline
                             role="img"
                             className="md hydrated"
                             style={{ transform: 'translateY(-1px)', color: 'white' }}
@@ -207,7 +205,7 @@ const LayerMetadataModal = ({ onClose }: { onClose: any }) => {
                 href="#"
                 className="flex items-center gap-1 whitespace-nowrap border-b-2 border-transparent px-1 py-4 text-sm font-medium text-neutral-200 hover:border-gray-200 hover:text-neutral-200">
                 <span className="inline-flex items-center">
-                  <IonIcon icon={duplicateOutline} role="img" className="md hydrated" />
+                  <IoDuplicateOutline role="img" className="md hydrated" />
                 </span>
                 Duplicate
               </a>
@@ -215,7 +213,7 @@ const LayerMetadataModal = ({ onClose }: { onClose: any }) => {
                 href="#"
                 className="flex items-center gap-1 whitespace-nowrap border-b-2 border-transparent px-1 py-4 text-sm font-medium text-red-500 hover:border-gray-200">
                 <span className="inline-flex items-center">
-                  <IonIcon icon={trashOutline} role="img" className="md hydrated" />
+                  <IoTrashOutline role="img" className="md hydrated" />
                 </span>
                 Delete
               </a>
@@ -263,7 +261,7 @@ const LayerMetadataModal = ({ onClose }: { onClose: any }) => {
                 rounded-md border border-slate-500 p-4 transition hover:border-slate-300"
                 title="These assets will not have an image/video attached to them, meaning they will only be used for the metadata.">
                 <span className="inline-flex items-center text-gray-400">
-                  <IonIcon size="large" icon={colorPaletteOutline} role="img" className="md icon-large hydrated" />
+                  <IoColorPaletteOutline size="large" role="img" className="md icon-large hydrated" />
                 </span>
                 <p
                   className="relative cursor-pointer rounded-md text-sm font-medium text-cyan-500 
