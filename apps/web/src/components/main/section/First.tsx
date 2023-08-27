@@ -27,7 +27,7 @@ const First = () => {
               <Link
                 className="rounded-full bg-blue-500 px-6 py-3 text-lg font-semibold text-white shadow-sm hover:bg-blue-400
              focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
-                href="./generator">
+                href="./generate">
                 Start Creating
               </Link>
               <button
