@@ -18,7 +18,7 @@ import { WalletButton } from '../button'
 export default function Header() {
   const [colorMode, setColorMode] = useColorMode()
   const [logo, setLogo] = useState<string>('/images/NFTArtGeneratorbyonemintblue.webp')
-  const store = useTabValueStore()
+  const { tabNumber, setTabNumber } = useTabValueStore()
 
   useEffect(() => {
     if (colorMode === 'light') {
