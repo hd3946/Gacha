@@ -20,7 +20,7 @@ const Third = () => {
             </dl>
           </div>
           <div className="mb-10 lg:w-full lg:max-w-2xl lg:flex-auto">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+            <h1 className="text-5xl font-bold leading-none tracking-tight text-gray-900">
               Industry Leading <br />
               NFT Art Generator
             </h1>
