@@ -3,6 +3,8 @@ import useColorMode from '@/hooks/useColorMode'
 import { useTabValueStore } from '@/store/store'
 import { GenerateTab } from '@/types/taps'
 import ImageLogo from 'next/image'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import {
   IoConstructOutline,
   IoFlaskOutline,
@@ -15,15 +17,24 @@ import { WalletButton } from '../button'
 
 export default function Header() {
   const [colorMode, setColorMode] = useColorMode()
+  const [logo, setLogo] = useState<string>('/images/NFTArtGeneratorbyonemintblue.webp')
   const store = useTabValueStore()
 
-  const LogoImage = colorMode === 'light' ? '/images/NFTArtGeneratorbyonemintblue.webp' : '/images/logo.png'
+  useEffect(() => {
+    if (colorMode === 'light') {
+      setLogo('/images/NFTArtGeneratorbyonemintblue.webp')
+    } else {
+      setLogo('/images/logo.png')
+    }
+  }, [colorMode])
 
   return (
     <div className="hiddenScrollbar relative mx-auto flex h-full max-w-[3000px] items-center justify-between overflow-auto bg-red-200 px-2 dark:bg-gray-800 sm:px-6 lg:px-8">
       <div className="flex flex-1 items-center justify-center gap-10 sm:items-stretch sm:justify-start">
         <div className="flex flex-shrink-0 items-center">
-          <ImageLogo src={LogoImage} alt="Gacha_Logo" width={220} height={40} priority />
+          <Link href="/">
+            <ImageLogo src={logo} alt="Gacha_Logo" width={220} height={40} priority />
+          </Link>
         </div>
 
         <div className="relative z-0 flex flex-1 items-center justify-center">

@@ -37,7 +37,9 @@ export default function Header() {
           <div className="mr-4 shrink-0">
             <div className="mb-2">
               <div className="flex flex-shrink-0 items-center">
-                <ImageLogo src={logo} alt="Gacha_Logo" width={330} height={60} priority />
+                <Link href="/">
+                  <ImageLogo src={logo} alt="Gacha_Logo" width={330} height={60} priority />
+                </Link>
               </div>
             </div>
           </div>
