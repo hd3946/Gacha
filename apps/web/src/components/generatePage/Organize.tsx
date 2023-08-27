@@ -29,7 +29,9 @@ const Organize = () => {
   return (
     <div className="mx-auto min-h-screen w-full max-w-[3000px] px-6 dark:bg-gray-800">
       <div className="flex flex-col px-4 pl-0 pt-3 md:flex-row md:gap-10">
-        <aside className="relative h-fit w-full shrink overflow-y-auto px-[1px] pb-10 pt-[1px] md:h-full md:w-[16rem] md:shrink-0">
+        <aside
+          className="relative h-fit w-full shrink overflow-y-auto px-[1px] pb-10 pt-[1px]
+         md:h-full md:w-[16rem] md:shrink-0">
           <div
             className="relative flex h-10 w-full items-center rounded-lg bg-white ring-1 ring-slate-200 hover:ring-slate-300
            dark:bg-slate-700/40 dark:ring-inset dark:ring-slate-500 dark:ring-white/5">
@@ -38,7 +40,7 @@ const Organize = () => {
               required
               type="text"
               id="layer name"
-              className="group flex h-auto w-full flex-none items-center bg-transparent py-3 pl-4 pr-3.5 text-sm
+              className="group flex h-auto w-full flex-none items-center border-0 bg-transparent py-3 pl-4 pr-3.5 text-sm
                outline-none focus:placeholder:text-white/75 dark:focus:text-white"
               placeholder="New layer name"
               onChange={(e) => setInputText(e.target.value)}
@@ -80,7 +82,7 @@ const Organize = () => {
                 <AddFileButton />
               </div>
               <div className="ml-auto flex gap-4">
-                <button
+                {/* <button
                   type="button"
                   className="my-auto inline-block rounded-full bg-cyan-500/20 px-3 py-1 text-xs  font-medium leading-5 text-cyan-500 empty:hidden hover:bg-cyan-500/30 dark:hover:text-cyan-300">
                   <span className="flex items-center">
@@ -90,7 +92,7 @@ const Organize = () => {
                       <span className="relative inline-flex h-3 w-3 rounded-full bg-sky-500"></span>
                     </span>
                   </span>
-                </button>
+                </button> */}
 
                 <button className="my-auto inline-block rounded-full bg-cyan-500/20 px-3 py-1 text-xs  font-medium leading-5 text-cyan-500 empty:hidden hover:bg-cyan-500/30 dark:hover:text-cyan-300">
                   <span className="flex items-center gap-0.5">
