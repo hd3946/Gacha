@@ -18,6 +18,7 @@ const Organize = () => {
 
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault()
+    if (!inputText) return
     const newLayer = {
       layerName: inputText,
       layerImageList: [],
@@ -35,39 +36,42 @@ const Organize = () => {
           <div
             className="relative flex h-10 w-full items-center rounded-lg bg-white ring-1 ring-slate-200 hover:ring-slate-300
            dark:bg-slate-700/40 dark:ring-inset dark:ring-slate-500 dark:ring-white/5">
-            <input
-              min="3"
-              required
-              type="text"
-              id="layer name"
-              className="group flex h-auto w-full flex-none items-center border-0 bg-transparent py-3 pl-4 pr-3.5 text-sm
-               outline-none focus:placeholder:text-white/75 dark:focus:text-white"
-              placeholder="New layer name"
-              onChange={(e) => setInputText(e.target.value)}
-            />
-            <button
-              className="border-1 absolute bottom-[5px] right-[5px] top-[5px] rounded-lg border border-slate-200/10
+            <form onSubmit={handleSubmit}>
+              <input
+                required
+                type="text"
+                id="layer name"
+                autoComplete="off"
+                className="group flex h-auto w-full flex-none items-center border-0 bg-transparent py-3 pl-4 pr-3.5 text-sm
+               outline-none focus:ring-0 focus:placeholder:text-white/75 dark:placeholder-gray-400 dark:focus:text-white"
+                placeholder="New layer name"
+                onChange={(e) => setInputText(e.target.value)}
+              />
+              <button
+                type="submit"
+                className="border-1 absolute bottom-[5px] right-[5px] top-[5px] rounded-lg border border-slate-200/10
              px-2 py-1 text-sm text-cyan-400 hover:bg-slate-700/10 dark:hover:text-violet-200"
-              onClick={handleSubmit}>
-              <div className="relative flex items-center gap-0.5">
-                <span className="inline-flex items-center">
-                  <IoAddOutline role="img" className="hi" />
-                </span>
-                <span>Add</span>
-              </div>
-            </button>
+                onClick={handleSubmit}>
+                <div className="relative flex items-center gap-0.5">
+                  <span className="inline-flex items-center">
+                    <IoAddOutline role="img" className="hi" />
+                  </span>
+                  <span>Add</span>
+                </div>
+              </button>
+            </form>
           </div>
           {/* 아래 */}
           <div className="hiddenScrollbar h-fit overflow-y-auto px-0.5 md:h-[calc(100vh-175px)]">
-            {layers.map((layer) => (
-              <LayerButton layer={layer} />
+            {layers.map((layer, index) => (
+              <LayerButton key={index} layer={layer} />
             ))}
           </div>
         </aside>
 
         <main className="grow overflow-hidden">
           {/* 첫번째 */}
-          <div className="space-y-2 pb-4 transition-all duration-200 ease-in-out" style={{ position: 'relative' }}>
+          <div className="relative space-y-2 pb-4 transition-all duration-200 ease-in-out">
             <div className="hiddenScrollbar flex h-10 max-w-full items-center gap-4 overflow-auto whitespace-nowrap px-2">
               <div className="flex items-center gap-4">
                 <div className="relative inline-block h-[36px] min-w-[10px]">
@@ -78,8 +82,12 @@ const Organize = () => {
                     font-semibold text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/30"
                   />
                 </div>
-                <LayerMetadataButton />
-                <AddFileButton />
+
+                {layers.length > 0 && (
+                  <>
+                    <LayerMetadataButton /> <AddFileButton />
+                  </>
+                )}
               </div>
               <div className="ml-auto flex gap-4">
                 {/* <button
@@ -111,7 +119,7 @@ const Organize = () => {
             </div>
           </div>
           {/* 두번째 */}
-          {Open && <ImageUploadBox />}
+          {Open || (layers.length === 0 && <ImageUploadBox />)}
           {/* 세번째 */}
           <div className="relative block min-h-[calc(100vh-150px)] w-full"></div>
         </main>
