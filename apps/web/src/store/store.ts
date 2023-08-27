@@ -26,6 +26,6 @@ type UploadBoxOpenStore = {
 }
 
 export const useUploadBoxOpen = create<UploadBoxOpenStore>((set) => ({
-  open: false,
+  open: true,
   toggleOpen: () => set((state) => ({ open: !state.open }))
 }))

@@ -56,7 +56,9 @@ export default function Header() {
             </button>
             <span className="mt-4 text-slate-400"></span>
             <button
-              className={`organize_btn group ${tabNumber === GenerateTab.Organize && 'border-cyan-400 bg-gray-200'}`}
+              className={`organize_btn group ${
+                tabNumber === GenerateTab.Organize ? 'border-cyan-400 bg-gray-200' : ''
+              }`}
               onClick={() => setTabNumber(GenerateTab.Organize)}>
               <span className="flex items-center justify-center gap-3 text-cyan-400 group-hover:text-cyan-400 group-hover:text-cyan-400 group-hover:text-cyan-400 dark:text-cyan-400 dark:text-cyan-400">
                 <span className="inline-flex items-center text-cyan-400 group-hover:text-cyan-400 group-hover:text-cyan-400 group-hover:text-cyan-400 dark:text-cyan-400 dark:text-cyan-400">

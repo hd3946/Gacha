@@ -24,6 +24,7 @@ const Organize = () => {
       layerImageList: [],
       layerRarity: 100
     }
+    setInputText('')
     addLayer(newLayer)
   }
 
@@ -80,6 +81,7 @@ const Organize = () => {
                     type="text"
                     className="absolute inset-0 h-full w-full rounded-sm border-none bg-transparent p-0.5 text-2xl 
                     font-semibold text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/30"
+                    value={inputText}
                   />
                 </div>
 
@@ -119,7 +121,7 @@ const Organize = () => {
             </div>
           </div>
           {/* 두번째 */}
-          {Open || (layers.length === 0 && <ImageUploadBox />)}
+          {(Open || layers.length === 0) && <ImageUploadBox />}
           {/* 세번째 */}
           <div className="relative block min-h-[calc(100vh-150px)] w-full"></div>
         </main>
