@@ -1,8 +1,7 @@
 import AddNewLayerModal from '@/components/modal/AddNewLayerModal'
 import { Modal } from '@/components/modal/Index'
-import { IonIcon } from '@ionic/react'
-import { addCircleOutline } from 'ionicons/icons'
 import { useState } from 'react'
+import { IoAddCircleOutline } from 'react-icons/io5'
 
 const AddNewLayerButton = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -21,7 +20,7 @@ const AddNewLayerButton = () => {
         type="button"
         onClick={openModal}
         className="flex items-center p-0.5 text-gray-500 hover:!text-cyan-400 dark:text-white">
-        <IonIcon icon={addCircleOutline} role="img" />
+        <IoAddCircleOutline role="img" />
       </button>
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <AddNewLayerModal onClose={closeModal} />
