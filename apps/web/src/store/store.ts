@@ -19,3 +19,13 @@ export const useTabValueStore = create<tabValueStore>((set) => ({
   value: 0,
   setValue: (num) => set({ value: num })
 }))
+
+type UploadBoxOpenStore = {
+  open: boolean
+  toggleOpen: () => void
+}
+
+export const useUploadBoxOpen = create<UploadBoxOpenStore>((set) => ({
+  open: false,
+  toggleOpen: () => set((state) => ({ open: !state.open }))
+}))

@@ -1,5 +1,3 @@
-import { GetServerSideProps } from 'next'
-
 const countries = [
   {
     label: '가나',
@@ -152,12 +150,6 @@ const Export = () => {
       </div>
     </section>
   )
-}
-
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  return {
-    props: {}
-  }
 }
 
 export default Export

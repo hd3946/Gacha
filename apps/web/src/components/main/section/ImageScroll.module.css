@@ -1,0 +1,25 @@
+.animationRight {
+  animation: 80s linear 0s infinite normal none running move-right;
+}
+
+.animationLeft {
+  animation: 80s linear 0s infinite normal none running move-left;
+}   
+
+@keyframes move-right {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translateZ(0);
+  }
+}
+
+@keyframes move-left {
+  0% {
+    transform: translateZ(0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}

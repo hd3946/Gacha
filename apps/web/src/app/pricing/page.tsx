@@ -1,12 +1,10 @@
-'use client'
-import { IonIcon } from '@ionic/react'
 import {
-  checkmarkCircleOutline,
-  checkmarkOutline,
-  chevronBackCircleOutline,
-  chevronForwardCircleOutline,
-  closeOutline
-} from 'ionicons/icons'
+  IoCheckmarkCircleOutline,
+  IoCheckmarkOutline,
+  IoChevronBackCircleOutline,
+  IoChevronForwardCircleOutline,
+  IoCloseOutline
+} from 'react-icons/io5'
 
 export default function Home() {
   return (
@@ -34,12 +32,11 @@ export default function Home() {
                   <div className="flex justify-between">
                     <div>
                       <button>
-                        <IonIcon
+                        <IoChevronBackCircleOutline
                           size="large"
-                          icon={chevronBackCircleOutline}
                           role="img"
                           className="md icon-large hydrated"
-                          aria-label="chevron back circle outline"></IonIcon>
+                          aria-label="chevron back circle outline"></IoChevronBackCircleOutline>
                       </button>
                     </div>
                     <div>
@@ -91,12 +88,11 @@ export default function Home() {
                     </div>
                     <div>
                       <button>
-                        <IonIcon
+                        <IoChevronForwardCircleOutline
                           size="large"
-                          icon={chevronForwardCircleOutline}
                           role="img"
                           className="md icon-large hydrated"
-                          aria-label="chevron forward circle outline"></IonIcon>
+                          aria-label="chevron forward circle outline"></IoChevronForwardCircleOutline>
                       </button>
                     </div>
                   </div>
@@ -121,11 +117,10 @@ export default function Home() {
                     <li className="flex items-start lg:col-span-1">
                       <div className="flex-shrink-0">
                         <div className="h-5 w-5 text-sky-500">
-                          <IonIcon
-                            icon={checkmarkCircleOutline}
+                          <IoCheckmarkCircleOutline
                             role="img"
                             className="md hydrated"
-                            aria-label="checkmark circle outline"></IonIcon>
+                            aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                         </div>
                       </div>
                       <p className="ml-3 text-sm text-gray-700">Animated collection (PNG, Gif, mp4 support)</p>
@@ -133,11 +128,10 @@ export default function Home() {
                     <li className="flex items-start lg:col-span-1">
                       <div className="flex-shrink-0">
                         <div className="h-5 w-5 text-sky-500">
-                          <IonIcon
-                            icon={checkmarkCircleOutline}
+                          <IoCheckmarkCircleOutline
                             role="img"
                             className="md hydrated"
-                            aria-label="checkmark circle outline"></IonIcon>
+                            aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                         </div>
                       </div>
                       <p className="ml-3 text-sm text-gray-700">Rules maker to block incompatible traits</p>
@@ -145,11 +139,10 @@ export default function Home() {
                     <li className="flex items-start lg:col-span-1">
                       <div className="flex-shrink-0">
                         <div className="h-5 w-5 text-sky-500">
-                          <IonIcon
-                            icon={checkmarkCircleOutline}
+                          <IoCheckmarkCircleOutline
                             role="img"
                             className="md hydrated"
-                            aria-label="checkmark circle outline"></IonIcon>
+                            aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                         </div>
                       </div>
                       <p className="ml-3 text-sm text-gray-700">Multi-Character support (Advanced Mode)</p>
@@ -157,11 +150,10 @@ export default function Home() {
                     <li className="flex items-start lg:col-span-1">
                       <div className="flex-shrink-0">
                         <div className="h-5 w-5 text-sky-500">
-                          <IonIcon
-                            icon={checkmarkCircleOutline}
+                          <IoCheckmarkCircleOutline
                             role="img"
                             className="md hydrated"
-                            aria-label="checkmark circle outline"></IonIcon>
+                            aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                         </div>
                       </div>
                       <p className="ml-3 text-sm text-gray-700">Instant Previews</p>
@@ -169,11 +161,10 @@ export default function Home() {
                     <li className="flex items-start lg:col-span-1">
                       <div className="flex-shrink-0">
                         <div className="h-5 w-5 text-gray-500">
-                          <IonIcon
-                            icon={checkmarkCircleOutline}
+                          <IoCheckmarkCircleOutline
                             role="img"
                             className="md hydrated"
-                            aria-label="checkmark circle outline"></IonIcon>
+                            aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                         </div>
                       </div>
                       <p className="ml-3 text-sm text-gray-700">Saved in browser cache</p>
@@ -223,51 +214,46 @@ export default function Home() {
                 <ul role="list" className="my-3 space-y-3">
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Save in Cloud</span>
                   </li>
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Real-time viewers</span>
                   </li>
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Cloud rendering for GIF and MP4</span>
                   </li>
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Multi-Character Support</span>
                   </li>
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Block incompatible traits</span>
                   </li>
@@ -276,41 +262,37 @@ export default function Home() {
                 <ul role="list" className="my-3 space-y-3">
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Contract Deployment</span>
                   </li>
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Free mint</span>
                   </li>
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Mint custom domain</span>
                   </li>
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Free IPFS upload (up to 24 GB)</span>
                   </li>
@@ -358,51 +340,46 @@ export default function Home() {
                 <ul role="list" className="my-3 space-y-3">
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Save in Cloud</span>
                   </li>
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Real-time viewers</span>
                   </li>
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Cloud rendering for GIF and MP4</span>
                   </li>
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Multi-Character Support</span>
                   </li>
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Block incompatible traits</span>
                   </li>
@@ -411,41 +388,37 @@ export default function Home() {
                 <ul role="list" className="my-3 space-y-3">
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Contract Deployment</span>
                   </li>
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Free mint</span>
                   </li>
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Mint custom domain</span>
                   </li>
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Free IPFS upload (up to 24 GB)</span>
                   </li>
@@ -454,21 +427,19 @@ export default function Home() {
                 <ul role="list" className="my-3 space-y-3">
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Dynamic NFT Marketplace</span>
                   </li>
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Crossmint</span>
                   </li>
@@ -519,51 +490,46 @@ export default function Home() {
                 <ul role="list" className="my-3 space-y-3">
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Save in Cloud</span>
                   </li>
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Real-time viewers</span>
                   </li>
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Cloud rendering for GIF and MP4</span>
                   </li>
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Multi-Character Support</span>
                   </li>
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Block incompatible traits</span>
                   </li>
@@ -572,41 +538,37 @@ export default function Home() {
                 <ul role="list" className="my-3 space-y-3">
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Contract Deployment</span>
                   </li>
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Free mint</span>
                   </li>
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Mint custom domain</span>
                   </li>
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Free IPFS upload (up to 24 GB)</span>
                   </li>
@@ -615,41 +577,37 @@ export default function Home() {
                 <ul role="list" className="my-3 space-y-3">
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Staking Set-Up</span>
                   </li>
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Lootboxes</span>
                   </li>
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">ERC-20 Token</span>
                   </li>
                   <li className="flex">
                     <div className="h-6 w-6 flex-shrink-0 text-sky-500">
-                      <IonIcon
-                        icon={checkmarkCircleOutline}
+                      <IoCheckmarkCircleOutline
                         role="img"
                         className="md hydrated"
-                        aria-label="checkmark circle outline"></IonIcon>
+                        aria-label="checkmark circle outline"></IoCheckmarkCircleOutline>
                     </div>
                     <span className="ml-3 text-gray-500">Rewards UI</span>
                   </li>
@@ -746,47 +704,39 @@ export default function Home() {
                     </td>
                     <td className="border-l border-t-0 border-gray-200">
                       <div className="w-130 text-brand-500 mx-auto text-[22px]">
-                        <IonIcon
-                          icon={checkmarkOutline}
+                        <IoCheckmarkOutline
                           role="img"
                           className="md hydrated"
-                          aria-label="checkmark outline"></IonIcon>
+                          aria-label="checkmark outline"></IoCheckmarkOutline>
                       </div>
                     </td>
                     <td className="border-l border-t-0 border-gray-200">
                       <div className="w-130 text-brand-500 mx-auto text-[22px]">
-                        <IonIcon
-                          icon={checkmarkOutline}
+                        <IoCheckmarkOutline
                           role="img"
                           className="md hydrated"
-                          aria-label="checkmark outline"></IonIcon>
+                          aria-label="checkmark outline"></IoCheckmarkOutline>
                       </div>
                     </td>
                     <td className="border-l border-t-0 border-gray-200">
                       <div className="w-130 text-brand-500 mx-auto text-[22px]">
-                        <IonIcon
-                          icon={checkmarkOutline}
+                        <IoCheckmarkOutline
                           role="img"
                           className="md hydrated"
-                          aria-label="checkmark outline"></IonIcon>
+                          aria-label="checkmark outline"></IoCheckmarkOutline>
                       </div>
                     </td>
                     <td className="border-l border-t-0 border-gray-200">
                       <div className="w-130 mx-auto text-[22px] text-gray-500">
-                        <IonIcon
-                          icon={closeOutline}
-                          role="img"
-                          className="md hydrated"
-                          aria-label="close outline"></IonIcon>
+                        <IoCloseOutline role="img" className="md hydrated" aria-label="close outline"></IoCloseOutline>
                       </div>
                     </td>
                     <td className="border-l border-t-0 border-gray-200">
                       <div className="w-130 text-brand-500 mx-auto text-[22px]">
-                        <IonIcon
-                          icon={checkmarkOutline}
+                        <IoCheckmarkOutline
                           role="img"
                           className="md hydrated"
-                          aria-label="checkmark outline"></IonIcon>
+                          aria-label="checkmark outline"></IoCheckmarkOutline>
                       </div>
                     </td>
                   </tr>
@@ -799,47 +749,42 @@ export default function Home() {
                     </td>
                     <td className="border-l border-t border-gray-200">
                       <div className="w-130 text-brand-500 mx-auto text-[22px]">
-                        <IonIcon
-                          icon={checkmarkOutline}
+                        <IoCheckmarkOutline
                           role="img"
                           className="md hydrated"
-                          aria-label="checkmark outline"></IonIcon>
+                          aria-label="checkmark outline"></IoCheckmarkOutline>
                       </div>
                     </td>
                     <td className="border-l border-t border-gray-200">
                       <div className="w-130 text-brand-500 mx-auto text-[22px]">
-                        <IonIcon
-                          icon={checkmarkOutline}
+                        <IoCheckmarkOutline
                           role="img"
                           className="md hydrated"
-                          aria-label="checkmark outline"></IonIcon>
+                          aria-label="checkmark outline"></IoCheckmarkOutline>
                       </div>
                     </td>
                     <td className="border-l border-t border-gray-200">
                       <div className="w-130 text-brand-500 mx-auto text-[22px]">
-                        <IonIcon
-                          icon={checkmarkOutline}
+                        <IoCheckmarkOutline
                           role="img"
                           className="md hydrated"
-                          aria-label="checkmark outline"></IonIcon>
+                          aria-label="checkmark outline"></IoCheckmarkOutline>
                       </div>
                     </td>
                     <td className="border-l border-t border-gray-200">
                       <div className="w-130 text-brand-500 mx-auto text-[22px]">
-                        <IonIcon
-                          icon={checkmarkOutline}
+                        <IoCheckmarkOutline
                           role="img"
                           className="md hydrated"
-                          aria-label="checkmark outline"></IonIcon>
+                          aria-label="checkmark outline"></IoCheckmarkOutline>
                       </div>
                     </td>
                     <td className="border-l border-t border-gray-200">
                       <div className="w-130 text-brand-500 mx-auto text-[22px]">
-                        <IonIcon
-                          icon={checkmarkOutline}
+                        <IoCheckmarkOutline
                           role="img"
                           className="md hydrated"
-                          aria-label="checkmark outline"></IonIcon>
+                          aria-label="checkmark outline"></IoCheckmarkOutline>
                       </div>
                     </td>
                   </tr>
@@ -852,47 +797,36 @@ export default function Home() {
                     </td>
                     <td className="border-l border-t border-gray-200">
                       <div className="w-130 text-brand-500 mx-auto text-[22px]">
-                        <IonIcon
-                          icon={checkmarkOutline}
+                        <IoCheckmarkOutline
                           role="img"
                           className="md hydrated"
-                          aria-label="checkmark outline"></IonIcon>
+                          aria-label="checkmark outline"></IoCheckmarkOutline>
                       </div>
                     </td>
                     <td className="border-l border-t border-gray-200">
                       <div className="w-130 text-brand-500 mx-auto text-[22px]">
-                        <IonIcon
-                          icon={checkmarkOutline}
+                        <IoCheckmarkOutline
                           role="img"
                           className="md hydrated"
-                          aria-label="checkmark outline"></IonIcon>
+                          aria-label="checkmark outline"></IoCheckmarkOutline>
                       </div>
                     </td>
                     <td className="border-l border-t border-gray-200">
                       <div className="w-130 text-brand-500 mx-auto text-[22px]">
-                        <IonIcon
-                          icon={checkmarkOutline}
+                        <IoCheckmarkOutline
                           role="img"
                           className="md hydrated"
-                          aria-label="checkmark outline"></IonIcon>
+                          aria-label="checkmark outline"></IoCheckmarkOutline>
                       </div>
                     </td>
                     <td className="border-l border-t border-gray-200">
                       <div className="w-130 mx-auto text-[22px] text-gray-500">
-                        <IonIcon
-                          icon={closeOutline}
-                          role="img"
-                          className="md hydrated"
-                          aria-label="close outline"></IonIcon>
+                        <IoCloseOutline role="img" className="md hydrated" aria-label="close outline"></IoCloseOutline>
                       </div>
                     </td>
                     <td className="border-l border-t border-gray-200">
                       <div className="w-130 mx-auto text-[22px] text-gray-500">
-                        <IonIcon
-                          icon={closeOutline}
-                          role="img"
-                          className="md hydrated"
-                          aria-label="close outline"></IonIcon>
+                        <IoCloseOutline role="img" className="md hydrated" aria-label="close outline"></IoCloseOutline>
                       </div>
                     </td>
                   </tr>
@@ -905,47 +839,33 @@ export default function Home() {
                     </td>
                     <td className="border-l border-t border-gray-200">
                       <div className="w-130 text-brand-500 mx-auto text-[22px]">
-                        <IonIcon
-                          icon={checkmarkOutline}
+                        <IoCheckmarkOutline
                           role="img"
                           className="md hydrated"
-                          aria-label="checkmark outline"></IonIcon>
+                          aria-label="checkmark outline"></IoCheckmarkOutline>
                       </div>
                     </td>
                     <td className="border-l border-t border-gray-200">
                       <div className="w-130 text-brand-500 mx-auto text-[22px]">
-                        <IonIcon
-                          icon={checkmarkOutline}
+                        <IoCheckmarkOutline
                           role="img"
                           className="md hydrated"
-                          aria-label="checkmark outline"></IonIcon>
+                          aria-label="checkmark outline"></IoCheckmarkOutline>
                       </div>
                     </td>
                     <td className="border-l border-t border-gray-200">
                       <div className="w-130 mx-auto text-[22px] text-gray-500">
-                        <IonIcon
-                          icon={closeOutline}
-                          role="img"
-                          className="md hydrated"
-                          aria-label="close outline"></IonIcon>
+                        <IoCloseOutline role="img" className="md hydrated" aria-label="close outline"></IoCloseOutline>
                       </div>
                     </td>
                     <td className="border-l border-t border-gray-200">
                       <div className="w-130 mx-auto text-[22px] text-gray-500">
-                        <IonIcon
-                          icon={closeOutline}
-                          role="img"
-                          className="md hydrated"
-                          aria-label="close outline"></IonIcon>
+                        <IoCloseOutline role="img" className="md hydrated" aria-label="close outline"></IoCloseOutline>
                       </div>
                     </td>
                     <td className="border-l border-t border-gray-200">
                       <div className="w-130 mx-auto text-[22px] text-gray-500">
-                        <IonIcon
-                          icon={closeOutline}
-                          role="img"
-                          className="md hydrated"
-                          aria-label="close outline"></IonIcon>
+                        <IoCloseOutline role="img" className="md hydrated" aria-label="close outline"></IoCloseOutline>
                       </div>
                     </td>
                   </tr>
@@ -960,47 +880,39 @@ export default function Home() {
                     </td>
                     <td className="border-l border-t border-gray-200">
                       <div className="w-130 text-brand-500 mx-auto text-[22px]">
-                        <IonIcon
-                          icon={checkmarkOutline}
+                        <IoCheckmarkOutline
                           role="img"
                           className="md hydrated"
-                          aria-label="checkmark outline"></IonIcon>
+                          aria-label="checkmark outline"></IoCheckmarkOutline>
                       </div>
                     </td>
                     <td className="border-l border-t border-gray-200">
                       <div className="w-130 text-brand-500 mx-auto text-[22px]">
-                        <IonIcon
-                          icon={checkmarkOutline}
+                        <IoCheckmarkOutline
                           role="img"
                           className="md hydrated"
-                          aria-label="checkmark outline"></IonIcon>
+                          aria-label="checkmark outline"></IoCheckmarkOutline>
                       </div>
                     </td>
                     <td className="border-l border-t border-gray-200">
                       <div className="w-130 text-brand-500 mx-auto text-[22px]">
-                        <IonIcon
-                          icon={checkmarkOutline}
+                        <IoCheckmarkOutline
                           role="img"
                           className="md hydrated"
-                          aria-label="checkmark outline"></IonIcon>
+                          aria-label="checkmark outline"></IoCheckmarkOutline>
                       </div>
                     </td>
                     <td className="border-l border-t border-gray-200">
                       <div className="w-130 text-brand-500 mx-auto text-[22px]">
-                        <IonIcon
-                          icon={checkmarkOutline}
+                        <IoCheckmarkOutline
                           role="img"
                           className="md hydrated"
-                          aria-label="checkmark outline"></IonIcon>
+                          aria-label="checkmark outline"></IoCheckmarkOutline>
                       </div>
                     </td>
                     <td className="border-l border-t border-gray-200">
                       <div className="w-130 mx-auto text-[22px] text-gray-500">
-                        <IonIcon
-                          icon={closeOutline}
-                          role="img"
-                          className="md hydrated"
-                          aria-label="close outline"></IonIcon>
+                        <IoCloseOutline role="img" className="md hydrated" aria-label="close outline"></IoCloseOutline>
                       </div>
                     </td>
                   </tr>
@@ -1015,47 +927,36 @@ export default function Home() {
                     </td>
                     <td className="border-l border-t border-gray-200">
                       <div className="w-130 text-brand-500 mx-auto text-[22px]">
-                        <IonIcon
-                          icon={checkmarkOutline}
+                        <IoCheckmarkOutline
                           role="img"
                           className="md hydrated"
-                          aria-label="checkmark outline"></IonIcon>
+                          aria-label="checkmark outline"></IoCheckmarkOutline>
                       </div>
                     </td>
                     <td className="border-l border-t border-gray-200">
                       <div className="w-130 text-brand-500 mx-auto text-[22px]">
-                        <IonIcon
-                          icon={checkmarkOutline}
+                        <IoCheckmarkOutline
                           role="img"
                           className="md hydrated"
-                          aria-label="checkmark outline"></IonIcon>
+                          aria-label="checkmark outline"></IoCheckmarkOutline>
                       </div>
                     </td>
                     <td className="border-l border-t border-gray-200">
                       <div className="w-130 text-brand-500 mx-auto text-[22px]">
-                        <IonIcon
-                          icon={checkmarkOutline}
+                        <IoCheckmarkOutline
                           role="img"
                           className="md hydrated"
-                          aria-label="checkmark outline"></IonIcon>
+                          aria-label="checkmark outline"></IoCheckmarkOutline>
                       </div>
                     </td>
                     <td className="border-l border-t border-gray-200">
                       <div className="w-130 mx-auto text-[22px] text-gray-500">
-                        <IonIcon
-                          icon={closeOutline}
-                          role="img"
-                          className="md hydrated"
-                          aria-label="close outline"></IonIcon>
+                        <IoCloseOutline role="img" className="md hydrated" aria-label="close outline"></IoCloseOutline>
                       </div>
                     </td>
                     <td className="border-l border-t border-gray-200">
                       <div className="w-130 mx-auto text-[22px] text-gray-500">
-                        <IonIcon
-                          icon={closeOutline}
-                          role="img"
-                          className="md hydrated"
-                          aria-label="close outline"></IonIcon>
+                        <IoCloseOutline role="img" className="md hydrated" aria-label="close outline"></IoCloseOutline>
                       </div>
                     </td>
                   </tr>

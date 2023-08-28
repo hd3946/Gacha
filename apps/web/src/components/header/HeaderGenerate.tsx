@@ -2,29 +2,39 @@
 import useColorMode from '@/hooks/useColorMode'
 import { useTabValueStore } from '@/store/store'
 import { GenerateTab } from '@/types/taps'
-import { IonIcon } from '@ionic/react'
-import {
-  constructOutline,
-  flaskOutline,
-  moonOutline,
-  settingsOutline,
-  sparklesOutline,
-  sunnyOutline
-} from 'ionicons/icons'
 import ImageLogo from 'next/image'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
+import {
+  IoConstructOutline,
+  IoFlaskOutline,
+  IoMoonOutline,
+  IoSettingsOutline,
+  IoSparklesOutline,
+  IoSunnyOutline
+} from 'react-icons/io5'
 import { WalletButton } from '../button'
 
-export default function HeaderTest() {
+export default function Header() {
   const [colorMode, setColorMode] = useColorMode()
+  const [logo, setLogo] = useState<string>('/images/NFTArtGeneratorbyonemintblue.webp')
   const store = useTabValueStore()
 
-  const LogoImage = colorMode === 'light' ? '/images/NFTArtGeneratorbyonemintblue.webp' : '/images/logo.png'
+  useEffect(() => {
+    if (colorMode === 'light') {
+      setLogo('/images/NFTArtGeneratorbyonemintblue.webp')
+    } else {
+      setLogo('/images/logo.png')
+    }
+  }, [colorMode])
 
   return (
     <div className="hiddenScrollbar relative mx-auto flex h-full max-w-[3000px] items-center justify-between overflow-auto bg-red-200 px-2 dark:bg-gray-800 sm:px-6 lg:px-8">
       <div className="flex flex-1 items-center justify-center gap-10 sm:items-stretch sm:justify-start">
         <div className="flex flex-shrink-0 items-center">
-          <ImageLogo src={LogoImage} alt="Gacha_Logo" width={220} height={40} priority />
+          <Link href="/">
+            <ImageLogo src={logo} alt="Gacha_Logo" width={220} height={40} priority />
+          </Link>
         </div>
 
         <div className="relative z-0 flex flex-1 items-center justify-center">
@@ -32,7 +42,7 @@ export default function HeaderTest() {
             <button className="settings_btn group" onClick={() => store.setValue(GenerateTab.Settings)}>
               <span className="flex items-center justify-center gap-3 text-orange-400 group-hover:text-orange-300 group-hover:text-orange-300 group-hover:text-orange-400 dark:text-orange-300 dark:text-orange-300">
                 <span className="inline-flex items-center text-orange-400 group-hover:text-orange-300 group-hover:text-orange-300 group-hover:text-orange-400 dark:text-orange-300 dark:text-orange-300">
-                  <IonIcon icon={settingsOutline} role="img" className="hi" />
+                  <IoSettingsOutline role="img" className="hi" />
                 </span>
                 <span className="settings_span">Settings</span>
               </span>
@@ -41,7 +51,7 @@ export default function HeaderTest() {
             <button className="organize_btn group" onClick={() => store.setValue(GenerateTab.Organize)}>
               <span className="flex items-center justify-center gap-3 text-cyan-400 group-hover:text-cyan-400 group-hover:text-cyan-400 group-hover:text-cyan-400 dark:text-cyan-400 dark:text-cyan-400">
                 <span className="inline-flex items-center text-cyan-400 group-hover:text-cyan-400 group-hover:text-cyan-400 group-hover:text-cyan-400 dark:text-cyan-400 dark:text-cyan-400">
-                  <IonIcon icon={constructOutline} role="img" />
+                  <IoConstructOutline role="img" />
                 </span>
                 <span className="organize_span">Organize</span>
               </span>
@@ -52,7 +62,7 @@ export default function HeaderTest() {
             <button className="preview_btn" onClick={() => store.setValue(GenerateTab.Preview)}>
               <span className="flex items-center justify-center gap-3 text-violet-400 group-hover:text-violet-300 group-hover:text-violet-300 group-hover:text-violet-400 dark:text-violet-300 dark:text-violet-300">
                 <span className="inline-flex items-center text-violet-400 group-hover:text-violet-300 group-hover:text-violet-300 group-hover:text-violet-400 dark:text-violet-300 dark:text-violet-300">
-                  <IonIcon icon={flaskOutline} role="img" />
+                  <IoFlaskOutline role="img" />
                 </span>
                 <span className="hidden text-gray-600 group-hover:text-violet-300 dark:text-gray-400 dark:text-violet-300 dark:group-hover:text-violet-400 lg:inline">
                   Preview
@@ -65,7 +75,7 @@ export default function HeaderTest() {
             <button className="export_btn" onClick={() => store.setValue(GenerateTab.Export)}>
               <span className="flex items-center justify-center gap-3 text-teal-400 group-hover:text-teal-400 group-hover:text-teal-400 group-hover:text-teal-400 dark:text-teal-400 dark:text-teal-400">
                 <span className="inline-flex items-center text-teal-400 group-hover:text-teal-400 group-hover:text-teal-400 group-hover:text-teal-400 dark:text-teal-400 dark:text-teal-400">
-                  <IonIcon icon={sparklesOutline} role="img" />
+                  <IoSparklesOutline role="img" />
                 </span>
                 <span className="hidden text-gray-600 group-hover:text-teal-400 dark:text-gray-400 dark:text-teal-400 dark:group-hover:text-teal-400 lg:inline">
                   Export
@@ -85,12 +95,11 @@ export default function HeaderTest() {
         <div className="ml-auto flex items-center justify-end gap-2">
           <button
             className="relative inline-flex h-[36px] w-[36px] flex-shrink-0 cursor-pointer items-center justify-center rounded-md bg-white text-gray-600 text-gray-900 transition-colors duration-200 ease-in-out hover:bg-gray-200 focus:outline-none dark:bg-slate-800 dark:text-gray-400 dark:hover:bg-slate-700"
-            id="headlessui-switch-1"
             role="switch"
             type="button"
             aria-checked="true"
             onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}>
-            {colorMode === 'light' ? <IonIcon icon={sunnyOutline} /> : <IonIcon icon={moonOutline} />}
+            {colorMode === 'light' ? <IoSunnyOutline /> : <IoMoonOutline />}
           </button>
           <WalletButton />
         </div>

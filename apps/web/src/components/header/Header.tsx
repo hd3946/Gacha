@@ -40,7 +40,15 @@ export default function Header() {
   }, [top])
 
   const [colorMode] = useColorMode()
-  const LogoImage = colorMode === 'light' ? '/images/NFTArtGeneratorbyonemintblue.webp' : '/images/logo.png'
+  const [logo, setLogo] = useState<string>('/images/NFTArtGeneratorbyonemintblue.webp')
+  useEffect(() => {
+    if (colorMode === 'light') {
+      setLogo('/images/NFTArtGeneratorbyonemintblue.webp')
+    } else {
+      setLogo('/images/logo.png')
+    }
+  }, [colorMode])
+
   return (
     <header
       className={`z-30 w-full bg-slate-900 transition duration-300 ease-in-out ${
@@ -51,7 +59,9 @@ export default function Header() {
           <div className="mr-4 shrink-0">
             <div className="mb-2">
               <div className="flex flex-shrink-0 items-center">
-                <ImageLogo src={LogoImage} alt="Gacha_Logo" width={330} height={60} priority />
+                <Link href="/">
+                  <ImageLogo src={logo} alt="Gacha_Logo" width={330} height={60} priority />
+                </Link>
               </div>
             </div>
           </div>
