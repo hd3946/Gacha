@@ -58,7 +58,7 @@ export default function Header() {
           <nav className="hidden md:flex md:grow">
             <ul className="flex grow flex-wrap items-center justify-end">
               <li className="relative" onMouseOver={() => setDisplay('0')} onMouseOut={() => setDisplay('')}>
-                <div className="text-white mr-5 inline-flex items-center">
+                <div className="mr-5 inline-flex items-center text-white">
                   <span className="mr-1">Products</span>
                   <IonIcon icon={chevronDownOutline} aria-hidden="true" role="img" className="md hydrated"></IonIcon>
                 </div>
@@ -89,7 +89,7 @@ export default function Header() {
                           </div>
                         </a>
                         <a
-                          href="https://nft-generator.art/app"
+                          href="/"
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-[#1c5fe5] text-white sm:h-12 sm:w-12">
                             <div className="h-4 w-4">
@@ -108,7 +108,7 @@ export default function Header() {
                           </div>
                         </a>
                         <a
-                          href="/account"
+                          href="/"
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-[#1c5fe5] text-white sm:h-12 sm:w-12">
                             <div className="h-4 w-4">
@@ -127,7 +127,7 @@ export default function Header() {
                           </div>
                         </a>
                         <a
-                          href="/dynamic-nfts"
+                          href="/"
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-[#1c5fe5] text-white sm:h-12 sm:w-12">
                             <div className="h-4 w-4">
@@ -152,7 +152,7 @@ export default function Header() {
                           </div>
                         </a>
                         <a
-                          href="/trait-marketplace"
+                          href="/"
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-[#1c5fe5] text-white sm:h-12 sm:w-12">
                             <div className="h-4 w-4">
@@ -177,7 +177,7 @@ export default function Header() {
                           </div>
                         </a>
                         <a
-                          href="/access-list"
+                          href="/"
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-[#1c5fe5] text-white sm:h-12 sm:w-12">
                             <div className="h-4 w-4">
@@ -197,7 +197,7 @@ export default function Header() {
                           </div>
                         </a>
                         <a
-                          href="/ai"
+                          href="/"
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-[#1c5fe5] text-white sm:h-12 sm:w-12">
                             <div className="h-4 w-4">
@@ -217,7 +217,7 @@ export default function Header() {
                           </div>
                         </a>
                         <a
-                          href="/staking"
+                          href="/"
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-[#1c5fe5] text-white sm:h-12 sm:w-12">
                             <div className="h-4 w-4">
@@ -242,7 +242,7 @@ export default function Header() {
                           </div>
                         </a>
                         <a
-                          href="/agency"
+                          href="/"
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-[#1c5fe5] text-white sm:h-12 sm:w-12">
                             <div className="h-4 w-4">
@@ -278,7 +278,7 @@ export default function Header() {
                         </div>
                         <div className="ml-auto mt-4">
                           <a
-                            href="/enterprise"
+                            href="/"
                             className="inline-flex items-center rounded-full border border-transparent bg-[#1c5fe5] px-3.5 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-indigo-700 hover:text-white hover:ring-blue-100 focus:outline-none focus:ring-2 focus:ring-offset-2">
                             Learn More
                           </a>
@@ -291,7 +291,7 @@ export default function Header() {
                 )}
               </li>
               <li className="relative" onMouseOver={() => setDisplay('1')} onMouseOut={() => setDisplay('')}>
-                <div className="text-white mr-5 inline-flex items-center">
+                <div className="mr-5 inline-flex items-center text-white">
                   <span className="mr-1">Resources</span>
                   <IonIcon icon={chevronDownOutline} aria-hidden="true" role="img" className="md hydrated"></IonIcon>
                 </div>
@@ -303,7 +303,7 @@ export default function Header() {
                     <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                       <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                         <a
-                          href="https://cdn.nft-generator.art/images/assets/One%20Mint%20Presentation.pdf"
+                          href="/"
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="h-4 w-4 text-black">
                             <IonIcon
@@ -317,7 +317,7 @@ export default function Header() {
                           </div>
                         </a>
                         <a
-                          href="https://cdn.nft-generator.art/images%2Fassets%2Fdynamic-nft%2Fdeck%2FDynamic%20NFTs%20One%20Mint%20Presentation.pdf"
+                          href="/"
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="h-4 w-4 text-black">
                             <IonIcon
@@ -331,7 +331,7 @@ export default function Header() {
                           </div>
                         </a>
                         <a
-                          href="/blog"
+                          href="/"
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="h-4 w-4 text-black">
                             <IonIcon
@@ -345,7 +345,7 @@ export default function Header() {
                           </div>
                         </a>
                         <a
-                          href="/enterprise"
+                          href="/"
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="h-4 w-4 text-black">
                             <IonIcon
@@ -359,7 +359,7 @@ export default function Header() {
                           </div>
                         </a>
                         <a
-                          href="https://help.nft-generator.art"
+                          href="/"
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="h-4 w-4 text-black">
                             <IonIcon
@@ -373,7 +373,7 @@ export default function Header() {
                           </div>
                         </a>
                         <a
-                          href="/about"
+                          href="/"
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="h-4 w-4 text-black">
                             <IonIcon
@@ -387,7 +387,7 @@ export default function Header() {
                           </div>
                         </a>
                         <a
-                          href="/contact"
+                          href="/"
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="h-4 w-4 text-black">
                             <IonIcon
@@ -410,7 +410,7 @@ export default function Header() {
               <li>
                 <Link
                   href="/pricing"
-                  className="flex items-center mr-5 py-3 font-medium text-gray-100 transition duration-150 ease-in-out hover:text-gray-400">
+                  className="mr-5 flex items-center py-3 font-medium text-gray-100 transition duration-150 ease-in-out hover:text-gray-400">
                   Pricing
                 </Link>
               </li>

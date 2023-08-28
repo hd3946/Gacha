@@ -253,7 +253,7 @@ const Settings = () => {
                   <div>
                     <a
                       className="flex w-full items-center justify-center gap-2 rounded-md bg-slate-700 bg-opacity-10 px-4 py-2 text-center text-sm font-medium text-gray-600 shadow-sm hover:bg-opacity-20 focus:outline-none dark:bg-opacity-20 dark:text-white dark:hover:bg-opacity-30"
-                      href="/account">
+                      href="/generate">
                       <span className="inline-flex items-center">
                         <IonIcon
                           icon={addOutline}
