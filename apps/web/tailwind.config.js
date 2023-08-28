@@ -116,12 +116,22 @@ module.exports = {
         98: '.98'
       },
       animation: {
-        float: 'float 3s ease-in-out infinite'
+        float: 'float 3s ease-in-out infinite',
+        appearRight: 'appearRight 120s linear 0s infinite',
+        appearLeft: 'appearLeft  120s linear 0s infinite'
       },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-5%)' }
+        },
+        appearRight: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' }
+        },
+        appearLeft: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(50%)' }
         }
       },
       zIndex: {

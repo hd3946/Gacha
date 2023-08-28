@@ -1,13 +1,16 @@
 import Link from 'next/link'
+import CardList from './card/CardList'
+import Catalog from './catalog/Catalog'
+import CatalogTitle from './catalog/CatalogTitle'
 
 export default function Main() {
   return (
-    <div className="relative flex items-center justify-center overflow-hidden bg-slate-900 pt-36 text-white">
-      <section className="px-3">
+    <div className="relative flex flex-col items-center justify-center overflow-hidden">
+      <section className="bg-slate-900 px-3 pt-36 text-white">
         <div className="mb-5 ">
           <h1 className="flex justify-center text-4xl font-bold">No Code NFT collection generator</h1>
           <p className="flex justify-center">
-            The most powerfull NFT generation tool trusted by the world's largest NFT Collections
+            The most powerful NFT generation tool trusted by the world's largest NFT Collections
           </p>
         </div>
         <div>
@@ -64,6 +67,47 @@ export default function Main() {
             <h6 className="jsx-6b6d74aff214a72b">Smart Contracts Deployed</h6>
             <h3 className="jsx-6b6d74aff214a72b">8,000 +</h3>
           </div>
+        </div>
+      </section>
+      <div className="bg-dark bg-slate-900 pb-4 pt-2 text-black">
+        <div className="container">
+          <div className="pb-6 pt-2 "></div>
+        </div>
+        <div className="py-4">
+          <div className="border-top border-bottom border-dark overflow-hidden pb-1 pt-2">
+            <div
+              // style={{ animation: '120s linear 0s, infinite normal none running ' }}
+              className="inline-block overflow-hidden whitespace-nowrap">
+              <div className="animate-appearLeft display-6 inline-block">
+                <CardList />
+              </div>
+              <div className="animate-appearLeft display-6 inline-block">
+                <CardList />
+              </div>
+            </div>
+          </div>
+          <div className="border-top border-bottom border-dark overflow-hidden pb-1 pt-2">
+            <div
+              // style={{ animation: '120s linear 0s, infinite normal none running' }}
+              className="inline-block overflow-hidden whitespace-nowrap">
+              <div className="animate-appearRight display-6 inline-block">
+                <CardList />
+              </div>
+              <div className="animate-appearRight display-6 inline-block">
+                <CardList />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section
+        id="secondary-features"
+        aria-label="Features for simplifying everyday business tasks"
+        className="pb-14 pt-20 sm:pb-20 sm:pt-32 lg:pb-32">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <CatalogTitle />
+          <Catalog />
         </div>
       </section>
     </div>
