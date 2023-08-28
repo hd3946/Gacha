@@ -1,6 +1,5 @@
 import SettingValuesStore from '@/store/settingValuesStore'
-import { IonIcon } from '@ionic/react'
-import { addOutline, folderOpenOutline, helpCircleOutline, trashOutline } from 'ionicons/icons'
+import { IoAddOutline, IoFolderOpenOutline, IoHelpCircleOutline, IoTrashOutline } from 'react-icons/io5'
 import { GetServerSideProps } from 'next'
 
 const Settings = () => {
@@ -191,12 +190,10 @@ const Settings = () => {
                       <label htmlFor="artwork-input">
                         <div className="jsx-af28e199db5dfdf2 ">
                           <div className="jsx-af28e199db5dfdf2 flex flex-col items-center justify-center rounded-md">
-                            <IonIcon
-                              size="large"
-                              icon={folderOpenOutline}
+                            <IoFolderOpenOutline
                               role="img"
                               className="md icon-large hydrated"
-                              aria-label="folder open outline"></IonIcon>
+                              aria-label="folder open outline"/>
                           </div>
                           <div className="jsx-af28e199db5dfdf2 flex items-start justify-center gap-1 text-sm">
                             <span className="jsx-af28e199db5dfdf2">Drop your assets </span>
@@ -204,11 +201,10 @@ const Settings = () => {
                               <span
                                 data-tooltip="Drop your folder containing all the layers and images."
                                 className="jsx-cb040b4b4d36d2c9 has-tooltip-arrow has-tooltip-undefined has-tooltip-undefined has-tooltip-multiline">
-                                <IonIcon
-                                  icon={helpCircleOutline}
+                                <IoHelpCircleOutline
                                   role="img"
                                   className="md hydrated"
-                                  aria-label="help circle outline"></IonIcon>
+                                  aria-label="help circle outline"/>
                               </span>
                             </div>
                           </div>
@@ -241,11 +237,10 @@ const Settings = () => {
                   <div>
                     <button className="flex w-full items-center justify-center gap-2 rounded-md bg-slate-700 bg-opacity-10 px-4 py-2 text-center text-sm font-medium text-gray-600 shadow-sm hover:bg-opacity-20 hover:text-red-400 focus:outline-none dark:bg-opacity-20 dark:text-white dark:hover:bg-opacity-30 dark:hover:text-red-400">
                       <span className="inline-flex items-center">
-                        <IonIcon
-                          icon={trashOutline}
+                        <IoTrashOutline
                           role="img"
                           className="md hydrated"
-                          aria-label="trash outline"></IonIcon>
+                          aria-label="trash outline"/>
                       </span>
                       <span>Reset collection</span>
                     </button>
@@ -255,11 +250,10 @@ const Settings = () => {
                       className="flex w-full items-center justify-center gap-2 rounded-md bg-slate-700 bg-opacity-10 px-4 py-2 text-center text-sm font-medium text-gray-600 shadow-sm hover:bg-opacity-20 focus:outline-none dark:bg-opacity-20 dark:text-white dark:hover:bg-opacity-30"
                       href="/generate">
                       <span className="inline-flex items-center">
-                        <IonIcon
-                          icon={addOutline}
+                        <IoAddOutline
                           role="img"
                           className="md hydrated"
-                          aria-label="add outline"></IonIcon>
+                          aria-label="add outline"/>
                       </span>
                       <span>Start a new collection</span>
                     </a>
