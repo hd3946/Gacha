@@ -1,6 +1,5 @@
 import SettingValuesStore from '@/store/settingValuesStore'
 import { IoAddOutline, IoFolderOpenOutline, IoHelpCircleOutline, IoTrashOutline } from 'react-icons/io5'
-import { GetServerSideProps } from 'next'
 
 const Settings = () => {
   const {
@@ -11,13 +10,15 @@ const Settings = () => {
     exportFormat,
     blockchain,
     artwork,
+    artworkArray,
     setCollectionName,
     setCollectionDescription,
     setCollectionSize,
     setNameOfEachNFT,
     setExportFormat,
     setBlockchain,
-    setArtwork
+    setArtwork,
+    setArtworkArray
   } = SettingValuesStore()
 
   const onChangeCollectionName = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,6 +39,40 @@ const Settings = () => {
   const onChangeBlockchain = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setBlockchain(event.target.value)
   }
+  const onChangeArtwork = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files) {
+      setArtwork(event.target.files)
+      const files: (File | null)[] = new Array<File>()
+      for (let i = 0; i < event.target.files?.length; i++) {
+        files[i] = event.target.files.item(i)
+        console.log(files[i])
+      }
+      setArtworkArray(files)
+      console.log('yaho')
+    }
+  }
+  // const onSubmit = () => {
+  //   const formData = new FormData()
+  //   formData.append('file', artwork.items(0))
+  //   const value = [
+  //     {
+  //       value1: 'test1',
+  //       value2: 'test2'
+  //     }
+  //   ]
+  //   formData.append('fileInfo', value)
+  //   const blob = new Blob([JSON.stringify()], { type: 'application/json' })
+  //   formData.append('data', blob)
+  //   await axios({
+  //     method: 'POST',
+  //     url: 'http://test.api',
+  //     mode: 'cors',
+  //     headers: {
+  //       'Content-Type': 'multipart/form-data'
+  //     },
+  //     data: formData
+  //   })
+  // }
   return (
     <section className="bg-gradient-to-b from-gray-100 to-white">
       <div className="mx-auto grid min-h-screen max-w-7xl grid-cols-4 gap-2 overflow-hidden px-3 py-12 sm:px-6 md:grid-cols-8 xl:gap-20">
@@ -186,6 +221,14 @@ const Settings = () => {
                         type="file"
                         className="jsx-af28e199db5dfdf2 hidden"
                         id="artwork-input"
+                        onChange={onChangeArtwork}
+                        ref={(node) => {
+                          if (node) {
+                            ;['webkitdirectory', 'directory', 'mozdirectory'].forEach((attr) => {
+                              node.setAttribute(attr, '')
+                            })
+                          }
+                        }}
                       />
                       <label htmlFor="artwork-input">
                         <div className="jsx-af28e199db5dfdf2 ">
@@ -193,7 +236,8 @@ const Settings = () => {
                             <IoFolderOpenOutline
                               role="img"
                               className="md icon-large hydrated"
-                              aria-label="folder open outline"/>
+                              aria-label="folder open outline"
+                            />
                           </div>
                           <div className="jsx-af28e199db5dfdf2 flex items-start justify-center gap-1 text-sm">
                             <span className="jsx-af28e199db5dfdf2">Drop your assets </span>
@@ -204,7 +248,8 @@ const Settings = () => {
                                 <IoHelpCircleOutline
                                   role="img"
                                   className="md hydrated"
-                                  aria-label="help circle outline"/>
+                                  aria-label="help circle outline"
+                                />
                               </span>
                             </div>
                           </div>
@@ -237,10 +282,7 @@ const Settings = () => {
                   <div>
                     <button className="flex w-full items-center justify-center gap-2 rounded-md bg-slate-700 bg-opacity-10 px-4 py-2 text-center text-sm font-medium text-gray-600 shadow-sm hover:bg-opacity-20 hover:text-red-400 focus:outline-none dark:bg-opacity-20 dark:text-white dark:hover:bg-opacity-30 dark:hover:text-red-400">
                       <span className="inline-flex items-center">
-                        <IoTrashOutline
-                          role="img"
-                          className="md hydrated"
-                          aria-label="trash outline"/>
+                        <IoTrashOutline role="img" className="md hydrated" aria-label="trash outline" />
                       </span>
                       <span>Reset collection</span>
                     </button>
@@ -250,10 +292,7 @@ const Settings = () => {
                       className="flex w-full items-center justify-center gap-2 rounded-md bg-slate-700 bg-opacity-10 px-4 py-2 text-center text-sm font-medium text-gray-600 shadow-sm hover:bg-opacity-20 focus:outline-none dark:bg-opacity-20 dark:text-white dark:hover:bg-opacity-30"
                       href="/generate">
                       <span className="inline-flex items-center">
-                        <IoAddOutline
-                          role="img"
-                          className="md hydrated"
-                          aria-label="add outline"/>
+                        <IoAddOutline role="img" className="md hydrated" aria-label="add outline" />
                       </span>
                       <span>Start a new collection</span>
                     </a>
