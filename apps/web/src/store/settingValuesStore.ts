@@ -8,6 +8,7 @@ interface SettingValues {
   exportFormat: string
   blockchain: string
   artwork: any
+  artworkArray: Array<File | null>
 
   setCollectionName: (val: string) => void
   setCollectionDescription: (val: string) => void
@@ -16,6 +17,7 @@ interface SettingValues {
   setExportFormat: (val: string) => void
   setBlockchain: (val: string) => void
   setArtwork: (val: any) => void
+  setArtworkArray: (val: Array<File | null>) => void
 }
 
 const SettingValuesStore = create<SettingValues>((set) => ({
@@ -26,6 +28,7 @@ const SettingValuesStore = create<SettingValues>((set) => ({
   exportFormat: 'webp',
   blockchain: '1',
   artwork: '',
+  artworkArray: [],
 
   setCollectionName: (val) => {
     set((state) => ({ collectionName: val }))
@@ -47,7 +50,10 @@ const SettingValuesStore = create<SettingValues>((set) => ({
   },
   setArtwork: (val) => {
     set((state) => ({ artwork: val }))
+  },
+  setArtworkArray: (val) => {
+    set((state) => ({ artworkArray: val }))
   }
 }))
 
-export default SettingValuesStore;
+export default SettingValuesStore
