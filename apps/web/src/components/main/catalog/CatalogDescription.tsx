@@ -1,6 +1,10 @@
+import { useState } from 'react'
+
 type Props = { id: number; title: string; subTitle: string; description: string; clickHandler: (id: number) => void }
 
 export default function CatalogDescription({ id, title, subTitle, description, clickHandler }: Props) {
+  const [selectedId, setSelectedId] = useState(99)
+
   return (
     <div>
       <div className="mx-3 max-w-2xl" onClick={() => clickHandler(id)}>
