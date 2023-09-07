@@ -47,6 +47,7 @@ const Organize = () => {
                outline-none focus:ring-0 focus:placeholder:text-white/75 dark:placeholder-gray-400 dark:focus:text-white"
                 placeholder="New layer name"
                 onChange={(e) => setInputText(e.target.value)}
+                value={inputText}
               />
               <button
                 type="submit"
@@ -76,7 +77,7 @@ const Organize = () => {
             <div className="hiddenScrollbar flex h-10 max-w-full items-center gap-4 overflow-auto whitespace-nowrap px-2">
               <div className="flex items-center gap-4">
                 <div className="relative inline-block h-[36px] min-w-[10px]">
-                  <span className="invisible h-full p-0.5 text-2xl font-semibold">Background</span>
+                  <span className="invisible h-full p-0.5 text-2xl font-semibold">{inputText}</span>
                   <input
                     type="text"
                     className="absolute inset-0 h-full w-full rounded-sm border-none bg-transparent p-0.5 text-2xl 
@@ -104,14 +105,18 @@ const Organize = () => {
                   </span>
                 </button> */}
 
-                <button className="my-auto inline-block rounded-full bg-cyan-500/20 px-3 py-1 text-xs  font-medium leading-5 text-cyan-500 empty:hidden hover:bg-cyan-500/30 dark:hover:text-cyan-300">
+                <button
+                  className="my-auto inline-block rounded-full bg-cyan-500/20 px-3 py-1 text-xs  font-medium leading-5
+                 text-cyan-500 empty:hidden hover:bg-cyan-500/30 dark:hover:text-cyan-300">
                   <span className="flex items-center gap-0.5">
                     <span className="-100 flex h-2 w-2 items-center justify-center rounded-full bg-cyan-900/20 dark:bg-cyan-900"></span>
                     <span className="ml-1">Advanced</span>
                   </span>
                 </button>
 
-                <button className="my-auto inline-block rounded-full bg-cyan-500/20 px-3 py-1 text-xs  font-medium leading-5 text-cyan-500 empty:hidden hover:bg-cyan-500/30 dark:hover:text-cyan-300">
+                <button
+                  className="my-auto inline-block rounded-full bg-cyan-500/20 px-3 py-1 text-xs  font-medium leading-5
+                 text-cyan-500 empty:hidden hover:bg-cyan-500/30 dark:hover:text-cyan-300">
                   <span className="flex items-center gap-1">
                     <span className="-100 flex h-2 w-2 items-center justify-center rounded-full bg-cyan-900/20 dark:bg-cyan-900"></span>
                     <span>Quick Preview</span>
