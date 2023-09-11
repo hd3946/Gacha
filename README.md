@@ -10,11 +10,19 @@ This project uses computer algorithms to turn randomly generated digital art int
 완료 예상 시점: 5 months 후 (9월말, 추석 목표)
 
 # 🥇기능 개발
-
-[ ] Web3 지갑 연결 </br>
+[✅] Main 화면 디자인 구현 </br>
+[✅] Account 화면 디자인 구현 </br>
+[✅] drag 기능 구현 </br>
+[✅] Web3 지갑 연결 </br>
+  - [✅] MetaMask </br>
+  - [ ] Clip </br>
+  - [ ] Kaikas </br>
+  - [ ] Phantom </br>
 [ ] 트위터 API 로그인 Auth연동 </br>
-[ ] DB 연결 </br>
-[ ] DB 구성 </br>
+[ ] 클레이튼 컨트랙트 NFT구현 </br>
+[ ] hashLipEngine 라이브러리 연결 </br>
+[✅] DB 연결 </br>
+[✅] DB 구성 </br>
 
 # test기능
 
