@@ -1,31 +1,36 @@
 'use client'
 import { useLayerStore } from '@/store/layerStore'
 import { useUploadBoxOpen } from '@/store/store'
+import { useEffect, useState } from 'react'
 import { IoAddOutline } from 'react-icons/io5'
 import AddFileButton from '../button/organize/AddFilesButton'
-
-import { useState } from 'react'
 import LayerMetadataButton from '../button/organize/LayerMetadataButton'
-import LayerButton from './organize/LayerButton'
+import { handleSubmit } from '../modal/AddNewLayerModal'
+import DragDrop from './organize/DragDrop'
 import ImageUploadBox from './organize/UploadBox'
 
 const Organize = () => {
+  const [enabled, setEnabled] = useState(false)
   const [inputText, setInputText] = useState('')
-  const { addLayer } = useLayerStore()
-
-  const { layers } = useLayerStore()
+  const { layers, addLayer } = useLayerStore()
   const { open: Open } = useUploadBoxOpen()
 
-  const handleSubmit = (event: { preventDefault: () => void }) => {
-    event.preventDefault()
-    if (!inputText) return
-    const newLayer = {
-      layerName: inputText,
-      layerImageList: [],
-      layerRarity: 100
+  useEffect(() => {
+    const animation = requestAnimationFrame(() => setEnabled(true))
+
+    return () => {
+      cancelAnimationFrame(animation)
+      setEnabled(false)
     }
+  }, [])
+
+  if (!enabled) {
+    return null
+  }
+  const onSubmit = (event: { preventDefault: () => void }) => {
+    event.preventDefault()
+    handleSubmit(inputText, layers?.length as number, addLayer)
     setInputText('')
-    addLayer(newLayer)
   }
 
   return (
@@ -37,7 +42,7 @@ const Organize = () => {
           <div
             className="relative flex h-10 w-full items-center rounded-lg bg-white ring-1 ring-slate-200 hover:ring-slate-300
            dark:bg-slate-700/40 dark:ring-inset dark:ring-slate-500 dark:ring-white/5">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={onSubmit}>
               <input
                 required
                 type="text"
@@ -53,7 +58,7 @@ const Organize = () => {
                 type="submit"
                 className="border-1 absolute bottom-[5px] right-[5px] top-[5px] rounded-lg border border-slate-200/10
              px-2 py-1 text-sm text-cyan-400 hover:bg-slate-700/10 dark:hover:text-violet-200"
-                onClick={handleSubmit}>
+                onClick={onSubmit}>
                 <div className="relative flex items-center gap-0.5">
                   <span className="inline-flex items-center">
                     <IoAddOutline role="img" className="hi" />
@@ -64,11 +69,7 @@ const Organize = () => {
             </form>
           </div>
           {/* 아래 */}
-          <div className="hiddenScrollbar h-fit overflow-y-auto px-0.5 md:h-[calc(100vh-175px)]">
-            {layers.map((layer, index) => (
-              <LayerButton key={index} layer={layer} />
-            ))}
-          </div>
+          <DragDrop />
         </aside>
 
         <main className="grow overflow-hidden">
@@ -82,7 +83,7 @@ const Organize = () => {
                     type="text"
                     className="absolute inset-0 h-full w-full rounded-sm border-none bg-transparent p-0.5 text-2xl 
                     font-semibold text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/30"
-                    value={inputText}
+                    defaultValue={inputText}
                   />
                 </div>
 
