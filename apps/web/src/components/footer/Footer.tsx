@@ -6,9 +6,9 @@ export default function Footer() {
 
   return (
     <footer className="bg-slate-900">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="py-18 grid grid-cols-10 gap-8 border-t border-gray-200 md:py-20">
-          <div className="sm:col-span-2 md:col-span-2 lg:col-span-2">
+      <div className="mx-auto max-w-screen-2xl px-4 sm:px-6">
+        <div className="py-18 grid grid-cols-2 lg:grid-cols-10 gap-8 border-t border-gray-200 md:py-20">
+          <div className="col-span-2 md:col-span-2 lg:col-span-2">
             <div className="mb-2">
               <div className="flex flex-shrink-0 items-center">
                 <ImageLogo src={LogoImage2} alt="Gacha_Logo" width={220} height={40} priority />
@@ -56,7 +56,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="sm:col-span-2 md:col-span-2 lg:col-span-2">
+          <div className="col-span-2 md:col-span-2 lg:col-span-2">
             <h6 className="mb-2 font-medium text-gray-100">Products</h6>
             <ul className="text-sm">
               <li className="mb-2">
@@ -97,7 +97,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="sm:col-span-2 md:col-span-2 lg:col-span-2">
+          <div className="col-span-2 md:col-span-2 lg:col-span-2">
             <h6 className="mb-2 font-medium text-gray-100">Resources</h6>
             <ul className="text-sm">
               <li className="mb-2">
@@ -123,7 +123,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="sm:col-span-2 md:col-span-2 lg:col-span-2">
+          <div className="col-span-2 md:col-span-2 lg:col-span-2">
             <h6 className="mb-2 font-medium text-gray-100">Legal</h6>
             <ul className="text-sm">
               <li className="mb-2">
@@ -149,7 +149,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="sm:col-span-2 md:col-span-2 lg:col-span-2">
+          <div className="col-span-2 md:col-span-2 lg:col-span-2">
             <h6 className="mb-2 font-medium text-gray-100">Social Media</h6>
             <ul className="text-sm">
               <li className="mb-2">

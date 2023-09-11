@@ -1,3 +1,6 @@
+import Catalog from '../catalog/Catalog'
+import CatalogTitle from '../catalog/CatalogTitle'
+
 const Fifth = () => {
   return (
     <section
@@ -5,7 +8,9 @@ const Fifth = () => {
       aria-label="Features for simplifying everyday business tasks"
       className="pb-14 pt-20 sm:pb-20 sm:pt-32 lg:pb-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl md:text-center">
+        <CatalogTitle />
+        <Catalog />
+        {/* <div className="mx-auto max-w-2xl md:text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:w-full lg:text-center">
             Attention to Details
           </h2>
@@ -275,7 +280,7 @@ const Fifth = () => {
             </div>
             <div className="rounded-4xl pointer-events-none absolute inset-0 ring-1 ring-inset ring-slate-900/10"></div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )
