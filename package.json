@@ -25,6 +25,7 @@
     "apps/**"
   ],
   "devDependencies": {
+    "@types/multer": "^1.4.7",
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
     "@yarnpkg/sdks": "^3.0.0-rc.45",

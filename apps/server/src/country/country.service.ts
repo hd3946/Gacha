@@ -11,8 +11,9 @@ export class CountryService {
     @InjectModel(Country.name) private readonly countryModel: Model<Country>,
   ) {}
 
-  create(createCountryDto: CreateCountryDto) {
-    return 'This action adds a new country';
+  async create(createCountryDto: CreateCountryDto): Promise<Country> {
+    const createdCountry = await this.countryModel.create(createCountryDto);
+    return createdCountry;
   }
 
   async findAll(): Promise<Country[]> {
