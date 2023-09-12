@@ -2,23 +2,30 @@ import { useLayerStore } from '@/store/layerStore'
 import { SetStateAction, useState } from 'react'
 import { IoCloseOutline } from 'react-icons/io5'
 
+export const handleSubmit = (inputText: string, layersIndex: number, addLayer: any, onClose?: () => void): void => {
+  if (inputText === '') return
+  const newLayer = {
+    id: `${layersIndex}`,
+    name: inputText,
+    imageList: [],
+    rarity: 100,
+    isShow: true
+  }
+  addLayer(newLayer)
+  if (onClose) onClose()
+}
+
 const AddNewLayerModal = ({ onClose }: { onClose: any }) => {
   const [inputText, setInputText] = useState('')
-  const { addLayer } = useLayerStore()
+  const { layers, addLayer } = useLayerStore()
 
   const handleInputChange = (event: { target: { value: SetStateAction<string> } }) => {
     setInputText(event.target.value)
   }
 
-  const handleSubmit = (event: { preventDefault: () => void }) => {
+  const onSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault()
-    const newLayer = {
-      layerName: inputText,
-      layerImageList: [],
-      layerRarity: 100
-    }
-    addLayer(newLayer)
-    onClose()
+    handleSubmit(inputText, layers?.length as number, addLayer, onClose)
   }
 
   return (
@@ -48,13 +55,13 @@ const AddNewLayerModal = ({ onClose }: { onClose: any }) => {
           border-gray-300 text-black shadow-sm placeholder:text-gray-400 sm:text-sm"
           placeholder="Background"
           onChange={handleInputChange}
-          value={inputText}
+          defaultValue={inputText}
         />
       </div>
       <div className="flex justify-end">
         <button
           type="submit"
-          onClick={handleSubmit}
+          onClick={onSubmit}
           className="hover:bg-brand-700 focus:ring-brand-500 disabled:hover:bg-brand-500 inline-flex w-full justify-center rounded-md 
           border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white shadow-sm 
           focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto">

@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import CatalogDescription from './CatalogDescription'
+import style from './SlideAnimation.module.css'
 
 export default function Catalog() {
   const catalogList = [
@@ -49,19 +50,25 @@ export default function Catalog() {
       </div>
 
       <div className="relative mt-10 flex overflow-hidden pb-10">
-        <div className="relative mt-10 flex pb-10" style={{ transform: `translate3d(-${700 * carouselId}px, 0, 0)` }}>
+        <div
+          className={`relative mt-10 flex pb-10 ${style.smoothlySlide}`}
+          style={{ transform: `translate3d(-${710 * carouselId}px, 0, 0)` }}>
           <div className="absolute -inset-x-4 bottom-0 top-8 bg-slate-200 sm:-inset-x-6"></div>
           <div className="relative mx-auto w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
             <img className="w-full" src="https://ik.imagekit.io/llh50zxqb/images/assets/app1.jpeg" alt="" />
           </div>
         </div>
-        <div className="relative mt-10 pb-10" style={{ transform: `translate3d(-${700 * carouselId}px, 0, 0)` }}>
+        <div
+          className={`relative mt-10 pb-10 ${style.smoothlySlide}`}
+          style={{ transform: `translate3d(-${710 * carouselId}px, 0, 0)` }}>
           <div className="absolute -inset-x-4 bottom-0 top-8 bg-slate-200 sm:-inset-x-6"></div>
           <div className="relative mx-auto w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
             <img className="w-full" src="https://ik.imagekit.io/llh50zxqb/images/assets/app1.jpeg" alt="" />
           </div>
         </div>
-        <div className="relative mt-10 pb-10" style={{ transform: `translate3d(-${700 * carouselId}px, 0, 0)` }}>
+        <div
+          className={`relative mt-10 pb-10 ${style.smoothlySlide}`}
+          style={{ transform: `translate3d(-${710 * carouselId}px, 0, 0)` }}>
           <div className="absolute -inset-x-4 bottom-0 top-8 bg-slate-200 sm:-inset-x-6"></div>
           <div className="relative mx-auto w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
             <img className="w-full" src="https://ik.imagekit.io/llh50zxqb/images/assets/app1.jpeg" alt="" />

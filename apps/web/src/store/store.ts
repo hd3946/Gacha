@@ -11,13 +11,13 @@ export const useStore = create<store>()((set) => ({
 }))
 
 type tabValueStore = {
-  value: number
-  setValue: (arg0: number) => void
+  tabNumber: number
+  setTabNumber: (arg0: number) => void
 }
 
 export const useTabValueStore = create<tabValueStore>((set) => ({
-  value: 0,
-  setValue: (num) => set({ value: num })
+  tabNumber: 0,
+  setTabNumber: (num) => set({ tabNumber: num })
 }))
 
 type UploadBoxOpenStore = {
@@ -26,6 +26,6 @@ type UploadBoxOpenStore = {
 }
 
 export const useUploadBoxOpen = create<UploadBoxOpenStore>((set) => ({
-  open: false,
+  open: true,
   toggleOpen: () => set((state) => ({ open: !state.open }))
 }))

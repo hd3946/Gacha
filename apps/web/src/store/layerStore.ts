@@ -7,31 +7,38 @@ export type layerImage = {
   isShow: boolean
 }
 
-export type layer = {
+export type layerType = {
+  id: number
   name: string
   imageList: string[]
   rarity: number // 1% ~ 100%
   isShow: boolean
-  zIndex: number
 }
 
-type layers = {
-  layers: layer[]
-  addLayer: (arg0: any) => void
-  updateLayer: (arg0: number, arg1: any) => void
+export type layerStore = {
+  layers: layerType[]
+  splitLayer: (arg0: number, arg1: number) => void
+  addLayer: (arg0: layerType) => void
+  updateLayer: (arg0: number, arg1: layerType) => void
   removeLayer: (arg0: number) => void
 }
 
-export const useLayerStore = create<layers>((set) => ({
-  layers: [],
-
-  addLayer: (layer: any) => set((state: { layers: any }) => ({ layers: [...state.layers, layer] })),
-  updateLayer: (index: number, updatedLayer: any) =>
-    set((state: { layers: any }) => {
+export const useLayerStore = create<layerStore>((set) => ({
+  layers: [] as layerType[],
+  addLayer: (layer: layerType) => set((state: { layers: layerType[] }) => ({ layers: [...state.layers, layer] })),
+  splitLayer: (index: number, splitIndex: number) =>
+    set((state: { layers: layerType[] }) => {
+      const updatedLayers = [...state.layers]
+      const [targetItem] = updatedLayers.splice(index, 1)
+      updatedLayers.splice(splitIndex, 0, targetItem)
+      return { layers: updatedLayers }
+    }),
+  updateLayer: (index: number, updatedLayer: layerType) =>
+    set((state: { layers: layerType[] }) => {
       const updatedLayers = [...state.layers]
       updatedLayers[index] = { ...updatedLayer }
       return { layers: updatedLayers }
     }),
-  removeLayer: (index: any) =>
-    set((state: { layers: any[] }) => ({ layers: state.layers.filter((_, i) => i !== index) }))
+  removeLayer: (index: number) =>
+    set((state: { layers: layerType[] }) => ({ layers: state.layers.filter((_, i) => i !== index) }))
 }))
