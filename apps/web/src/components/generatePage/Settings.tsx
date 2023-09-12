@@ -1,7 +1,11 @@
+import { clear, get, keys, set } from '@/idb/idb'
 import SettingValuesStore from '@/store/settingValuesStore'
+import { useState } from 'react'
 import { IoAddOutline, IoFolderOpenOutline, IoHelpCircleOutline, IoTrashOutline } from 'react-icons/io5'
 
 const Settings = () => {
+  const [previewImage, setPreviewImage] = useState<any | null>(null)
+
   const {
     collectionName,
     collectionDescription,
@@ -39,18 +43,67 @@ const Settings = () => {
   const onChangeBlockchain = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setBlockchain(event.target.value)
   }
+
+  type fileInfo = {
+    key: any
+    lastModified: any
+    name: any
+    size: any
+    type: any
+    webkitRelativePath: any
+  }
+
   const onChangeArtwork = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files) {
       setArtwork(event.target.files)
+      console.log(event.target.files.toString())
       const files: (File | null)[] = new Array<File>()
+      const filesInfos: fileInfo[] = new Array<fileInfo>()
+      clear()
       for (let i = 0; i < event.target.files?.length; i++) {
         files[i] = event.target.files.item(i)
         console.log(files[i])
+        var currentKeys: IDBValidKey[] = []
+        keys().then((result) => (currentKeys = result))
+        var randomKey = Math.random().toString(36).substring(2, 11)
+        while (currentKeys.includes(randomKey)) {
+          randomKey = Math.random().toString(36).substring(2, 11)
+        }
+        set(randomKey, files[i])
+        var testObj: fileInfo = {
+          key: randomKey,
+          lastModified: files[i]?.lastModified,
+          name: files[i]?.name,
+          size: files[i]?.size,
+          type: files[i]?.type,
+          webkitRelativePath: files[i]?.webkitRelativePath
+        }
+        filesInfos[i] = testObj
       }
+      var jsonData = JSON.stringify(filesInfos)
+      console.log(jsonData)
+      set('fileInfo', jsonData)
       setArtworkArray(files)
       console.log('yaho')
     }
   }
+
+  const onClickTest = async (event: React.MouseEvent<HTMLElement>) => {
+    var currentKeys: IDBValidKey[] = []
+    var selectedKey
+    await keys().then((result) => {
+      currentKeys = result
+      console.log(currentKeys)
+    })
+    selectedKey = currentKeys.at(Math.floor(Math.random() * currentKeys.length) + 1)!
+    console.log(selectedKey)
+    get(selectedKey).then((result) => {
+      var blobImage = new Blob([result], { type: 'image/png' })
+      // var test = window.URL.createObjectURL(blobImage)
+      setPreviewImage(window.URL.createObjectURL(blobImage))
+    })
+  }
+
   // const onSubmit = () => {
   //   const formData = new FormData()
   //   formData.append('file', artwork.items(0))
@@ -309,7 +362,10 @@ const Settings = () => {
               Welcome to the NFT Art Generator. The most powerful no-code NFT tool trusted by the world’s largest NFT
               creators.
             </div>
-            <img src="/images/test.png" className="my-6 rounded-lg" />
+            <img src={previewImage ?? 'images/test.png'} className="my-6 h-48 w-96 rounded-lg" />
+            <button type="button" onClick={onClickTest}>
+              test
+            </button>
             <div className="mt-8 text-gray-600 dark:text-slate-200">
               <strong className="mt-2 text-xl font-extrabold tracking-tight text-gray-600 dark:text-slate-50 ">
                 Setup your NFT Collection
