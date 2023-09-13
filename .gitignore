@@ -40,3 +40,5 @@ coverage/
 !.yarn/versions
 .vercel
 .env
+package-lock.json
+```
