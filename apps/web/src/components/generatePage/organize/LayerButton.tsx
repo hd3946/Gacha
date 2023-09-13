@@ -21,7 +21,9 @@ const LayerButton = ({ layer }: { layer: any }) => {
             </div>
           </div>
         </div>
-        <div className="col-span-1 ml-auto text-gray-900 transition-all hover:text-white dark:text-white/50 dark:hover:text-white">
+        <div
+          className="col-span-1 ml-auto text-gray-900 transition-all hover:text-white 
+        dark:text-white/50 dark:hover:text-white">
           <LayerMetadataIconButton />
         </div>
       </div>
