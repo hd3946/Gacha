@@ -14,13 +14,11 @@ const WalletButton = () => {
   }
 
   return (
-    <div>
+    <>
       <button
         type="button"
         onClick={openModal}
-        data-modal-target="crypto-modal"
-        data-modal-toggle="crypto-modal"
-        className="inline-flex items-center rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-center text-sm font-medium 
+        className="inline-flex h-10 items-center rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-center text-sm font-medium 
         text-gray-900 hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:bg-slate-800 
         dark:text-gray-400 dark:hover:bg-slate-700 dark:focus:ring-gray-600 
         ">
@@ -42,7 +40,7 @@ const WalletButton = () => {
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <WalletModal onClose={closeModal} />
       </Modal>
-    </div>
+    </>
   )
 }
 

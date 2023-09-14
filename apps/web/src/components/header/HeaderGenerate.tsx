@@ -1,11 +1,10 @@
 'use client'
-import useColorMode from '@/hooks/useColorMode'
+import useLogoMode from '@/hooks/useLogoMode'
 import useMounted from '@/hooks/useMouted'
 import { useTabValueStore } from '@/store/store'
 import { GenerateTab } from '@/types/taps'
 import ImageLogo from 'next/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
 import {
   IoConstructOutline,
   IoFlaskOutline,
@@ -17,20 +16,11 @@ import {
 import { WalletButton } from '../button'
 
 export default function Header() {
-  const [colorMode, setColorMode] = useColorMode()
-  const [logo, setLogo] = useState<string>('/images/NFTArtGeneratorbyonemintblue.webp')
+  const [logo, colorMode, setColorMode] = useLogoMode()
   const { tabNumber, setTabNumber } = useTabValueStore()
 
-  useEffect(() => {
-    if (colorMode === 'light') {
-      setLogo('/images/NFTArtGeneratorbyonemintblue.webp')
-    } else {
-      setLogo('/images/logo.png')
-    }
-  }, [colorMode])
-
   return (
-    <div className="hiddenScrollbar relative mx-auto flex h-full max-w-[3000px] items-center justify-between overflow-auto bg-red-200 px-2 dark:bg-gray-800 sm:px-6 lg:px-8">
+    <div className="hiddenScrollbar relative mx-auto flex h-[4.5rem] max-w-[3000px] items-center justify-between overflow-auto bg-red-200 px-2 dark:bg-gray-800 sm:px-6 lg:px-8">
       <div className="flex flex-1 items-center justify-center gap-10 sm:items-stretch sm:justify-start">
         <div className="flex flex-shrink-0 items-center">
           <Link href="/" passHref>
@@ -103,15 +93,15 @@ export default function Header() {
             <button
               className="ml-4 hidden cursor-pointer items-center justify-between gap-2 rounded-full bg-sky-400/10 px-3 py-1 text-xs font-medium leading-5 text-sky-600 
             ring-1 ring-sky-600 hover:bg-sky-400/20 dark:text-sky-400 dark:ring-0 lg:flex">
-              <span className="whitespace-nowrap font-bold underline">Mint a Team Pass</span>
+              <span className="whitespace-nowrap font-bold underline">Mint Pass</span>
               <span className="inline-flex items-center"></span>
-              <span className="hidden xl:inline-block">Unlock Pro features!</span>
+              <span className="hidden xl:inline-block">Unlock Pro!</span>
             </button>
           </div>
         </div>
         <div className="ml-auto flex items-center justify-end gap-2">
           <button
-            className="relative inline-flex h-[36px] w-[36px] flex-shrink-0 cursor-pointer items-center justify-center rounded-md bg-white 
+            className="relative inline-flex h-10 w-10 flex-shrink-0 cursor-pointer items-center justify-center rounded-md bg-white 
               text-gray-600 text-gray-900 transition-colors duration-200 ease-in-out hover:bg-gray-200 focus:outline-none 
               dark:bg-slate-800 dark:text-gray-400 dark:hover:bg-slate-700"
             role="switch"
