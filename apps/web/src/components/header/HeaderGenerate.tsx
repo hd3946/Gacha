@@ -1,11 +1,10 @@
 'use client'
-import useColorMode from '@/hooks/useColorMode'
+import useLogoMode from '@/hooks/useLogoMode'
 import useMounted from '@/hooks/useMouted'
 import { useTabValueStore } from '@/store/store'
 import { GenerateTab } from '@/types/taps'
 import ImageLogo from 'next/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
 import {
   IoConstructOutline,
   IoFlaskOutline,
@@ -17,17 +16,8 @@ import {
 import { WalletButton } from '../button'
 
 export default function Header() {
-  const [colorMode, setColorMode] = useColorMode()
-  const [logo, setLogo] = useState<string>('/images/NFTArtGeneratorbyonemintblue.webp')
+  const [logo, colorMode, setColorMode] = useLogoMode()
   const { tabNumber, setTabNumber } = useTabValueStore()
-
-  useEffect(() => {
-    if (colorMode === 'light') {
-      setLogo('/images/NFTArtGeneratorbyonemintblue.webp')
-    } else {
-      setLogo('/images/logo.png')
-    }
-  }, [colorMode])
 
   return (
     <div className="hiddenScrollbar relative mx-auto flex h-full max-w-[3000px] items-center justify-between overflow-auto bg-red-200 px-2 dark:bg-gray-800 sm:px-6 lg:px-8">

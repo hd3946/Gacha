@@ -1,5 +1,7 @@
-'use client'
-import useColorMode from '@/hooks/useColorMode'
+import useLogoMode from '@/hooks/useLogoMode'
+import ImageLogo from 'next/image'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import {
   IoBookOutline,
   IoBriefcaseOutline,
@@ -19,13 +21,10 @@ import {
   IoReaderOutline,
   IoStorefrontOutline
 } from 'react-icons/io5'
-import ImageLogo from 'next/image'
-import Link from 'next/link'
-import { useEffect, useState } from 'react'
 
 export default function Header() {
   const [top, setTop] = useState<boolean>(true)
-
+  const [logo] = useLogoMode()
   const [display, setDisplay] = useState('')
 
   const scrollHandler = () => {
@@ -37,16 +36,6 @@ export default function Header() {
     window.addEventListener('scroll', scrollHandler)
     return () => window.removeEventListener('scroll', scrollHandler)
   }, [top])
-
-  const [colorMode] = useColorMode()
-  const [logo, setLogo] = useState<string>('/images/NFTArtGeneratorbyonemintblue.webp')
-  useEffect(() => {
-    if (colorMode === 'light') {
-      setLogo('/images/NFTArtGeneratorbyonemintblue.webp')
-    } else {
-      setLogo('/images/logo.png')
-    }
-  }, [colorMode])
 
   return (
     <header
@@ -69,7 +58,7 @@ export default function Header() {
               <li className="relative" onMouseOver={() => setDisplay('0')} onMouseOut={() => setDisplay('')}>
                 <div className="mr-5 inline-flex items-center text-white">
                   <span className="mr-1">Products</span>
-                  <IoChevronDownOutline aria-hidden="true" role="img" className="md hydrated"/>
+                  <IoChevronDownOutline aria-hidden="true" role="img" className="md hydrated" />
                 </div>
                 {display == '0' ? (
                   <div
@@ -83,10 +72,7 @@ export default function Header() {
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-[#1c5fe5] text-white sm:h-12 sm:w-12">
                             <div className="h-4 w-4">
-                              <IoHomeOutline
-                                aria-hidden="true"
-                                role="img"
-                                className="md hydrated"/>
+                              <IoHomeOutline aria-hidden="true" role="img" className="md hydrated" />
                             </div>
                           </div>
                           <div className="ml-4">
@@ -101,10 +87,7 @@ export default function Header() {
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-[#1c5fe5] text-white sm:h-12 sm:w-12">
                             <div className="h-4 w-4">
-                              <IoImagesOutline
-                                aria-hidden="true"
-                                role="img"
-                                className="md hydrated"/>
+                              <IoImagesOutline aria-hidden="true" role="img" className="md hydrated" />
                             </div>
                           </div>
                           <div className="ml-4">
@@ -119,10 +102,7 @@ export default function Header() {
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-[#1c5fe5] text-white sm:h-12 sm:w-12">
                             <div className="h-4 w-4">
-                              <IoReaderOutline
-                                aria-hidden="true"
-                                role="img"
-                                className="md hydrated"/>
+                              <IoReaderOutline aria-hidden="true" role="img" className="md hydrated" />
                             </div>
                           </div>
                           <div className="ml-4">
@@ -137,10 +117,7 @@ export default function Header() {
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-[#1c5fe5] text-white sm:h-12 sm:w-12">
                             <div className="h-4 w-4">
-                              <IoColorFilterOutline
-                                aria-hidden="true"
-                                role="img"
-                                className="md hydrated"/>
+                              <IoColorFilterOutline aria-hidden="true" role="img" className="md hydrated" />
                             </div>
                           </div>
                           <div className="ml-4">
@@ -161,10 +138,7 @@ export default function Header() {
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-[#1c5fe5] text-white sm:h-12 sm:w-12">
                             <div className="h-4 w-4">
-                              <IoStorefrontOutline
-                                aria-hidden="true"
-                                role="img"
-                                className="md hydrated"/>
+                              <IoStorefrontOutline aria-hidden="true" role="img" className="md hydrated" />
                             </div>
                           </div>
                           <div className="ml-4">
@@ -185,10 +159,7 @@ export default function Header() {
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-[#1c5fe5] text-white sm:h-12 sm:w-12">
                             <div className="h-4 w-4">
-                              <IoLockOpenOutline
-                                aria-hidden="true"
-                                role="img"
-                                className="md hydrated"/>
+                              <IoLockOpenOutline aria-hidden="true" role="img" className="md hydrated" />
                             </div>
                           </div>
                           <div className="ml-4">
@@ -204,10 +175,7 @@ export default function Header() {
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-[#1c5fe5] text-white sm:h-12 sm:w-12">
                             <div className="h-4 w-4">
-                              <IoHardwareChipOutline
-                                aria-hidden="true"
-                                role="img"
-                                className="md hydrated"/>
+                              <IoHardwareChipOutline aria-hidden="true" role="img" className="md hydrated" />
                             </div>
                           </div>
                           <div className="ml-4">
@@ -223,10 +191,7 @@ export default function Header() {
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-[#1c5fe5] text-white sm:h-12 sm:w-12">
                             <div className="h-4 w-4">
-                              <IoCashOutline
-                                aria-hidden="true"
-                                role="img"
-                                className="md hydrated"/>
+                              <IoCashOutline aria-hidden="true" role="img" className="md hydrated" />
                             </div>
                           </div>
                           <div className="ml-4">
@@ -247,10 +212,7 @@ export default function Header() {
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-[#1c5fe5] text-white sm:h-12 sm:w-12">
                             <div className="h-4 w-4">
-                              <IoCogOutline
-                                aria-hidden="true"
-                                role="img"
-                                className="md hydrated"/>
+                              <IoCogOutline aria-hidden="true" role="img" className="md hydrated" />
                             </div>
                           </div>
                           <div className="ml-4">
@@ -293,7 +255,7 @@ export default function Header() {
               <li className="relative" onMouseOver={() => setDisplay('1')} onMouseOut={() => setDisplay('')}>
                 <div className="mr-5 inline-flex items-center text-white">
                   <span className="mr-1">Resources</span>
-                  <IoChevronDownOutline aria-hidden="true" role="img" className="md hydrated"/>
+                  <IoChevronDownOutline aria-hidden="true" role="img" className="md hydrated" />
                 </div>
                 {display == '1' ? (
                   <div
@@ -306,10 +268,7 @@ export default function Header() {
                           href="/"
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="h-4 w-4 text-black">
-                            <IoDesktopOutline
-                              role="img"
-                              className="md hydrated"
-                              aria-label="desktop outline"/>
+                            <IoDesktopOutline role="img" className="md hydrated" aria-label="desktop outline" />
                           </div>
                           <div className="ml-4">
                             <p className="text-base font-medium text-gray-900">One Mint Presentation</p>
@@ -319,10 +278,7 @@ export default function Header() {
                           href="/"
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="h-4 w-4 text-black">
-                            <IoBookOutline
-                              role="img"
-                              className="md hydrated"
-                              aria-label="book outline"/>
+                            <IoBookOutline role="img" className="md hydrated" aria-label="book outline" />
                           </div>
                           <div className="ml-4">
                             <p className="text-base font-medium text-gray-900">Dynamic NFTs Deck</p>
@@ -332,10 +288,7 @@ export default function Header() {
                           href="/"
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="h-4 w-4 text-black">
-                            <IoNewspaperOutline
-                              role="img"
-                              className="md hydrated"
-                              aria-label="newspaper outline"/>
+                            <IoNewspaperOutline role="img" className="md hydrated" aria-label="newspaper outline" />
                           </div>
                           <div className="ml-4">
                             <p className="text-base font-medium text-gray-900">Blog</p>
@@ -345,10 +298,7 @@ export default function Header() {
                           href="/"
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="h-4 w-4 text-black">
-                            <IoBriefcaseOutline
-                              role="img"
-                              className="md hydrated"
-                              aria-label="briefcase outline"/>
+                            <IoBriefcaseOutline role="img" className="md hydrated" aria-label="briefcase outline" />
                           </div>
                           <div className="ml-4">
                             <p className="text-base font-medium text-gray-900">B2B</p>
@@ -358,10 +308,7 @@ export default function Header() {
                           href="/"
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="h-4 w-4 text-black">
-                            <IoHelpCircleOutline
-                              role="img"
-                              className="md hydrated"
-                              aria-label="help circle outline"/>
+                            <IoHelpCircleOutline role="img" className="md hydrated" aria-label="help circle outline" />
                           </div>
                           <div className="ml-4">
                             <p className="text-base font-medium text-gray-900">Help</p>
@@ -371,10 +318,7 @@ export default function Header() {
                           href="/"
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="h-4 w-4 text-black">
-                            <IoPersonOutline
-                              role="img"
-                              className="md hydrated"
-                              aria-label="person outline"/>
+                            <IoPersonOutline role="img" className="md hydrated" aria-label="person outline" />
                           </div>
                           <div className="ml-4">
                             <p className="text-base font-medium text-gray-900">About</p>
@@ -384,10 +328,7 @@ export default function Header() {
                           href="/"
                           className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50">
                           <div className="h-4 w-4 text-black">
-                            <IoMailUnreadOutline
-                              role="img"
-                              className="md hydrated"
-                              aria-label="mail unread outline"/>
+                            <IoMailUnreadOutline role="img" className="md hydrated" aria-label="mail unread outline" />
                           </div>
                           <div className="ml-4">
                             <p className="text-base font-medium text-gray-900">Contact</p>
