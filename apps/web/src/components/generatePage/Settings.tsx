@@ -1,5 +1,5 @@
-import { clear, get, keys, set } from '@/idb/idb'
 import SettingValuesStore from '@/store/settingValuesStore'
+import { clear, get, keys, set } from 'idb-keyval'
 import { useState } from 'react'
 import { IoAddOutline, IoFolderOpenOutline, IoHelpCircleOutline, IoTrashOutline } from 'react-icons/io5'
 
