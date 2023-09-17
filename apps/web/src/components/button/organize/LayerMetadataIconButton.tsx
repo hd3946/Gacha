@@ -2,7 +2,8 @@ import { Modal } from '@/components/modal/Index'
 import LayerMetadataModal from '@/components/modal/LayerMetadataModal'
 import { useState } from 'react'
 import { IoSettingsOutline } from 'react-icons/io5'
-import Button from './IndexCaptionButton'
+import IndexLayerButton from './IndexLayerButton'
+
 
 const LayerMetadataIconButton = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -16,9 +17,9 @@ const LayerMetadataIconButton = () => {
   }
   return (
     <div>
-      <Button onClick={openModal} className="flex items-center">
-        <IoSettingsOutline role="img" className="md hydrated" aria-label="settings outline" />
-      </Button>
+      <IndexLayerButton onClick={openModal} className="flex items-center">
+        <IoSettingsOutline role="img" />
+      </IndexLayerButton>
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <LayerMetadataModal onClose={closeModal} />
       </Modal>

@@ -61,14 +61,14 @@ const Organize = () => {
                 onClick={onSubmit}>
                 <div className="relative flex items-center gap-0.5">
                   <span className="inline-flex items-center">
-                    <IoAddOutline role="img" className="hi" />
+                    <IoAddOutline role="img" />
                   </span>
                   <span>Add</span>
                 </div>
               </button>
             </form>
           </div>
-          {/* 아래 */}
+          {/* SideBar */}
           <DragDrop />
         </aside>
 
@@ -89,7 +89,8 @@ const Organize = () => {
 
                 {layers.length > 0 && (
                   <>
-                    <LayerMetadataButton /> <AddFileButton />
+                    <LayerMetadataButton />
+                    <AddFileButton />
                   </>
                 )}
               </div>
@@ -110,7 +111,9 @@ const Organize = () => {
                   className="my-auto inline-block rounded-full bg-cyan-500/20 px-3 py-1 text-xs  font-medium leading-5
                  text-cyan-500 empty:hidden hover:bg-cyan-500/30 dark:hover:text-cyan-300">
                   <span className="flex items-center gap-0.5">
-                    <span className="-100 flex h-2 w-2 items-center justify-center rounded-full bg-cyan-900/20 dark:bg-cyan-900"></span>
+                    <span
+                      className="-100 flex h-2 w-2 items-center justify-center 
+                    rounded-full bg-cyan-900/20 dark:bg-cyan-900"></span>
                     <span className="ml-1">Advanced</span>
                   </span>
                 </button>
@@ -119,7 +122,9 @@ const Organize = () => {
                   className="my-auto inline-block rounded-full bg-cyan-500/20 px-3 py-1 text-xs  font-medium leading-5
                  text-cyan-500 empty:hidden hover:bg-cyan-500/30 dark:hover:text-cyan-300">
                   <span className="flex items-center gap-1">
-                    <span className="-100 flex h-2 w-2 items-center justify-center rounded-full bg-cyan-900/20 dark:bg-cyan-900"></span>
+                    <span
+                      className="flex h-2 w-2 items-center justify-center 
+                    rounded-full bg-cyan-900/20 dark:bg-cyan-900"></span>
                     <span>Quick Preview</span>
                   </span>
                 </button>
