@@ -1,6 +1,6 @@
 import AddNewLayerButton from '@/components/button/organize/AddNewLayerButton'
+import useAnimation from '@/hooks/useAnimationFrame'
 import { useLayerFocusStore, useLayerStore } from '@/store/layerStore'
-import { useEffect, useState } from 'react'
 import { DragDropContext, Draggable, DropResult, Droppable } from 'react-beautiful-dnd'
 import LayerButton from './LayerButton'
 
@@ -14,18 +14,8 @@ const DragDrop = () => {
     const destinationKey = destination.index
     setItems(sourceKey, destinationKey)
   }
-  const [enabled, setEnabled] = useState(false)
 
-  useEffect(() => {
-    const animation = requestAnimationFrame(() => setEnabled(true))
-
-    return () => {
-      cancelAnimationFrame(animation)
-      setEnabled(false)
-    }
-  }, [])
-
-  if (!enabled) {
+  if (!useAnimation) {
     return null
   }
 
