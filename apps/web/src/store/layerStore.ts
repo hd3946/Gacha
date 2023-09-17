@@ -1,8 +1,9 @@
 import { create } from 'zustand'
 
-export type layerImage = {
+export type layerImageType = {
+  key: string
   name: string
-  url: string
+  url: Blob // -> blob url
   rarity: number // 1% ~ 100%
   isShow: boolean
 }
@@ -10,7 +11,7 @@ export type layerImage = {
 export type layerType = {
   id: number
   name: string
-  imageList: string[]
+  imageList: layerImageType[]
   rarity: number // 1% ~ 100%
   isShow: boolean
 }
