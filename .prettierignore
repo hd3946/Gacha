@@ -2,3 +2,31 @@
 **/dist
 **/build
 .github
+.yarn
+
+# IDE
+.idea
+.vscode
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+```
+
+## License
+MIT
+
+## Author
+[Imomo]
+
+## References
+- [GitHub Help: Ignoring files](https://help.github.com/articles/ignoring-files/)
+- [GitHub Help: Creating a .gitignore file](https://help.github.com/articles/creating-a-gitignore-file/)
+- [GitHub Help: Ignoring files from a repository](https://help.github.com/articles/ignoring-files-from-a-repository/)
+- [GitHub Help: Removing sensitive data from a repository](https://help.github.com/articles/removing-sensitive-data-from-a-repository/)
+- [GitHub Help: Removing files from a repository's history](https://help.github.com/articles/removing-files-from-a-repository-s-history/)
+- [GitHub Help: Purging a file from your repository's history](https://help.github.com/articles/purging-a-file-from-your-repository-s-history/)
+- [GitHub Help: Removing sensitive data from a repository](https://help.github.com/articles/removing-sensitive-data-from-a-repository/)
+

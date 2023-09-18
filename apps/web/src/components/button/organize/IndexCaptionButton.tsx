@@ -6,7 +6,7 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   onClick?: MouseEventHandler<HTMLButtonElement>
 }
 
-const OrganizePageButton = (props: ButtonProps) => {
+const IndexCaptionButton = (props: ButtonProps) => {
   const { children, onClick, ...other } = props
 
   return (
@@ -21,4 +21,4 @@ const OrganizePageButton = (props: ButtonProps) => {
   )
 }
 
-export default OrganizePageButton
+export default IndexCaptionButton
