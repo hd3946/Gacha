@@ -1,5 +1,5 @@
-'use client'
-import { useLayerStore } from '@/store/layerStore'
+import useAnimation from '@/hooks/useAnimationFrame'
+import { useLayerFocusStore, useLayerStore } from '@/store/layerStore'
 import { useUploadBoxOpen } from '@/store/store'
 import { useEffect, useState } from 'react'
 import { IoAddOutline } from 'react-icons/io5'
@@ -10,28 +10,27 @@ import DragDrop from './organize/DragDrop'
 import ImageUploadBox from './organize/UploadBox'
 
 const Organize = () => {
-  const [enabled, setEnabled] = useState(false)
   const [inputText, setInputText] = useState('')
+  const [layerName, setLayerName] = useState('')
+  const { divFocus } = useLayerFocusStore()
   const { layers, addLayer } = useLayerStore()
   const { open: Open } = useUploadBoxOpen()
 
-  useEffect(() => {
-    const animation = requestAnimationFrame(() => setEnabled(true))
-
-    return () => {
-      cancelAnimationFrame(animation)
-      setEnabled(false)
-    }
-  }, [])
-
-  if (!enabled) {
+  if (!useAnimation) {
     return null
   }
+
   const onSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault()
     handleSubmit(inputText, layers?.length as number, addLayer)
     setInputText('')
   }
+
+  useEffect(() => {
+    const focusId = Object.keys(divFocus).filter((key) => divFocus[key] === true)
+    const findLayer = layers.filter((layer) => layer.id === focusId[0])
+    setLayerName(findLayer[0]?.name)
+  }, [layers, divFocus])
 
   return (
     <div className="mx-auto min-h-screen w-full max-w-[3000px] px-6 dark:bg-gray-800">
@@ -78,12 +77,12 @@ const Organize = () => {
             <div className="hiddenScrollbar flex h-10 max-w-full items-center gap-4 overflow-auto whitespace-nowrap px-2">
               <div className="flex items-center gap-4">
                 <div className="relative inline-block h-[36px] min-w-[10px]">
-                  <span className="invisible h-full p-0.5 text-2xl font-semibold">{inputText}</span>
+                  <span className="invisible h-full p-0.5 text-2xl font-semibold">{layerName}</span>
                   <input
                     type="text"
                     className="absolute inset-0 h-full w-full rounded-sm border-none bg-transparent p-0.5 text-2xl 
                     font-semibold text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/30"
-                    defaultValue={inputText}
+                    defaultValue={layerName}
                   />
                 </div>
 
