@@ -1,6 +1,8 @@
 import useAnimation from '@/hooks/useAnimationFrame'
 import { useLayerFocusStore, useLayerStore } from '@/store/layerStore'
 import { useUploadBoxOpen } from '@/store/store'
+import { get, keys } from 'idb-keyval'
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { IoAddOutline } from 'react-icons/io5'
 import AddFileButton from '../button/organize/AddFilesButton'
@@ -10,8 +12,9 @@ import DragDrop from './organize/DragDrop'
 import ImageUploadBox from './organize/UploadBox'
 
 const Organize = () => {
-  const [inputText, setInputText] = useState('')
+  const [inputText, setInputText] = useState<any>('')
   const [layerName, setLayerName] = useState('')
+  const [previewImage, setPreviewImage] = useState('')
   const { divFocus } = useLayerFocusStore()
   const { layers, addLayer } = useLayerStore()
   const { open: Open } = useUploadBoxOpen()
@@ -26,7 +29,21 @@ const Organize = () => {
     setInputText('')
   }
 
+  const fetchData = async () => {
+    const getData: IDBValidKey[] = await keys()
+    
+    getData.forEach(async (key: any) => {
+      const i = await get(key)
+      console.log('i', i)
+      const blobImage = new Blob([i], { type: 'image/png' })
+      // -> fold name -> layer name 
+      const d: string = window.URL.createObjectURL(blobImage)
+      setPreviewImage(d)
+    })
+  }
+
   useEffect(() => {
+    fetchData()
     const focusId = Object.keys(divFocus).filter((key) => divFocus[key] === true)
     const findLayer = layers.filter((layer) => layer.id === focusId[0])
     setLayerName(findLayer[0]?.name)
@@ -68,6 +85,14 @@ const Organize = () => {
             </form>
           </div>
           {/* SideBar */}
+          {previewImage && (
+            <>
+              <Image src={previewImage} alt="preview" width={100} height={100} />
+              <img id="output" src={previewImage} alt="preview" />
+            </>
+          )}
+          <p>{previewImage}</p>
+
           <DragDrop />
         </aside>
 
