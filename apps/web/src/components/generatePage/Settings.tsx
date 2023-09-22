@@ -1,11 +1,12 @@
 import SettingValuesStore from '@/store/settingValuesStore'
 import { clear, get, keys, set } from 'idb-keyval'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { IoAddOutline, IoFolderOpenOutline, IoHelpCircleOutline, IoTrashOutline } from 'react-icons/io5'
-
 const Settings = () => {
-  const [previewImage, setPreviewImage] = useState<any | null>(null)
-
+  const [isImageUploadedState, setIsImageUploadedState] = useState(false)
+  useEffect(() => {
+    keys().then((result) => (result.length == 0 ? setIsImageUploadedState(false) : setIsImageUploadedState(true)))
+  }, [])
   const {
     collectionName,
     collectionDescription,
@@ -15,6 +16,7 @@ const Settings = () => {
     blockchain,
     artwork,
     artworkArray,
+    blobUrlTest,
     setCollectionName,
     setCollectionDescription,
     setCollectionSize,
@@ -22,7 +24,8 @@ const Settings = () => {
     setExportFormat,
     setBlockchain,
     setArtwork,
-    setArtworkArray
+    setArtworkArray,
+    setBlobUrlTest
   } = SettingValuesStore()
 
   const onChangeCollectionName = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -43,24 +46,42 @@ const Settings = () => {
   const onChangeBlockchain = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setBlockchain(event.target.value)
   }
+  const onClickReset = () => {
+    clear()
+    window.location.replace('/generate')
+  }
+
+  function fileCheck(fileName: string): boolean {
+    if (
+      fileName.substring(fileName.lastIndexOf('.') + 1, fileName.length).search('png') == -1 &&
+      fileName.substring(fileName.lastIndexOf('.') + 1, fileName.length).search('webp') == -1
+    ) {
+      console.log(fileName + ' : format error')
+      return true
+    }
+    return false
+  }
 
   type fileInfo = {
-    key: any
+    id: any
     lastModified: any
     name: any
     size: any
     type: any
-    webkitRelativePath: any
+    layerName: any
   }
 
   const onChangeArtwork = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files) {
       setArtwork(event.target.files)
-      console.log(event.target.files.toString())
+      // console.log(event.target.files.toString())
       const files: (File | null)[] = new Array<File>()
       const filesInfos: fileInfo[] = new Array<fileInfo>()
       clear()
       for (let i = 0; i < event.target.files?.length; i++) {
+        if (fileCheck(event.target.files?.item(i)?.name!)) {
+          continue
+        }
         files[i] = event.target.files.item(i)
         console.log(files[i])
         var currentKeys: IDBValidKey[] = []
@@ -70,22 +91,27 @@ const Settings = () => {
           randomKey = Math.random().toString(36).substring(2, 11)
         }
         set(randomKey, files[i])
+        var tempLayerNameLastSlashIndex = files[i]?.webkitRelativePath.lastIndexOf('/')
+        var tempLayerName = files[i]?.webkitRelativePath.slice(0, tempLayerNameLastSlashIndex)
+        var layerName = tempLayerName?.slice(tempLayerName.lastIndexOf('/') + 1, tempLayerName.length)
+        // console.log(tempLayerName)
+        // console.log(layerName)
         var testObj: fileInfo = {
-          key: randomKey,
+          id: randomKey,
           lastModified: files[i]?.lastModified,
           name: files[i]?.name,
           size: files[i]?.size,
           type: files[i]?.type,
-          webkitRelativePath: files[i]?.webkitRelativePath
+          layerName: layerName
         }
-        filesInfos[i] = testObj
+        filesInfos.push(testObj)
       }
       var jsonData = JSON.stringify(filesInfos)
       console.log(jsonData)
       set('fileInfo', jsonData)
       setArtworkArray(files)
-      console.log('yaho')
     }
+    keys().then((result) => (result.length == 0 ? setIsImageUploadedState(false) : setIsImageUploadedState(true)))
   }
 
   const onClickTest = async (event: React.MouseEvent<HTMLElement>) => {
@@ -100,7 +126,8 @@ const Settings = () => {
     get(selectedKey).then((result) => {
       var blobImage = new Blob([result], { type: 'image/png' })
       // var test = window.URL.createObjectURL(blobImage)
-      setPreviewImage(window.URL.createObjectURL(blobImage))
+      // setPreviewImage(window.URL.createObjectURL(blobImage))
+      setBlobUrlTest(window.URL.createObjectURL(blobImage))
     })
   }
 
@@ -259,7 +286,7 @@ const Settings = () => {
                     </select>
                   </div>
                 </div>
-                <div>
+                <div className={isImageUploadedState ? 'hidden' : ''}>
                   <label className="block text-base font-medium dark:font-normal dark:text-white">
                     Artwork (Optional)
                   </label>
@@ -268,11 +295,11 @@ const Settings = () => {
                     htmlFor you to setup on the next step.
                   </p>
                   <div id="directory-drop" role="presentation">
-                    <div className="jsx-af28e199db5dfdf2 cursor-pointer rounded border border-dashed border-slate-500 p-3 text-center hover:border-solid">
+                    <div className="cursor-pointer rounded border border-dashed border-slate-500 p-3 text-center hover:border-solid">
                       <input
-                        accept="image/*,.png,.webp,.gif,video/*,.mp4,.webm"
+                        accept="image/*,.png,.webp"
                         type="file"
-                        className="jsx-af28e199db5dfdf2 hidden"
+                        className="hidden"
                         id="artwork-input"
                         onChange={onChangeArtwork}
                         ref={(node) => {
@@ -284,16 +311,16 @@ const Settings = () => {
                         }}
                       />
                       <label htmlFor="artwork-input">
-                        <div className="jsx-af28e199db5dfdf2 ">
-                          <div className="jsx-af28e199db5dfdf2 flex flex-col items-center justify-center rounded-md">
+                        <div className="">
+                          <div className="flex flex-col items-center justify-center rounded-md">
                             <IoFolderOpenOutline
                               role="img"
                               className="md icon-large hydrated"
                               aria-label="folder open outline"
                             />
                           </div>
-                          <div className="jsx-af28e199db5dfdf2 flex items-start justify-center gap-1 text-sm">
-                            <span className="jsx-af28e199db5dfdf2">Drop your assets </span>
+                          <div className="flex items-start justify-center gap-1 text-sm">
+                            <span className="">Drop your assets </span>
                             <div className="jsx-cb040b4b4d36d2c9">
                               <span
                                 data-tooltip="Drop your folder containing all the layers and images."
@@ -306,9 +333,38 @@ const Settings = () => {
                               </span>
                             </div>
                           </div>
-                          <i className="jsx-af28e199db5dfdf2 mt-0 text-sm">We'll import everything htmlFor you</i>
+                          <i className="mt-0 text-sm">We'll import everything htmlFor you</i>
                         </div>
                       </label>
+                    </div>
+                  </div>
+                </div>
+                <div className={isImageUploadedState ? '' : 'hidden'}>
+                  <div>
+                    <label className="block text-base font-medium dark:font-normal dark:text-white">Dimensions</label>
+                    <p className="mt-1 text-sm text-slate-700 dark:text-slate-400">
+                      Optional: Dimensions of your assets (images, gifs, videos) in px. Dimensions are calculated
+                      automically once your assets are imported.
+                    </p>
+                  </div>
+                  <div className="mt-1 flex gap-3">
+                    <div className="">
+                      <div className="mt-1">
+                        <input
+                          type="number"
+                          className="group flex h-auto w-full flex-none items-center justify-start rounded-lg border-none px-3 py-2.5 text-sm outline-none ring-1 ring-slate-200 hover:ring-slate-300 disabled:cursor-not-allowed disabled:opacity-70 hover:disabled:ring-slate-200 dark:bg-slate-700/40 dark:ring-inset dark:ring-slate-500 dark:ring-white/5 dark:disabled:bg-slate-500/50 dark:hover:disabled:ring-slate-500"
+                          // value="279"
+                        />
+                      </div>
+                    </div>
+                    <div className="">
+                      <div className="mt-1">
+                        <input
+                          type="number"
+                          className="group flex h-auto w-full flex-none items-center justify-start rounded-lg border-none px-3 py-2.5 text-sm outline-none ring-1 ring-slate-200 hover:ring-slate-300 disabled:cursor-not-allowed disabled:opacity-70 hover:disabled:ring-slate-200 dark:bg-slate-700/40 dark:ring-inset dark:ring-slate-500 dark:ring-white/5 dark:disabled:bg-slate-500/50 dark:hover:disabled:ring-slate-500"
+                          // value="221"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -333,7 +389,9 @@ const Settings = () => {
                 </div>
                 <div className="mt-6 grid grid-cols-2 gap-3">
                   <div>
-                    <button className="flex w-full items-center justify-center gap-2 rounded-md bg-slate-700 bg-opacity-10 px-4 py-2 text-center text-sm font-medium text-gray-600 shadow-sm hover:bg-opacity-20 hover:text-red-400 focus:outline-none dark:bg-opacity-20 dark:text-white dark:hover:bg-opacity-30 dark:hover:text-red-400">
+                    <button
+                      className="flex w-full items-center justify-center gap-2 rounded-md bg-slate-700 bg-opacity-10 px-4 py-2 text-center text-sm font-medium text-gray-600 shadow-sm hover:bg-opacity-20 hover:text-red-400 focus:outline-none dark:bg-opacity-20 dark:text-white dark:hover:bg-opacity-30 dark:hover:text-red-400"
+                      onClick={() => onClickReset()}>
                       <span className="inline-flex items-center">
                         <IoTrashOutline role="img" className="md hydrated" aria-label="trash outline" />
                       </span>
@@ -362,7 +420,7 @@ const Settings = () => {
               Welcome to the NFT Art Generator. The most powerful no-code NFT tool trusted by the world’s largest NFT
               creators.
             </div>
-            <img src={previewImage ?? 'images/test.png'} className="my-6 h-48 w-96 rounded-lg" />
+            <img src={blobUrlTest ?? 'images/test.png'} className="my-6 h-48 w-96 rounded-lg" />
             <button type="button" onClick={onClickTest}>
               test
             </button>
