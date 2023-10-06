@@ -1,7 +1,7 @@
 import NETWORK from '../constants/network';
-const fs = require('fs');
-const sha1 = require('sha1');
-const { createCanvas, loadImage } = require('canvas');
+import fs from 'fs';
+import sha1 from 'sha1';
+import { createCanvas, loadImage } from 'canvas';
 const { NFT_BUILD_PATH, NFT_IMG_PATH } = process.env;
 const buildDir = './result';
 let layersDir;
@@ -336,10 +336,10 @@ function shuffle(array) {
   return array;
 }
 
-const startCreating = async (growSize, club_id) => {
-  console.log('NFT_IMG_PATH', NFT_IMG_PATH);
+const startCreating = async (growSize, userId) => {
+  console.log('startCreating');
   layersDir='./upload';
-  // layersDir = `${NFT_IMG_PATH}/${club_id}/layer`;
+  // layersDir = `${NFT_IMG_PATH}/${userId}/layer`;
   let layerConfigIndex = 0;
   let editionCount = 1;
   let failedCount = 0;
