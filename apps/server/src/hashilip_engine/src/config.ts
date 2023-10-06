@@ -1,4 +1,3 @@
-// import MODE from '../constants/blend_mode'
 import NETWORK from '../constants/network';
 
 const network = NETWORK.eth;

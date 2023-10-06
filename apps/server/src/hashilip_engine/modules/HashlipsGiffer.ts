@@ -1,5 +1,5 @@
 import GifEncoder from 'gif-encoder-2';
-const { writeFile } = require('fs');
+import { writeFile } from 'fs';
 
 class HashLipsGiffer {
   canvas: any;
