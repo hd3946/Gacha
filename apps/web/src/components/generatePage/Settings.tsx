@@ -1,11 +1,35 @@
-import SettingValuesStore from '@/store/settingValuesStore'
+import settingValuesStore from '@/store/settingValuesStore'
 import { clear, get, keys, set } from 'idb-keyval'
 import { useEffect, useState } from 'react'
 import { IoAddOutline, IoFolderOpenOutline, IoHelpCircleOutline, IoTrashOutline } from 'react-icons/io5'
 const Settings = () => {
   const [isImageUploadedState, setIsImageUploadedState] = useState(false)
+  const [testState, setTestState] = useState<settings>()
   useEffect(() => {
-    keys().then((result) => (result.length == 0 ? setIsImageUploadedState(false) : setIsImageUploadedState(true)))
+    keys().then((result) => {
+      result.filter((key) => key !== 'settingsValue').length == 0
+        ? setIsImageUploadedState(false)
+        : setIsImageUploadedState(true)
+      result.filter((key) => key == 'settingsValue').length != 0
+        ? get('settingsValue').then((result) => {
+            let parsedSettingsValue = JSON.parse(result)
+            setTestState(parsedSettingsValue)
+            setCollectionName(parsedSettingsValue.collectionName)
+            setCollectionDescription(parsedSettingsValue.collectionDescription)
+            setCollectionSize(parseFloat(parsedSettingsValue.collectionSize))
+            setNameOfEachNFT(parsedSettingsValue.nameOfEachNFT)
+            setExportFormat(parsedSettingsValue.exportFormat)
+            setBlockchain(parsedSettingsValue.blockchain)
+          })
+        : setTestState({
+            collectionName: collectionName,
+            collectionDescription: collectionDescription,
+            collectionSize: collectionSize,
+            nameOfEachNFT: nameOfEachNFT,
+            exportFormat: exportFormat,
+            blockchain: blockchain
+          })
+    })
   }, [])
   const {
     collectionName,
@@ -26,25 +50,43 @@ const Settings = () => {
     setArtwork,
     setArtworkArray,
     setBlobUrlTest
-  } = SettingValuesStore()
+  } = settingValuesStore()
 
   const onChangeCollectionName = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCollectionName(event.target.value)
+    testState ? (testState.collectionName = event.target.value) : null
+    console.log(JSON.stringify(testState))
+    set('settingsValue', JSON.stringify(testState))
   }
   const onChangeCollectionDescription = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCollectionDescription(event.target.value)
+    testState ? (testState.collectionDescription = event.target.value) : null
+    console.log(JSON.stringify(testState))
+    set('settingsValue', JSON.stringify(testState))
   }
   const onChangeCollectionSize = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCollectionSize(parseFloat(event.target.value))
+    testState ? (testState.collectionSize = parseFloat(event.target.value)) : null
+    console.log(JSON.stringify(testState))
+    set('settingsValue', JSON.stringify(testState))
   }
   const onChangeNameOfEachNFT = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNameOfEachNFT(event.target.value)
+    testState ? (testState.nameOfEachNFT = event.target.value) : null
+    console.log(JSON.stringify(testState))
+    set('settingsValue', JSON.stringify(testState))
   }
   const onChangeExportFormat = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setExportFormat(event.target.value)
+    testState ? (testState.exportFormat = event.target.value) : null
+    console.log(JSON.stringify(testState))
+    set('settingsValue', JSON.stringify(testState))
   }
   const onChangeBlockchain = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setBlockchain(event.target.value)
+    testState ? (testState.blockchain = event.target.value) : null
+    console.log(JSON.stringify(testState))
+    set('settingsValue', JSON.stringify(testState))
   }
   const onClickReset = () => {
     clear()
@@ -62,6 +104,15 @@ const Settings = () => {
     return false
   }
 
+  type settings = {
+    collectionName: any
+    collectionDescription: any
+    collectionSize: any
+    nameOfEachNFT: any
+    exportFormat: any
+    blockchain: any
+  }
+
   type fileInfo = {
     id: any
     lastModified: any
@@ -77,7 +128,6 @@ const Settings = () => {
       // console.log(event.target.files.toString())
       const files: (File | null)[] = new Array<File>()
       const filesInfos: fileInfo[] = new Array<fileInfo>()
-      clear()
       for (let i = 0; i < event.target.files?.length; i++) {
         if (fileCheck(event.target.files?.item(i)?.name!)) {
           continue
@@ -420,10 +470,7 @@ const Settings = () => {
               Welcome to the NFT Art Generator. The most powerful no-code NFT tool trusted by the world’s largest NFT
               creators.
             </div>
-            <img src={blobUrlTest ?? 'images/test.png'} className="my-6 h-48 w-96 rounded-lg" />
-            <button type="button" onClick={onClickTest}>
-              test
-            </button>
+            <img src="images/test.png" className="my-6 h-48 w-96 rounded-lg" />
             <div className="mt-8 text-gray-600 dark:text-slate-200">
               <strong className="mt-2 text-xl font-extrabold tracking-tight text-gray-600 dark:text-slate-50 ">
                 Setup your NFT Collection
