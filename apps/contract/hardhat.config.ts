@@ -1,10 +1,9 @@
+import '@nomicfoundation/hardhat-verify'
 import '@nomiclabs/hardhat-ethers'
 import '@nomiclabs/hardhat-waffle'
 import '@typechain/hardhat'
 import 'dotenv/config'
 import { HardhatUserConfig, task } from 'hardhat/config'
-
-import 'hardhat-deploy'
 
 // https://hardhat.org/guides/create-task.html
 task('accounts', 'Prints the list of accounts', async (taskArgs, hre) => {
@@ -15,14 +14,30 @@ task('accounts', 'Prints the list of accounts', async (taskArgs, hre) => {
   }
 })
 
+const PrivateKey = '<<Private Key>>'
+
 // 더 자세한 설정법은 https://hardhat.org/config/ 에서 확인해주세요.
 const config: HardhatUserConfig = {
   solidity: '0.8.19',
   networks: {
+    mumbai: {
+      url: `https://polygon-mumbai.infura.io/v3/${process.env.INFURA_API_KEY}`,
+      accounts: [process.env.PRIVATE_KEY || '']
+    },
     klaytn: {
       url: process.env.KLAYTN_URL || '',
-      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : []
+      accounts: [process.env.PRIVATE_KEY || '']
     }
+    // wemix_testnet: {
+    //   url: "https://api.test.wemix.com",
+    //   accounts: process.env.PRIVATE_KEY !== undefined ? [`0x${PrivateKey}`] : [],
+    //   gasPrice: 101000000000
+    // },
+    // wemix_mainnet: {
+    //   url: "https://api.wemix.com",
+    //   accounts: process.env.PRIVATE_KEY !== undefined ? [`0x${PrivateKey}`] : [],
+    //   gasPrice: 101000000000
+    // },
     // mainnet: {
     //   url: `https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
     //   accounts: [process.env.ADMIN || "", process.env.DEPOSITOR || ""],
@@ -34,9 +49,10 @@ const config: HardhatUserConfig = {
     //   chainId: 3,
     // },
   },
-  gasReporter: {
-    enabled: process.env.REPORT_GAS !== undefined,
-    currency: 'USD'
+  etherscan: {
+    apiKey: {
+      polygonMumbai: process.env.POLYGONSCAN_API_KEY
+    }
   }
 }
 
