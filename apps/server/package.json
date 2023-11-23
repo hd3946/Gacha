@@ -1,10 +1,10 @@
 {
   "name": "@apps/server",
   "version": "0.0.1",
-  "description": "",
+  "description": "Gacha Game Server",
   "author": "",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "Daegu Family",
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
